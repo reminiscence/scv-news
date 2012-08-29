@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="bignews" />
+    <title>Big News</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css" rel="stylesheet" media="screen" />
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+
+<div id="btnbox">
+  <a id="btn-list"  data-toggle="modal" title="리스트 보기" rel="tooltip" class="btn btn-small btn-info"><i class="icon-th-list"></i></a>
+  <a id="btn-refresh" title="랜덤 빅뉴스 보기" rel="tooltip" class="btn btn-small"><i class="icon-refresh"></i></a>
+  <a id="btn-info" title="이곳은?" rel="tooltip" class="btn btn-small"><i class="icon-info-sign"></i></a>
+</div>
+<div class="main">
+  <div id="overview" class="box">
+      <h1 id="title"></h1>
+  </div>
+</div>
+
+
+<div id="listbox" class="hide"></div>
+
+<script id="news-template" type="text/template">
+<div class="box" vid="${vid}">
+  <img src="${imageUrl}" class="img-rounded" />
+  <h5>${title}<h5>
+</div>
+</script>
+
+<!-- <div id="listbox" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal-body">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">List</h3>
+    </div>
+    <div>
+      <div>dddd</div>
+      <div>dddd</div>
+    </div>
+  </div>
+</div>
+ -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+<script src="http://vjs.zencdn.net/c/video.js"></script>
+<!-- <script src="js/jquery.masonry.min.js"></script> -->
+<script src="js/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="js/jquery.imagesloaded.min.js"></script>
+<script src="js/bigvideo.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
