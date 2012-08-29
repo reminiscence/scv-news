@@ -217,11 +217,13 @@
 				// create player
 				$('body').prepend(wrap);
 				var autoPlayString = BigVideo.settings.forceAutoplay ? 'autoplay' : '';
-				player = $('<video id="'+vidEl.substr(1)+'" class="video-js vjs-default-skin" controls="controls" preload="auto" data-setup="{}" '+autoPlayString+' webkit-playsinline></video>');
+				player = $('<video id="'+vidEl.substr(1)+'" class="video-js vjs-default-skin" preload="auto"  data-setup="{}" '+autoPlayString+' webkit-playsinline></video>');
 				player.css('position','absolute');
 				wrap.append(player);
+
 				player = _V_(vidEl.substr(1), { 'controls': false, 'autoplay': true, 'preload': 'auto' });
-				
+
+
 				// add controls
 				if (BigVideo.settings.controls) initPlayControl();
 				
