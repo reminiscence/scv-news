@@ -1,1 +1,0 @@
-http://niceaji7.github.com/big-news/
