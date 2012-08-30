@@ -10,6 +10,7 @@
     z-index: 1000;
     /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
 }
+
 #listbox {
     background:rgba(0,0,0,.8);
     position:absolute;
