@@ -1,5 +1,8 @@
 
-.modal {width:940px;left:36%;}
+.modal {width:360px; top : 50%; left:60%; }
+.dropdown {width: 150px; margin:0 auto; }
+.dropdown-menu {position: relative;}
+.dropdown-toggle {font-size : 20px; font-weight: bold;}
 
 #btnbox {
     position:absolute;
@@ -38,6 +41,23 @@
     line-height: 15px;
 }
 
+#articlebox {
+    background:rgba(0,0,0,.8);
+    position:absolute;
+    top:0;
+    left:40%;
+    z-index: 1010;
+    width:50%;
+    height: 100%;
+    overflow: scroll;
+    padding:40px;
+    color:#fff;
+}
+
+#articlebox p {
+    text-indent: 10px;
+}
+
 
 html, body { 
     margin:0;
@@ -48,9 +68,9 @@ h1, h2, .nav-link, .playlist-btn {
     text-transform:uppercase;
 
 }
-h1 {font-size:28px; margin:0;padding:0 0 0 20px; color:#fff;}
+h1 {font-size:20px; margin:0;padding:0 0 0 20px; color:#fff;}
 
-a { color:#fff; font-style:italic; }
+//a { color:#fff; font-style:italic; }
 blockquote { 
     background:#fff; 
     margin:0 0 20px;
@@ -68,6 +88,11 @@ pre {
     padding:10px;
     border-radius:5px;
     margin-bottom:20px;
+}
+.box span {
+    color:#fff;
+    padding: 0 0 0 20px;
+    margin:0;
 }
 .nav { 
     position:fixed; 
