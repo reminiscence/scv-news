@@ -3,12 +3,15 @@ $(function() {
 	var $doc =$(document.body);
 	
 	//viewer, DL,BV 객체 생성
-	var bagNewsViewer = new BagNews();
-	var DL = new DataLoader();
-	var BV = new $.BigVideo();
-	var SV = new SelectCpBox();
-	BV.init();
+	var bagNewsViewer = new BagNews($doc),
+		DL = new DataLoader(),
+		BV = new $.BigVideo(),
+		SB = new SelectCpBox(),
+		CB = new ConfigBox();
 
+	//BV 초기화 및 데이터 로드 시작
+	BV.init();
+	CB.init();
 	DL.loadData();
 
 	var toggle = true; //이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
@@ -17,6 +20,7 @@ $(function() {
 	//뉴스사 선택 event
 	$('#btn-cp').click(function(){
 		$('#selectbox').fadeIn();
+		//$('#myModal').modal('show');
 	});
 
 	//기사 보기 버튼 event
@@ -48,7 +52,7 @@ $(function() {
 	});
 
 	$('#btn-config').click(function(){
-
+		$('#configbox').fadeIn();
 	});
 
 	//trigger & bind event
@@ -59,10 +63,9 @@ $(function() {
 	//기사가 로드가 됬다면 기사를 뿌려줌
 	//기사가 로드가 되었다면,  config의 값들이 채워져 있으므로 뉴스사 선택 객체의 init() 을 실행하여 초기 세팅
 	$doc.bind('loadedArticle', function(){
-
 		var article = config.articleData; 
 		bagNewsViewer.buildArticle(article);
-		SV.init();
+		SB.init();
 	});
 
 	//뉴스 동영상에 관련된 내용들이 모두 띄워졌다면 기사를 api에서 로드
@@ -102,9 +105,14 @@ $(function() {
 	});
 
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
-	$doc.bind('close',function(){
+	$doc.bind('closeSB',function(e){
 		$('#selectbox').fadeOut();
-		SV.init();
+		SB.init();
+	});
+
+	//설정 box의 x버튼을 클릭시 닫아줌
+	$doc.bind('closeCB',function(){
+		$('#configbox').fadeOut();
 	});
 
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
@@ -112,12 +120,18 @@ $(function() {
 		e.preventDefault();
 		var $children = $(e.currentTarget);
 		$cpKorName = $children.text();
-		SV.selectCp($cpKorName);
+		SB.selectCp($cpKorName);
 	});
 
+	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
 		var cp = $('#selectbox').find('#dLabel').text();
 		$('#selectbox').fadeOut();
 		DL.loadData(cp);
+	});
+
+	$doc.bind('changeConfig', function(){
+		CB.setAutoPlay();
+		$('#configbox').fadeOut();
 	});
 });

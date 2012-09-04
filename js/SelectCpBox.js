@@ -9,7 +9,7 @@ function SelectCpBox(){
 //뉴스사 선택 박스를 초기화 해줌.
 SelectCpBox.prototype.init = function(cpKorName){
 	var selectBox = this.selectBox,
-		news = config.news,
+		newsList = config.newsList,
 		order = config.currentNewsOrder,
 		doc = this.doc;
 
@@ -17,16 +17,16 @@ SelectCpBox.prototype.init = function(cpKorName){
 
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
-			$.tmpl(tmpl, news[order]).appendTo(selectBox);
+			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}else{
-			news[order].cpKorName = cpKorName;
-			$.tmpl(tmpl, news[order]).appendTo(selectBox);
+			newsList[order].cpKorName = cpKorName;
+			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}
 
 		$('.dropdown-toggle').dropdown();
 
-		$('.close').click(function(){
-			doc.trigger('close');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
+		$('#closeSelectBox').click(function(){
+			doc.trigger('closeSB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
 						//추측1. 태그가 동적으로 만들어지므로, app.js에서 작동 안함
 		});
 

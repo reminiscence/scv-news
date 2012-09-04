@@ -6,6 +6,6 @@ var config = {
 	vid : '',
 	articleData : '',
 	vidList : [],
-	news : [],
-	currentNewsOrder : 0
+	currentNewsOrder : 0,
+	autoPlay : true
 };

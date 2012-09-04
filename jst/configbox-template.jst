@@ -1,13 +1,18 @@
 <div class="config_box">
   <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">설</h3>
+      <button type="button" class="close" id="closeConfigBox" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">설정</h3>
     </div>
     <div class="modal-body">
+      <div>자동재생 설정</div>
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-primary active">ON</button>
+          <button type="button" class="btn btn-primary">OFF</button>
+        </div>
     </div>
     <div class="modal-footer">
-      <button id="submit" class="btn btn-primary">확인</button>
+      <button id="submit-config" class="btn btn-primary">확인</button>
     </div>
   </div>
 </div>
