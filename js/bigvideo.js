@@ -79,9 +79,9 @@
 						.height(windowW/mediaAspect);
 					$(vidEl)
 						.css('top',-(windowW/mediaAspect-windowH)/2)
-						.css('left',70);
-					$(vidEl+'_html5_api').css('width','90%');
-					$(vidEl+'_flash_api').css('width','90%');
+						.css('left',0);
+					$(vidEl+'_html5_api').css('width','100%');
+					$(vidEl+'_flash_api').css('width','100%');
 				} else {
 					// is image
 					$('#big-video-image')

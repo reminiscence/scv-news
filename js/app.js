@@ -4,15 +4,15 @@ $(function() {
 	
 	//viewer, DL,BV 객체 생성
 	var bagNewsViewer = new BagNews($doc),
-		DL = new DataLoader(),
+		dataLoader = new DataLoader(),
 		BV = new $.BigVideo(),
-		SB = new SelectCpBox(),
-		CB = new ConfigBox();
+		selectCpBox = new SelectCpBox(),
+		configBox = new ConfigBox();
 
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
-	CB.init();
-	DL.loadData();
+	configBox.init();
+	dataLoader.loadData();
 
 	var toggle = true; //이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
 
@@ -25,6 +25,8 @@ $(function() {
 
 	//기사 보기 버튼 event
 	$('#btn-article').click(function(){
+		$('#selectbox').hide();
+		$('#configbox').hide();
 		$('#articlebox').fadeIn();
 	});
 
@@ -34,6 +36,8 @@ $(function() {
 
 	//뉴스 리스트 버튼 event
 	$('#btn-list').click(function(){
+		$('#selectbox').hide();
+		$('#configbox').hide();
 		$('#listbox').fadeIn();
 	});
 
@@ -44,9 +48,13 @@ $(function() {
 	$('video').click(function(){
 		if(toggle){
 			$('.main').fadeOut();
+			$('#big-video-control-container').fadeOut();
+			$('#btnbox').fadeOut();
 			toggle = false;
 		} else {
 			$('.main').fadeIn();
+			$('#big-video-control-container').fadeIn();
+			$('#btnbox').fadeIn();
 			toggle = true;
 		}
 	});
@@ -65,16 +73,19 @@ $(function() {
 	$doc.bind('loadedArticle', function(){
 		var article = config.articleData; 
 		bagNewsViewer.buildArticle(article);
-		SB.init();
+		selectCpBox.init();
 	});
 
 	//뉴스 동영상에 관련된 내용들이 모두 띄워졌다면 기사를 api에서 로드
 	$doc.bind('showNews',  function(){
-		DL.loadArticle();
+		dataLoader.loadArticle();
 	});
 
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
+		$('#listbox').hide();
+		$('#selectbox').hide();
+		$('#articlebox').hide();
 		bagNewsViewer.showNewsInfo();
 	});
 
@@ -107,7 +118,7 @@ $(function() {
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeSB',function(e){
 		$('#selectbox').fadeOut();
-		SB.init();
+		selectCpBox.init();
 	});
 
 	//설정 box의 x버튼을 클릭시 닫아줌
@@ -120,18 +131,18 @@ $(function() {
 		e.preventDefault();
 		var $children = $(e.currentTarget);
 		$cpKorName = $children.text();
-		SB.selectCp($cpKorName);
+		selectCpBox.selectCp($cpKorName);
 	});
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
 		var cp = $('#selectbox').find('#dLabel').text();
 		$('#selectbox').fadeOut();
-		DL.loadData(cp);
+		dataLoader.loadData(cp);
 	});
 
 	$doc.bind('changeConfig', function(){
-		CB.setAutoPlay();
+		configBox.setAutoPlay();
 		$('#configbox').fadeOut();
 	});
 });
