@@ -52,17 +52,23 @@
 			var windowW = $(window).width();
 			var windowH = $(window).height();
 			var windowAspect = windowW/windowH;
-			if (windowAspect < mediaAspect) {
+			//if (windowAspect < mediaAspect) {
 				// taller
 				if (currMediaType === 'video') {
 					player
-						.width(windowH*mediaAspect)
-						.height(windowH);
+						// .width(windowH*mediaAspect)
+						// .height(windowH);
+						.width(1024)
+						.height(768);
 					$(vidEl)
-						.css('top',0)
-						.css('left',-(windowH*mediaAspect-windowW)/2);
-					$(vidEl+'_html5_api').css('width',windowH*mediaAspect);
-					$(vidEl+'_flash_api').css('width',windowH*mediaAspect);
+						// .css('top',0)
+						// .css('left',-(windowH*mediaAspect-windowW)/2);
+						.css('top','100px')
+						.css('left',0);
+					// $(vidEl+'_html5_api').css('width',windowH*mediaAspect);
+					// $(vidEl+'_flash_api').css('width',windowH*mediaAspect);
+					$(vidEl+'_html5_api').css('width','1024px');
+					$(vidEl+'_flash_api').css('width','768px');
 				} else {
 					// is image
 					$('#big-video-image')
@@ -71,7 +77,7 @@
 						.css('top',0)
 						.css('left',-(windowH*mediaAspect-windowW)/2);
 				}
-			} else {
+			/*} else {
 				// wider
 				if (currMediaType === 'video') {
 					player
@@ -90,7 +96,7 @@
 						.css('top',-(windowW/mediaAspect-windowH)/2)
 						.css('left',0);
 				}
-			}
+			}*/
 		}
 
 		function initPlayControl() {
