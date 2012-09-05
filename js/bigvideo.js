@@ -57,7 +57,7 @@
 				player
 
 					.width(1024)
-					.height(768);
+					.height(576);
 				$(vidEl)
 					.css('top','100px')
 					.css('left',0);
@@ -69,7 +69,7 @@
 				$('#big-video-image')
 					.width(1024)
 					.height(576)
-					 .css('top','100px')
+					 .css('top',0)
 					 .css('left',0);
 			}
 		}
