@@ -30,19 +30,11 @@ $(function() {
 		$('#articlebox').fadeIn();
 	});
 
-	$('#articlebox').click(function(){
-		$('#articlebox').fadeOut();
-	});
-
 	//뉴스 리스트 버튼 event
 	$('#btn-list').click(function(){
 		$('#selectbox').hide();
 		$('#configbox').hide();
 		$('#listbox').fadeIn();
-	});
-
-	$('#listbox').click(function(){
-		$('#listbox').fadeOut();
 	});
 
 	$('video').click(function(){
@@ -103,6 +95,7 @@ $(function() {
 
 	//뉴스 리스트에서 기사 하나를 선택 시 -> 화면에 새로 뿌려줌
 	$doc.bind('clickBox',function(){
+		BV.init(); //플레이어 control bar 도 초기화
 		bagNewsViewer.setNewsList(config.vid);
 	});
 
@@ -144,5 +137,9 @@ $(function() {
 	$doc.bind('changeConfig', function(){
 		configBox.setAutoPlay();
 		$('#configbox').fadeOut();
+	});
+
+	$doc.bind('toggleControl', function(){
+		BV.togglePlayControl();
 	});
 });

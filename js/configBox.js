@@ -24,6 +24,7 @@ ConfigBox.prototype.init = function(){
 
 ConfigBox.prototype.setAutoPlay = function(){
 	var $active = $('.active');
+
 	if($active.text()=="ON"){
 		config.autoPlay = true;
 	} else {

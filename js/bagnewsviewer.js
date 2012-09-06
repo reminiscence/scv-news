@@ -51,7 +51,8 @@ BagNews.prototype.buildList = function (){
 		doc = this.doc;
 
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
-	$listbox.html('<div class="list-title">'+newsList[i].cpKorName+'</div>');
+	$listbox.html();
+	$listbox.html('<div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button>')
 	$.get('./jst/news-template.jst',function(tmpl){
 		for(i=0; i<length; i++){
 			news = newsList[i],
@@ -63,6 +64,11 @@ BagNews.prototype.buildList = function (){
 		$listbox.find(".box").click(function(){
 			config.vid = $(this).attr('vid');
 			doc.trigger('clickBox');
+			doc.trigger('toggleControl');
+		});
+
+		$('#closeListBox').click(function(){
+			$('#listbox').fadeOut();
 		});
 	});
 };
@@ -74,6 +80,10 @@ BagNews.prototype.buildArticle = function(article){
 	
 	$.get('./jst/article-template.jst',function(tmpl){
 		$.tmpl(tmpl, article).appendTo($articlebox);
+
+		$('#closeArticleBox').click(function(){
+			$('#articlebox').fadeOut();
+		});
 	});
 };
 

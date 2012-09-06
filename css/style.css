@@ -26,29 +26,54 @@
 }
 
 #listbox .box{
-    background-color:#fff;
+    background:rgba(0,0,0,.8);
     padding:3px;
     opacity: .8;
-    width:150px;
-    height:150px;
+    width:470px;
+    height:200px;
     overflow:hidden;
     float:left;
     margin:15px;
-    text-align: center;
 }
 
 #listbox .list-title {
-    font-size:15px; 
-    background-color: #fff; 
-    width:150px; 
-    height:30px; 
-    margin: 15px 0 0 15px; 
+    font-weight: bold;
+    font-size:30px;
+    color : #fff;
+    background:rgba(0,0,0,.8); 
+    width:345px; 
+    height:20px; 
+    margin: 10px 0 0 15px; 
     border-radius:5px;
+    padding : 20px;
+}
+
+#listbox img {
+    float:left;
+    width:110px;
+    height: 85%;
+    margin : 15px 0 5px 5px;
 }
 
 #listbox h5{
-    font-size:11px;
+    color:#fff;
+    float:left;
+    font-size:15px;
     line-height: 15px;
+    margin : 10px 0 0 20px;
+    width : 330px;
+}
+
+#closeListBox {
+    color : #fff;
+    opacity: .9;
+    position: fixed;
+    top:10px;
+    right:10px;
+    background: rgba(0,0,0,.8);
+    border-radius:5px;
+    width:50px;
+    height:50px;
 }
 
 #articlebox {
@@ -63,21 +88,31 @@
     overflow:hidden;
 }
 
+#closeArticleBox{
+    color : #fff;
+    opacity: .9;
+    position: absolute;
+    top:3px;
+    right:5px;
+}
+
 .title { 
+    position: relative;
     width : 80%; 
-    height : 20px; 
     padding:10px; 
     background : rgba(0,0,0,.6); 
     border-radius:5px; 
     font-weight: bold; 
     font-size: 25px; 
     color: #17B2FF; 
-    margin: 40px 0 10px 40px;
+    margin: 15px 0 10px 40px;
 }
 .article_box span {
+    margin-top:10px;
     font-weight: bold; 
     font-size: 15px; 
     color: #fff; 
+    display:block;
 }
 
 .content {
@@ -91,7 +126,6 @@
     border-radius:5px;
     overflow-y: auto;
 }
-
 
 html, body { 
     margin:0;
@@ -123,12 +157,23 @@ pre {
     border-radius:5px;
     margin-bottom:20px;
 }
+
 .box span {
     color:#fff;
-    padding: 0 0 0 20px;
+    padding: 10px 0 0 20px;
     margin:0;
     font-weight: bold;
+    float : left;
+    display:block;
+    width:310px;
 }
+
+span.mid_tit {
+    color : #08c;
+    font-size:20px;
+}
+
+
 .nav { 
     position:fixed; 
     top:50px;left:50px;
@@ -181,6 +226,7 @@ pre {
     font-family:'Source Sans Pro', sans-serif; font-weight:900; 
     text-transform: uppercase;
 }
+
 .playlist { 
     padding:0; 
     margin:20px 20px 40px;
@@ -205,7 +251,14 @@ pre {
     text-shadow: 1px 1px 1px rgba(0,0,0,.8);
 }
 
-
+#cp, #date {
+    float:none;
+    display: inline;
+    color : #fff;
+    padding: 0 0 0 20px;
+    margin:0;
+    font-weight: bold;
+}
 
 /*  BigVideo Styles 
   You may need to adjust these styles to get this working right in your design. 

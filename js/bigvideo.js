@@ -315,7 +315,11 @@
 
         // Expose Video.js player
         BigVideo.getPlayer = function() {
-			return player;
+	return player;
+        };
+
+        BigVideo.togglePlayControl = function(){
+        	playControl('play');
         };
     };
 
