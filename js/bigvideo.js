@@ -52,6 +52,7 @@
 			var windowW = $(window).width();
 			var windowH = $(window).height();
 			var windowAspect = windowW/windowH;
+
 			if (windowAspect < mediaAspect) {
 				// taller
 				if (currMediaType === 'video') {
@@ -60,37 +61,39 @@
 						.height(windowH);
 
 					$(vidEl)
-						.css('top',0)
+						.css('top','80px')   //.css('top',0)
 						.css('left',-(windowH*mediaAspect-windowW)/2);
-
-					$(vidEl+'_html5_api').css('width',windowH*mediaAspect);
+				
+					$(vidEl+'_html5_api').css('width',windowH*mediaAspect).css('height','70%');
 					$(vidEl+'_flash_api').css('width',windowH*mediaAspect);
 				} else {
 					// is image
 					$('#big-video-image')
 						.width(windowH*mediaAspect)
 						.height(windowH)
-						.css('top',0)
+						.css('top','80px')
 						.css('left',-(windowH*mediaAspect-windowW)/2);
 				}
 			} else {
 				// wider
 				if (currMediaType === 'video') {
 					player
-						.width(windowW)
+						.width(windowW*mediaAspect)
 						.height(windowW/mediaAspect);
+
 					$(vidEl)
-						.css('top',-(windowW/mediaAspect-windowH)/2)
-						.css('left',0);
-					$(vidEl+'_html5_api').css('width','100%');
+						.css('top','60px')                //.css('top',-(windowW/mediaAspect-windowH)/2)
+						.css('left',-(windowH*mediaAspect-windowH)*0.8);           //.css('left',0);
+
+					$(vidEl+'_html5_api').css('width','100%').css('height','70%');   //$(vidEl+'_html5_api').css('width','100%');
 					$(vidEl+'_flash_api').css('width','100%');
 				} else {
 					// is image
 					$('#big-video-image')
 						.width(windowW)
 						.height(windowW/mediaAspect)
-						.css('top',-(windowW/mediaAspect-windowH)/2)
-						.css('left',0);
+						.css('top','60px')// .css('top',-(windowW/mediaAspect-windowH)/2)
+						.css('left',-(windowH*mediaAspect-windowH)*0.65);// .css('left',0);
 				}
 			}
 		}
@@ -192,7 +195,7 @@
 
         function playVideo(source) {
         			var $doc = $(document.body);
-		        	
+		        	console.log(source);
 			// clear image
 			$(vidEl).css('display','block');
 			$doc.trigger('playNewsVideo');
@@ -265,6 +268,7 @@
 					mediaAspect = document.getElementById('big-video-vid_flash_api').vjs_getProperty('videoWidth')/document.getElementById('big-video-vid_flash_api').vjs_getProperty('videoHeight');
 				} else {
 					// use html5 player to get mediaAspect
+					console.log($('#big-video-vid_html5_api').prop('videoWidth'),$('#big-video-vid_html5_api').prop('videoHeight'));
 					mediaAspect = $('#big-video-vid_html5_api').prop('videoWidth')/$('#big-video-vid_html5_api').prop('videoHeight');
 				}
 				updateSize();

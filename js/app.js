@@ -101,11 +101,13 @@ $(function() {
 
 	$('#btn-prev').bind('click', function(){
 		BV.prev();
+		$doc.trigger('toggleControl');
 	});
 
 	//다음 동영상 클릭 시 -> 다음 동영상 화면 로드
 	$('#btn-next').bind('click', function(){
 		BV.next();
+		$doc.trigger('toggleControl');
 	});
 
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌

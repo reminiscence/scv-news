@@ -61,7 +61,7 @@ BagNews.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
 
-		$listbox.find(".box").click(function(){
+		$listbox.find(".box").click(function(event){
 			config.vid = $(this).attr('vid');
 			doc.trigger('clickBox');
 			doc.trigger('toggleControl');
