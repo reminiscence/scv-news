@@ -7,24 +7,37 @@ $(function() {
 		dataLoader = new DataLoader(),
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
-		configBox = new ConfigBox();
-
+		configBox = new ConfigBox(),
+		$cpButton = $('#btn-cp'),
+		$articleButton = $('#btn-article'),
+		$listButton = $('#btn-list'),
+		$prevButton = $('#btn-prev'),
+		$nextButton = $('#btn-next'),
+		$configButton = $('#btn-config');
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
 	dataLoader.loadData();
 
+	//tooltip 작동
+	$cpButton.tooltip();
+	$articleButton.tooltip();
+	$listButton.tooltip();
+	$prevButton.tooltip();
+	$nextButton.tooltip();
+	$configButton.tooltip();
+
 	var toggle = true; //이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
 
 	//event
 	//뉴스사 선택 event
-	$('#btn-cp').click(function(){
+	$cpButton.click(function(){
 		$('#selectbox').fadeIn();
 		//$('#myModal').modal('show');
 	});
 
 	//기사 보기 버튼 event
-	$('#btn-article').click(function(){
+	$articleButton.click(function(){
 		$('#selectbox').hide();
 		$('#configbox').hide();
 		$('#articlebox').fadeIn();
@@ -51,7 +64,7 @@ $(function() {
 		}
 	});
 
-	$('#btn-config').click(function(){
+	$configButton.click(function(){
 		$('#configbox').fadeIn();
 	});
 
@@ -99,19 +112,23 @@ $(function() {
 		bagNewsViewer.setNewsList(config.vid);
 	});
 
-	$('#btn-prev').bind('click', function(){
+	$prevButton.bind('click', function(){
+		$('#selectbox').hide();
+		$('#configbox').hide();
 		BV.prev();
 		$doc.trigger('toggleControl');
 	});
 
 	//다음 동영상 클릭 시 -> 다음 동영상 화면 로드
-	$('#btn-next').bind('click', function(){
+	$nextButton.bind('click', function(){
+		$('#selectbox').hide();
+		$('#configbox').hide();
 		BV.next();
 		$doc.trigger('toggleControl');
 	});
 
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
-	$doc.bind('closeSB',function(e){
+	$doc.bind('closeSB',function(){
 		$('#selectbox').fadeOut();
 		selectCpBox.init();
 	});
