@@ -8,12 +8,18 @@ $(function() {
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
 		configBox = new ConfigBox(),
-		$cpButton = $('#btn-cp'),
+		headline = new Headline();
+
+
+	//버튼 selector
+	var $cpButton = $('#btn-cp'),
 		$articleButton = $('#btn-article'),
 		$listButton = $('#btn-list'),
 		$prevButton = $('#btn-prev'),
 		$nextButton = $('#btn-next'),
 		$configButton = $('#btn-config');
+
+		$('#slides').fadeIn();
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
@@ -50,15 +56,17 @@ $(function() {
 		$('#listbox').fadeIn();
 	});
 
-	$('video').click(function(){
+	$('.vjs-tech').click(function(){
 		if(toggle){
 			$('.main').fadeOut();
 			$('#big-video-control-container').fadeOut();
+			$('#slides').fadeOut();
 			$('#btnbox').fadeOut();
 			toggle = false;
 		} else {
 			$('.main').fadeIn();
 			$('#big-video-control-container').fadeIn();
+			$('#slides').fadeIn();
 			$('#btnbox').fadeIn();
 			toggle = true;
 		}
@@ -69,12 +77,13 @@ $(function() {
 	});
 
 	//trigger & bind event
-	$doc.bind('loadedData', function(){ //뉴스 데이터 로드가 됬다면 control view 실행
+	$doc.bind('loadedData', function(){ //뉴스 데이터 로드가 됬다면 control view 실행, 뉴스 제목만 랜덤으로 띄워주는 메소드 실행함
 		bagNewsViewer.controlView();
+		headline.showNewsTitle();
 	});	
 
 	//기사가 로드가 됬다면 기사를 뿌려줌
-	//기사가 로드가 되었다면,  config의 값들이 채워져 있으므로 뉴스사 선택 객체의 init() 을 실행하여 초기 세팅
+	//기사가 로드가 되었다면,  config 값들이 채워져 있으므로 뉴스사 선택 객체의 init() 을 실행하여 초기 세팅
 	$doc.bind('loadedArticle', function(){
 		var article = config.articleData; 
 		bagNewsViewer.buildArticle(article);
@@ -85,6 +94,11 @@ $(function() {
 	$doc.bind('showNews',  function(){
 		dataLoader.loadArticle();
 	});
+
+	// $doc.bind('setTitle',function(){
+	// 	$('#rand_title').fadeIn(3000);
+	// 	$('#rand_title').fadeOut(2000);
+	// });
 
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
@@ -160,5 +174,12 @@ $(function() {
 
 	$doc.bind('toggleControl', function(){
 		BV.togglePlayControl();
+	});
+
+	$doc.bind('clickNews',function(){
+		$('.slides_container').empty();
+		BV.init(); //플레이어 control bar 도 초기화
+		bagNewsViewer.setNewsList(config.vid);
+		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
 });

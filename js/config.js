@@ -7,5 +7,8 @@ var config = {
 	articleData : '',
 	vidList : [],
 	currentNewsOrder : 0,
-	autoPlay : true
+	autoPlay : true,
+	getId : function getVid(videoUrl){
+		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
+	}
 };

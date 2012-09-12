@@ -12,7 +12,7 @@ BagNews.prototype.setNewsList = function(vid){
 
 	if(vid){
 		for(var i=0; i<length; i++){
-			if(vid === getVid(newsList[i].videoUrl) ){
+			if(vid === config.getId(newsList[i].videoUrl) ){
 				config.currentNewsOrder = i;  //클릭한 뉴스의 위치만 알아냄. 전체목록에서 클릭한 뉴스부터 뉴스 동영상이 재생됨.
 				break;
 			}
@@ -20,7 +20,7 @@ BagNews.prototype.setNewsList = function(vid){
 	}
 
 	for(var i=0; i<length; i++){
-		vidList[i] = getVid(newsList[i].videoUrl);
+		vidList[i] = config.getId(newsList[i].videoUrl);
 	}
 
 	config.vidList = vidList;
@@ -56,7 +56,7 @@ BagNews.prototype.buildList = function (){
 	$.get('./jst/news-template.jst',function(tmpl){
 		for(i=0; i<length; i++){
 			news = newsList[i],
-			news.vid = getVid(news.videoUrl);
+			news.vid = config.getId(news.videoUrl);
 
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
@@ -93,6 +93,3 @@ BagNews.prototype.controlView = function(){
 	this.buildList();
 };
 
-function getVid(videoUrl){
-	return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
-}
