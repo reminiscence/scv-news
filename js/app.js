@@ -8,6 +8,7 @@ $(function() {
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
 		configBox = new ConfigBox(),
+		socialComment = new SocialComments(),
 		headline = new Headline();
 
 
@@ -15,6 +16,7 @@ $(function() {
 	var $cpButton = $('#btn-cp'),
 		$articleButton = $('#btn-article'),
 		$listButton = $('#btn-list'),
+		$commentButton = $('#btn-comment'),
 		$prevButton = $('#btn-prev'),
 		$nextButton = $('#btn-next'),
 		$configButton = $('#btn-config');
@@ -25,10 +27,15 @@ $(function() {
 	configBox.init();
 	dataLoader.loadData();
 
+	//소셜댓글 template 띄우는 객체 메소드 실행
+	socialComment.showSocialComment();
+	//alert(window.innerWidth);
+
 	//tooltip 작동
 	$cpButton.tooltip();
 	$articleButton.tooltip();
 	$listButton.tooltip();
+	$commentButton.tooltip();
 	$prevButton.tooltip();
 	$nextButton.tooltip();
 	$configButton.tooltip();
@@ -50,11 +57,17 @@ $(function() {
 	});
 
 	//뉴스 리스트 버튼 event
-	$('#btn-list').click(function(){
+	$listButton.click(function(){
 		$('#selectbox').hide();
 		$('#configbox').hide();
 		$('#listbox').fadeIn();
 	});
+
+	$commentButton.click(function(){
+		$('#selectbox').hide();
+		$('#configbox').hide();
+		$('#commentbox').fadeIn();
+	})
 
 	$('.vjs-tech').click(function(){
 		if(toggle){
@@ -150,6 +163,10 @@ $(function() {
 	//설정 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeCB',function(){
 		$('#configbox').fadeOut();
+	});
+
+	$doc.bind('closeCommentBox',function(){
+		$('#commentbox').fadeOut();
 	});
 
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할

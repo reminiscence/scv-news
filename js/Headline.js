@@ -22,7 +22,11 @@ Headline.prototype.showNewsTitle = function(){
 
 		str = newsList[randNum].title;
 		news[i] = {};
-		news[i].tit = str.substring(0, 25) + '...';
+		console.log($(window).innerWidth());
+		if($(window).innerWidth() > 600)
+			news[i].tit = str.substring(0, 25) + '...';
+		else
+			news[i].tit = str.substring(0, 10) + '...';
 		news[i].vid = config.getId(newsList[randNum].videoUrl);
 	}
 
