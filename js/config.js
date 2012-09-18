@@ -10,5 +10,10 @@ var config = {
 	autoPlay : true,
 	getId : function getVid(videoUrl){
 		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
+	},
+	trim : function trim(str){
+		str  = str.replace(/^\s*/,'').replace(/\s*$/,'');
+
+		return str;
 	}
 };

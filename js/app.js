@@ -8,11 +8,10 @@ $(function() {
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
 		configBox = new ConfigBox(),
-		socialComment = new SocialComments(),
 		headline = new Headline();
 
 
-	//버튼 selector
+	//버튼 selector 선언
 	var $cpButton = $('#btn-cp'),
 		$articleButton = $('#btn-article'),
 		$listButton = $('#btn-list'),
@@ -21,72 +20,115 @@ $(function() {
 		$nextButton = $('#btn-next'),
 		$configButton = $('#btn-config');
 
-		$('#slides').fadeIn();
+
+	//슬라이드 박스 pirnt
+	$('#slides').fadeIn();
+	
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
 	dataLoader.loadData();
 
-	//소셜댓글 template 띄우는 객체 메소드 실행
-	socialComment.showSocialComment();
-	//alert(window.innerWidth);
-
-	//tooltip 작동
-	$cpButton.tooltip();
-	$articleButton.tooltip();
-	$listButton.tooltip();
-	$commentButton.tooltip();
-	$prevButton.tooltip();
-	$nextButton.tooltip();
-	$configButton.tooltip();
-
-	var toggle = true; //이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
+	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
+	var ua = navigator.userAgent.toLowerCase(),
+		isAndroid = ua.indexOf('android'),
+		isIphone= ua.indexOf('iphone'),
+		isIpad = ua.indexOf('ipad');
+	if(isAndroid == -1 && isIphone == -1  && isIpad == -1){
+		
+		$cpButton.tooltip();
+		$articleButton.tooltip();
+		$listButton.tooltip();
+		$commentButton.tooltip();
+		$prevButton.tooltip();
+		$nextButton.tooltip();
+		$configButton.tooltip();
+	}
+	var infoToggle = true,//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
+		cpButtonToggle = false,
+		listButtonToggle = false,
+		articleButtonToggle = false,
+		commentButtonToggle = false,
+		configButtonToggle = false;
 
 	//event
 	//뉴스사 선택 event
 	$cpButton.click(function(){
-		$('#selectbox').fadeIn();
-		//$('#myModal').modal('show');
+		if(!cpButtonToggle){
+			$('#selectbox').fadeIn();
+			cpButtonToggle = true;
+		} else{
+			$('#selectbox').fadeOut();
+			cpButtonToggle = false;
+		}
 	});
 
 	//기사 보기 버튼 event
 	$articleButton.click(function(){
-		$('#selectbox').hide();
-		$('#configbox').hide();
-		$('#articlebox').fadeIn();
+		if(!articleButtonToggle){
+			$('#selectbox').hide();
+			$('#configbox').hide();
+			$('#articlebox').fadeIn();
+			articleButtonToggle = true;
+		} else {
+			$('#articlebox').fadeOut();
+			articleButtonToggle = false;
+		}
 	});
 
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
-		$('#selectbox').hide();
-		$('#configbox').hide();
-		$('#listbox').fadeIn();
+		if(!listButtonToggle){
+			$('#selectbox').hide();
+			$('#configbox').hide();
+			$('#listbox').fadeIn();
+			listButtonToggle = true;
+		}else{
+			$('#listbox').fadeOut();
+			listButtonToggle = false;
+		}
 	});
 
 	$commentButton.click(function(){
-		$('#selectbox').hide();
-		$('#configbox').hide();
-		$('#commentbox').fadeIn();
-	})
+		if(!commentButtonToggle){
+			$('#selectbox').hide();
+			$('#configbox').hide();
+			$('#commentbox').fadeIn();
+			commentButtonToggle = true;
+		} else {
+			$('#commentbox').fadeOut();
+			commentButtonToggle = false;
+		}
+	});
 
 	$('.vjs-tech').click(function(){
-		if(toggle){
+		if(infoToggle){
 			$('.main').fadeOut();
 			$('#big-video-control-container').fadeOut();
 			$('#slides').fadeOut();
 			$('#btnbox').fadeOut();
-			toggle = false;
+			infoToggle = false;
 		} else {
 			$('.main').fadeIn();
 			$('#big-video-control-container').fadeIn();
 			$('#slides').fadeIn();
 			$('#btnbox').fadeIn();
-			toggle = true;
+			infoToggle = true;
 		}
 	});
 
 	$configButton.click(function(){
-		$('#configbox').fadeIn();
+		if(!configButtonToggle){
+			$('#configbox').fadeIn();
+			configButtonToggle = true;
+		} else {
+			$('#configbox').fadeOut();
+			configButtonToggle = false;
+		}
+	});
+
+	$('#closeCommentBox').click(function(){
+		$('#commentbox').fadeOut();				
 	});
 
 	//trigger & bind event
@@ -107,11 +149,6 @@ $(function() {
 	$doc.bind('showNews',  function(){
 		dataLoader.loadArticle();
 	});
-
-	// $doc.bind('setTitle',function(){
-	// 	$('#rand_title').fadeIn(3000);
-	// 	$('#rand_title').fadeOut(2000);
-	// });
 
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
@@ -165,10 +202,6 @@ $(function() {
 		$('#configbox').fadeOut();
 	});
 
-	$doc.bind('closeCommentBox',function(){
-		$('#commentbox').fadeOut();
-	});
-
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
 	$('#selectbox').on('click','.dropdown-menu a' ,function(e){
 		e.preventDefault();
@@ -199,4 +232,31 @@ $(function() {
 		bagNewsViewer.setNewsList(config.vid);
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
+
+	$doc.bind('checkLogin',function(){
+		console.log("fdsa");
+		sLogin();
+	});
+
+	function sLogin(){
+		FB.getLoginStatus(function(response) {
+			console.log(response);
+			/*if (response.status === 'connected') {
+				// the user is logged in and has authenticated your
+				// app, and response.authResponse supplies
+				// the user's ID, a valid access token, a signed
+				// request, and the time the access token 
+				// and signed request each expire
+				var uid = response.authResponse.userID;
+				var accessToken = response.authResponse.accessToken;
+				console.log(uid);
+			} else if (response.status === 'not_authorized') {
+				// the user is logged in to Facebook, 
+				// but has not authenticated your app
+				console.log("error");
+			} else {
+				// the user isn't logged in to Facebook.
+			}*/
+		});
+	}
 });

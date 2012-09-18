@@ -22,7 +22,6 @@ Headline.prototype.showNewsTitle = function(){
 
 		str = newsList[randNum].title;
 		news[i] = {};
-		console.log($(window).innerWidth());
 		if($(window).innerWidth() > 600)
 			news[i].tit = str.substring(0, 25) + '...';
 		else

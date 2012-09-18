@@ -38,6 +38,7 @@ BagNews.prototype.showNewsInfo = function (){
 	$("#date").html(news[order].regDate);
 	
 	config.newsId = news[order].newsId;
+	$('.newsImage').css('src',news[order].imageUrl);
 	doc.trigger('showNews');
 };
 
@@ -51,7 +52,7 @@ BagNews.prototype.buildList = function (){
 		doc = this.doc;
 
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
-	$listbox.html();
+	//$listbox.html();
 	$listbox.html('<div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button>')
 	$.get('./jst/news-template.jst',function(tmpl){
 		for(i=0; i<length; i++){
@@ -61,15 +62,26 @@ BagNews.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
 
-		$listbox.find(".box").click(function(event){
-			config.vid = $(this).attr('vid');
-			doc.trigger('clickBox');
-			doc.trigger('toggleControl');
+		$listbox.find(".box").click(function(e){
+			var $target = $(e.target);
+			if($target.attr('id') != 'btn-bookmark' && $target.attr('class') != 'icon-star-empty'){
+				config.vid = $(this).attr('vid');
+				doc.trigger('clickBox');
+				doc.trigger('toggleControl');
+			} else {
+				//= $(this).attr('vid');
+				//var v = localStorage["vid"];
+				console.log("asdf"); 
+				doc.trigger('checkLogin');
+			}
+
 		});
 
 		$('#closeListBox').click(function(){
 			$('#listbox').fadeOut();
 		});
+
+		
 	});
 };
 

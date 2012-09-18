@@ -1,5 +1,5 @@
 
-.modal {width:360px; top : 50%; left:60%; }
+.modal {width:360px; top: 70%; left:60%; }
 .dropdown {width: 150px; margin:0 auto; }
 .dropdown-menu {position: relative;}
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
@@ -7,17 +7,19 @@
 
 
 #btnbox {
+    width:190px;
     position:absolute;
-    bottom:13px; right:20px;
+    bottom:20px; right:10px;
     background:rgba(255,255,255,0.2);
     border-radius:5px;
-    z-index: 1000;
+    z-index: 1100;
     /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
 }
 
 #btnbox a {
-    display : block;
-     margin:5px;
+    float: left;
+    width:15px;
+     margin:6px;
 }
 
 #listbox {
@@ -32,6 +34,7 @@
 }
 
 #listbox .box{
+    position: relative;
     background:rgba(0,0,0,.9);
     padding:3px;
     opacity: .8;
@@ -122,14 +125,14 @@
 }
 
 #slides {
-    width:40%;height:16px;position:absolute; bottom : 20px; right:10%; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    width:40%;height:16px;position:absolute; bottom : 60px; left:20px; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
 #rand_title {
     color : #fff;
 }
 
-
+#btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
 
 .title { 
     position: relative;
@@ -165,7 +168,7 @@
 }
 
 .comments {
-    width : 70%; 
+    width : 80%; 
     height: 350px;
     text-indent: 10px; 
     padding:10px; 
@@ -223,13 +226,16 @@ span.mid_tit {
     font-size:20px;
 }
 
-
 .nav { 
     position:fixed; 
-    top:50px;left:50px;
-    width:150px; 
+    right:10px;
     -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
 }
+
+.navbar .nav { right:0; float : right;}
+
+.navbar .brand{padding:20px;}
+
 .credit {
     margin:20px 0;
 }
@@ -308,15 +314,17 @@ span.mid_tit {
     margin:0;
     font-weight: bold;
 }
+
 /*facebook comment plugin*/
 .fb-comments{ margin: 15px 0;}
+#login {position : absolute; bottom:30px; right: 33%;}
 
 /*  BigVideo Styles 
   You may need to adjust these styles to get this working right in your design. 
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-#big-video-control-container{position:fixed;bottom:20px;padding: 0 20px;width:45%;
+#big-video-control-container{position:fixed;bottom:20px;padding: 0 20px;width:47%;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{width:85%;height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
@@ -337,35 +345,43 @@ span.mid_tit {
 
 
 /*media query*/
-@media screen and (max-width : 600px){
+@media screen and (max-width : 700px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    #slides {
-        width:40%;height:10px;position:absolute; bottom : 60px; right:20px; padding:10px; margin:0; background: rgba(0,0,0,0.2); border-radius:5px; 
-    }
-    #btnbox { position:absolute; bottom:20px; right:20px;background:rgba(0,0,0,0.2);border-radius:5px;z-index: 1000;}
-    #btnbox a { display : inline-block; margin : 3px;}
-    #big-video-control-container{position:fixed;bottom:20px;padding: 0 20px;width:45%;
-  -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
-   #big-video-control{width:85%;height:16px;position:relative; padding:10px; margin:0; background: rgba(0,0,0,0.2); border-radius:5px; }
-    #big-video-control-timer{position:absolute;top:7px;left:70%;color:#fff;font-size:11px; width:55px;}
-    .main { position:relative; min-width:300px; margin:0; background:rgba(255,255,255,0.2); border-radius:5px; height:40px;}
-    .box { background:#444; background:rgba(0,0,0,.4);  padding: 0; height:40px; }
-    .content {
-    width : 80%;  height: 130px; text-indent: 10px;  padding:10px;  margin-top : 15px; margin-left : 40px;  background : rgba(0,0,0,.6);  border-radius:5px; overflow-y: auto;}
-    .title { 
-    position: relative; width : 80%;  padding:10px;   background : rgba(0,0,0,.6);  border-radius:5px;   font-weight: bold;  font-size:1em; color: #34D541;  margin: 15px 0 10px 40px;}
-    .modal {width:360px; top :5%; left:15%; }
-    .comments {
-    width : 70%; 
-    height:180px;
-    text-indent: 10px; 
-    padding:10px; 
-    /*margin-top : 15px;
-    margin-left : 40px; */
-    margin : 15px auto;
-    background : #fff;
-    border-radius:5px;
-    overflow-y: auto;
+    #slides {width:50%; height:10px; right:20px; background: rgba(0,0,0,0.2); }
+    #btnbox { background:rgba(0,0,0,0.2); width:41px; right: 10px;  }
+    #btnbox a { display : block; clear:both; margin : 3px;}
+    #big-video-control{ background: rgba(0,0,0,0.2); }
+    #big-video-control-container {width:58%;}
+    #big-video-control-timer{position:absolute;top:7px; right:5%;color:#fff;font-size:11px; width:55px;}
+    .main { margin:0; height:40px;}
+    .box {  padding: 0; height:40px; }
+    .content { height: 130px;}
+    .title { font-size:1em; }
+    .modal { top :300px; left:60%; width:300px;}
+    #socialCmt { margin : 15px auto; }
+    .comments { height:180px; }
 }
+
+@media screen and (max-width : 400px){
+    #cp, #date {padding : 0 0 0 5px;}
+   
+   #listbox .list-title{ width:270px; height:10px; }
+    #listbox .box { width:350px; height:150px; padding: 0; overflow: visible; margin:10px 0 0 5px; }
+    #listbox img { margin: 5px 0 5px 5px; height: 95%; }
+    #listbox h5 { font-size: 1em; margin: 0px 0 0 10px; width: 200px;}
+    #btnbox { background:rgba(0,0,0,0.2); width:300px; left:20px; }
+    #btnbox a { display : inline-block; margin : 3px; clear:none;}
+    span.mid_tit { font-size : 1em;}
+    .box span { width:200px; padding-left: 10px; padding-top:0;}
+    .content { height: 130px;}
+    .title { font-size:1em; }
+    .modal { left:80%; }
+    #socialCmt { margin : 15px auto; }
+    .comments { height:180px; }
+
+     #slides { left: 20px; width: 85%; }
+    .slides_container { top : -5px;}
+    #big-video-control-container { width : 100%; bottom : 100px; }
+     #big-video-control{ background: rgba(0,0,0,0.2); }
 }

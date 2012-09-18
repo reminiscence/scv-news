@@ -7,21 +7,12 @@
         <meta name="viewport" content="width=device-width">
         <title>S.C.V-news</title>
         
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css" rel="stylesheet" media="screen" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
     
         <link href="css/style.css" rel="stylesheet"/>
     </head>
     <body>
-        <!--페이스북 comment plugin 시작-->
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1&appId=102908229864689";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-        <!--페이스북 comment plugin 끝-->
         <div class="main">
             <div id="overview" class="box">
                 <h1 id="title"></h1>
@@ -33,7 +24,19 @@
     <div id="articlebox" class="hide"></div>
     <div id="selectbox" class="hide"></div>
     <div id="configbox" class="hide"></div>
-    <div id="commentbox" class="hide"></div>
+    <div id="commentbox" class="hide">
+        <div id="socialCmt"class="title">
+            소셜 댓글
+            <button type="button" class="close" id="closeCommentBox" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+
+        <div class="comments">
+            <!-- 페이스북 댓글 플러그인 시작 -->
+            <div class="fb-comments" data-href="reminiscence.github.com/scv-news/index.html" data-num-posts="5" data-width="350px"></div>
+            <!-- 페이스북 댓글 플러그인 끝 -->
+            <img class="newsImage" />
+        </div>
+    </div>
     <div id="btnbox">
         <a id="btn-cp" title="뉴스사 선택"  data-toggle="modal" class="btn btn-small" rel="tooltip" data-placement="left"><i class="icon-facetime-video"></i></a>
         <a id="btn-article" title="기사 보기" class="btn btn-small" rel="tooltip" data-placement="left"><i class="icon-align-justify"></i></a>
@@ -46,14 +49,14 @@
     <div id="slides" class="hide">
         <div class="slides_container"></div>
     </div>
-
+    <div id="login">
+         <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+     </div>
    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>   
-    
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
     <script src="http://vjs.zencdn.net/c/video.js"></script>
-    <!-- <script src="js/jquery.masonry.min.js"></script> -->
     <script src="js/jquery-ui-1.8.22.custom.min.js"></script>
     <script src="js/slides.jquery.js"></script>
     <script src="js/jquery.imagesloaded.min.js"></script>
@@ -64,7 +67,7 @@
     <script src="js/DataLoader.js"></script>
     <script src="js/bagnewsviewer.js"></script>
     <script src="js/Headline.js"></script>
-    <script src="js/SocialComments.js"></script>
+    <script src="js/commentPlugin.js"></script>
     <script src="js/app.js"></script>
     </body>
 </html>

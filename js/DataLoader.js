@@ -37,7 +37,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 	else {
 		//뉴스사 값을 api URL값에 맞게 파싱함
 		cp = cp.toLowerCase();
-		cp = trim(cp);
+		cp = config.trim(cp);
 
 		if(cp == "연합뉴스")
 			cp = "yonhap";
