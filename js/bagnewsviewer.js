@@ -71,7 +71,6 @@ BagNews.prototype.buildList = function (){
 			} else {
 				//= $(this).attr('vid');
 				//var v = localStorage["vid"];
-				console.log("asdf"); 
 				doc.trigger('checkLogin');
 			}
 
