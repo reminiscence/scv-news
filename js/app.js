@@ -235,10 +235,6 @@ $(function() {
 
 	$doc.bind('checkLogin',function(){
 		console.log("fdsa");
-		sLogin();
-	});
-
-	function sLogin(){
 		FB.getLoginStatus(function(response) {
 			console.log(response);
 			/*if (response.status === 'connected') {
@@ -258,5 +254,6 @@ $(function() {
 				// the user isn't logged in to Facebook.
 			}*/
 		});
-	}
+	});
+
 });
