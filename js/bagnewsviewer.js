@@ -77,7 +77,7 @@ BagNews.prototype.buildList = function (){
 					console.log("asdf");
 					if(response.status === 'connected') {
 						bookmark.uid = response.authResponse.userID;
-						boomark.newsList[count].vid = $(this).attr('vid');
+						bookmark.newsList[count].vid = $(this).attr('vid');
 						bookmark.newsList[count].imageUrl = $(this).children('img').attr('src');
 						bookmark.newsList[count].title = $(this).children('h5').text();
 						bookmark.newsList[count].cpKorName = $(this).find('span:eq(2)').text();
