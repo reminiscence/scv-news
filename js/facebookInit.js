@@ -3,7 +3,6 @@ window.fbAsyncInit = function() {
 		xfbml: true});
 };
 
-	
 (function() {
 	var e = document.createElement('script'); e.async = true;
 	e.src = document.location.protocol +
