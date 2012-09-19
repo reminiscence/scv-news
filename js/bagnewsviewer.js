@@ -49,7 +49,9 @@ BagNews.prototype.buildList = function (){
 		length = newsList.length,
 		i=0,
 		news='',
-		doc = this.doc;
+		doc = this.doc,
+		bookmark = config.bookmark,
+		count = config.count;
 
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
 	//$listbox.html();
@@ -64,23 +66,24 @@ BagNews.prototype.buildList = function (){
 
 		$listbox.find(".box").click(function(e){
 			var $target = $(e.target);
-			if($target.attr('id') != 'btn-bookmark' && $target.attr('class') != 'icon-star-empty'){
+			if($target.attr('id') != 'btn-bookmark' || $target.attr('class') != 'icon-star-empty'){
 				config.vid = $(this).attr('vid');
 				doc.trigger('clickBox');
 				doc.trigger('toggleControl');
 			} else {
+				console.log($(this).attr('vid'), $(this img).attr('src'));
 				//= $(this).attr('vid');
 				//var v = localStorage["vid"];
-				FB.getLoginStatus(function (response) {
+				/*FB.getLoginStatus(function (response) {
 					console.log(response);
 					if(response.status === 'connected') {
-						console.log("success");//user is logged in, display profile div
-						var uid = response.authResponse.userID;
-						console.log(uid);
+						bookmark.uid = response.authResponse.userID;
+						boomark.newsList[count].vid = $(this).attr('vid');
+						
 					} else {
-						console.log("failed");//user is not logged in, display guest div
+						
 					}
-				});
+				});*/
 			}
 
 		});

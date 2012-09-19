@@ -8,6 +8,8 @@ var config = {
 	vidList : [],
 	currentNewsOrder : 0,
 	autoPlay : true,
+	bookmarkList : {uid : 0, newsList : []},
+	count : 0,
 	getId : function getVid(videoUrl){
 		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
 	},
