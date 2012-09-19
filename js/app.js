@@ -234,7 +234,7 @@ $(function() {
 	});
 
 	$doc.bind('checkLogin',function(){
-		//console.log("asdf");
+		console.log("asdf");
 		FB.getLoginStatus(function(response) {
 			if (response.session) {
 				console.log("asdf");// logged in and connected user, someone you know
