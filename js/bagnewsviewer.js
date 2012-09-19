@@ -87,7 +87,7 @@ BagNews.prototype.buildList = function (){
 					} else {
 						
 					}
-				});
+				}.bind(this));
 			}
 
 		});
