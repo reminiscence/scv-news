@@ -71,13 +71,13 @@ BagNews.prototype.buildList = function (){
 			} else {
 				//= $(this).attr('vid');
 				//var v = localStorage["vid"];
-				if(FB.getLoginStatus() != null) {
-				   //logged user id: FB.getSession().uid
-				   console.log("success!");
-				} else {
-				  //user is not logged in
-				  console.log("oh...failed");
-				}
+				FB.getLoginStatus(function(response) {
+				     if(response.session) {
+				        console.log("success");//user is logged in, display profile div
+				     } else {
+				        console.log("failed");//user is not logged in, display guest div
+				     }
+				});
 			}
 
 		});
