@@ -65,29 +65,29 @@ BagNews.prototype.buildList = function (){
 		}
 
 		$listbox.find(".box").click(function(e){
-			var $target = $(e.target);
+			var $target = $(e.target),
+				$box = $(this);
 			if($target.attr('id') != 'btn-bookmark' && $target.attr('class') != 'icon-star-empty'){
 				config.vid = $(this).attr('vid');
 				doc.trigger('clickBox');
 				doc.trigger('toggleControl');
 			} else {
-				//= $(this).attr('vid');
-				//var v = localStorage["vid"];
+				
 				FB.getLoginStatus(function (response) {
 					console.log("asdf");
 					if(response.status === 'connected') {
 						bookmark.uid = response.authResponse.userID;
-						bookmark.newsList[count].vid = $(this).attr('vid');
-						bookmark.newsList[count].imageUrl = $(this).children('img').attr('src');
-						bookmark.newsList[count].title = $(this).children('h5').text();
-						bookmark.newsList[count].cpKorName = $(this).find('span:eq(2)').text();
-						bookmark.newsList[count].regDate = $(this).find('span:eq(4)').text();
+						bookmark.newsList[count].vid = $box.attr('vid');
+						bookmark.newsList[count].imageUrl = $box.children('img').attr('src');
+						bookmark.newsList[count].title = $box.children('h5').text();
+						bookmark.newsList[count].cpKorName = $box.find('span:eq(2)').text();
+						bookmark.newsList[count].regDate = $box.find('span:eq(4)').text();
 						config.count = count++;
 						console.log(bookmark);
 					} else {
 						
 					}
-				}.bind(this));
+				});
 			}
 
 		});
