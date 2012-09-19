@@ -241,6 +241,6 @@ $(function() {
 			} else {
 				console.log("ddd");// no user session available, someone you dont know
 			}
-		});
+		}, true);
 	});
 });

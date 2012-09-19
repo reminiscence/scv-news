@@ -95,7 +95,7 @@ BagNews.prototype.buildArticle = function(article){
 		$('#closeArticleBox').click(function(){
 			$('#articlebox').fadeOut();
 		});
-	}, true);
+	});
 };
 
 //
