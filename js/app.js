@@ -232,15 +232,4 @@ $(function() {
 		bagNewsViewer.setNewsList(config.vid);
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
-
-	$doc.bind('checkLogin',function(){
-		console.log("asdf");
-		FB.getLoginStatus(function(response) {
-			if (response.session) {
-				console.log("asdf");// logged in and connected user, someone you know
-			} else {
-				console.log("ddd");// no user session available, someone you dont know
-			}
-		}, true);
-	});
 });
