@@ -72,9 +72,8 @@ BagNews.prototype.buildList = function (){
 				doc.trigger('clickBox');
 				doc.trigger('toggleControl');
 			} else {
+				var list = {};
 				FB.getLoginStatus(function (response) {
-					console.log("asdf");
-					console.log();
 					if(response.status === 'connected') {
 						bookmark.uid = response.authResponse.userID;
 						bookmark.newsList[count] = {};
@@ -83,9 +82,10 @@ BagNews.prototype.buildList = function (){
 						bookmark.newsList[count].title = $box.children('h5').text();
 						bookmark.newsList[count].cpKorName = $box.find('span:eq(2)').text();
 						bookmark.newsList[count].regDate = $box.find('span:eq(4)').text();
+
+						bookmark.newsList[count] = list;
 						config.bookmarkList = bookmark;
 						config.count = count++;
-						console.log(bookmark);
 					} else {
 						
 					}
