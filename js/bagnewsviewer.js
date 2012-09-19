@@ -73,8 +73,10 @@ BagNews.prototype.buildList = function (){
 				//var v = localStorage["vid"];
 				FB.getLoginStatus(function (response) {
 					console.log(response);
-					if(response.session) {
+					if(response.status === 'connected') {
 						console.log("success");//user is logged in, display profile div
+						var uid = response.authResponse.userID;
+						console.log(uid);
 					} else {
 						console.log("failed");//user is not logged in, display guest div
 					}
