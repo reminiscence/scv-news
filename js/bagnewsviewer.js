@@ -71,7 +71,7 @@ BagNews.prototype.buildList = function (){
 			} else {
 				//= $(this).attr('vid');
 				//var v = localStorage["vid"];
-				if(FB.getSession() != null) {
+				if(FB.getLoginStatus() != null) {
 				   //logged user id: FB.getSession().uid
 				   console.log("success!");
 				} else {
