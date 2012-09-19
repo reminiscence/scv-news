@@ -75,6 +75,7 @@ BagNews.prototype.buildList = function (){
 				
 				FB.getLoginStatus(function (response) {
 					console.log("asdf");
+					console.log($box);
 					if(response.status === 'connected') {
 						bookmark.uid = response.authResponse.userID;
 						bookmark.newsList[count].vid = $box.attr('vid');
