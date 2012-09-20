@@ -133,6 +133,17 @@
 
 #btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
 
+#bookmarkbox {
+    background:rgba(255,255,255,.8);
+    position:absolute;
+    bottom:100px;
+    left:0;
+    z-index: 1010;
+    width:3000px;
+    height: 100%;
+    overflow: scroll;
+}
+
 .title { 
     position: relative;
     width : 80%; 

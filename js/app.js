@@ -9,7 +9,8 @@ $(function() {
 		selectCpBox = new SelectCpBox(),
 		configBox = new ConfigBox(),
 		headline = new Headline(),
-		storage = new DataStorage();
+		storage = new DataStorage(),
+		bookmark = new Bookmark();
 
 
 	//버튼 selector 선언
@@ -19,7 +20,8 @@ $(function() {
 		$commentButton = $('#btn-comment'),
 		$prevButton = $('#btn-prev'),
 		$nextButton = $('#btn-next'),
-		$configButton = $('#btn-config');
+		$configButton = $('#btn-config'),
+		$bookmarkButton = $('#btn-bookmark');
 
 
 	//슬라이드 박스 pirnt
@@ -56,6 +58,10 @@ $(function() {
 	//뉴스사 선택 event
 	$cpButton.click(function(){
 		if(!cpButtonToggle){
+			$('#listbox').hide();
+			$('#articlebox').hide();
+			$('#commentbox').hide();
+			$('#configbox').hide();
 			$('#selectbox').fadeIn();
 			cpButtonToggle = true;
 		} else{
@@ -67,8 +73,10 @@ $(function() {
 	//기사 보기 버튼 event
 	$articleButton.click(function(){
 		if(!articleButtonToggle){
-			$('#selectbox').hide();
+			$('#listbox').hide();
+			$('#commentbox').hide();
 			$('#configbox').hide();
+			$('#selectbox').hide();
 			$('#articlebox').fadeIn();
 			articleButtonToggle = true;
 		} else {
@@ -80,6 +88,8 @@ $(function() {
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
 		if(!listButtonToggle){
+			$('#articlebox').hide();
+			$('#commentbox').hide();
 			$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#listbox').fadeIn();
@@ -90,8 +100,11 @@ $(function() {
 		}
 	});
 
+	//소셜댓글 버튼 클릭
 	$commentButton.click(function(){
 		if(!commentButtonToggle){
+			$('#listbox').hide();
+			$('#articlebox').hide();
 			$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#commentbox').fadeIn();
@@ -102,24 +115,32 @@ $(function() {
 		}
 	});
 
+	//화면 클릭시 메뉴들이 전부 fadeOut, 다시 클릭 시 fadeIn하도록.
 	$('.vjs-tech').click(function(){
 		if(infoToggle){
 			$('.main').fadeOut();
 			$('#big-video-control-container').fadeOut();
 			$('#slides').fadeOut();
+			$('#login').fadeOut();
 			$('#btnbox').fadeOut();
 			infoToggle = false;
 		} else {
 			$('.main').fadeIn();
 			$('#big-video-control-container').fadeIn();
 			$('#slides').fadeIn();
+			$('#login').fadeIn();
 			$('#btnbox').fadeIn();
 			infoToggle = true;
 		}
 	});
 
+	//설정 메뉴 버튼 클릭
 	$configButton.click(function(){
 		if(!configButtonToggle){
+			$('#listbox').hide();
+			$('#articlebox').hide();
+			$('#commentbox').hide();
+			$('#selectbox').hide();
 			$('#configbox').fadeIn();
 			configButtonToggle = true;
 		} else {
@@ -130,6 +151,19 @@ $(function() {
 
 	$('#closeCommentBox').click(function(){
 		$('#commentbox').fadeOut();				
+	});
+
+	//모아보기 버튼 클릭시
+	$bookmarkButton.click(function(){
+		storage.loadBookmarkData();
+
+		//bookmark.showBookmarkList();
+		// $('#listbox').hide();
+		// $('#articlebox').hide();
+		// $('#commentbox').hide();
+		// $('#selectbox').hide();
+		// $('#configbox').hide();
+		// $('#bookmarkbox').fadeIn();
 	});
 
 	//trigger & bind event
