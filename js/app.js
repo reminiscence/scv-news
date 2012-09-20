@@ -21,7 +21,7 @@ $(function() {
 		$prevButton = $('#btn-prev'),
 		$nextButton = $('#btn-next'),
 		$configButton = $('#btn-config'),
-		$bookmarkButton = $('#btn-bookmark');
+		$bookmarkButton = $('#btn-bookmarkBox');
 
 
 	//슬라이드 박스 pirnt
