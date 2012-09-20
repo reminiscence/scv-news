@@ -157,13 +157,13 @@ $(function() {
 	$bookmarkButton.click(function(){
 		storage.loadBookmarkData();
 
-		//bookmark.showBookmarkList();
-		// $('#listbox').hide();
-		// $('#articlebox').hide();
-		// $('#commentbox').hide();
-		// $('#selectbox').hide();
-		// $('#configbox').hide();
-		// $('#bookmarkbox').fadeIn();
+		bookmark.showBookmarkList();
+		$('#listbox').hide();
+		$('#articlebox').hide();
+		$('#commentbox').hide();
+		$('#selectbox').hide();
+		$('#configbox').hide();
+		$('#bookmarkbox').fadeIn();
 	});
 
 	//trigger & bind event

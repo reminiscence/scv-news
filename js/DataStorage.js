@@ -23,8 +23,6 @@ DataStorage.prototype.loadBookmarkData = function(){
 	});
 
 	ws.get('bookmark').on('success', function(data, response){
-		//config.bookmark = data;
-		console.log(data);
-		console.log("finish");
+		config.bookmark = data;
 	});
 };
