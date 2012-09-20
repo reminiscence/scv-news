@@ -145,13 +145,17 @@
 }
 
 .miniBox {
+    position: relative;
     width: 200px;
     height: 100px;
     float : left;
+    margin: 5px;
+    padding: 5px;
     border : 1px solid #777;
 }
 
 .miniBox img {
+    
     width: 100px;
     height: 80px;
 }
