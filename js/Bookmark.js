@@ -16,5 +16,10 @@ Bookmark.prototype.showBookmarkList = function(){
 			news = bookmark[i];
 			$.tmpl(tmpl, news).appendTo($('.horizentalBox'));
 		}
+
+		$('#closebookmarkBox').click(function(){
+			console.log("알았져게");
+			$('#bookmarkbox').fadeOut();
+		});
 	});		
 };

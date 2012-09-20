@@ -178,11 +178,6 @@ $(function() {
 		}
 	});
 
-	$('#closebookmarkBox').click(function(){
-		console.log("알았져게");
-		$('#bookmarkbox').fadeOut();
-	});
-
 	//trigger & bind event
 	$doc.bind('loadedData', function(){ //뉴스 데이터 로드가 됬다면 control view 실행, 뉴스 제목만 랜덤으로 띄워주는 메소드 실행함
 		bagNewsViewer.controlView();
