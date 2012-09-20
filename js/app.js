@@ -179,6 +179,7 @@ $(function() {
 	});
 
 	$('#closebookmarkBox').click(function(){
+		console.log("알았져게");
 		$('#bookmarkbox').fadeOut();
 	});
 

@@ -14,7 +14,7 @@ DataStorage.prototype.saveData = function(){
 		if(data != null){
 			ws.update('bookmark',bookmark).on('success',function(data, response){
 				console.log(data,response,"success");
-			});l
+			});
 		} else {
 			ws.set('bookmark', bookmark).on('success', function(data, response){
 				console.log(data, response);
