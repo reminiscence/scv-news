@@ -52,7 +52,8 @@ $(function() {
 		listButtonToggle = false,
 		articleButtonToggle = false,
 		commentButtonToggle = false,
-		configButtonToggle = false;
+		configButtonToggle = false,
+		bookmarkButtonToggle = false;
 
 	//event
 	//뉴스사 선택 event
@@ -155,15 +156,21 @@ $(function() {
 
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
-		storage.loadBookmarkData();
+		if(!bookmarkButtonToggle){
+			storage.loadBookmarkData();
 
-		bookmark.showBookmarkList();
-		$('#listbox').hide();
-		$('#articlebox').hide();
-		$('#commentbox').hide();
-		$('#selectbox').hide();
-		$('#configbox').hide();
-		$('#bookmarkbox').fadeIn();
+			bookmark.showBookmarkList();
+			$('#listbox').hide();
+			$('#articlebox').hide();
+			$('#commentbox').hide();
+			$('#selectbox').hide();
+			$('#configbox').hide();
+			$('#bookmarkbox').fadeIn();
+			bookmarkButtonToggle = true;
+		} else {
+			$('#bookmarkbox').fadeOut();
+			bookmarkButtonToggle = false;
+		}
 	});
 
 	//trigger & bind event
