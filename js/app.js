@@ -31,7 +31,8 @@ $(function() {
 	BV.init();
 	configBox.init();
 	dataLoader.loadData();
-
+	storage.loadBookmarkData();
+	
 	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
 	var ua = navigator.userAgent.toLowerCase(),
 		isAndroid = ua.indexOf('android'),
@@ -157,8 +158,6 @@ $(function() {
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
 		if(!bookmarkButtonToggle){
-			storage.loadBookmarkData();
-
 			bookmark.showBookmarkList();
 			$('#listbox').hide();
 			$('#articlebox').hide();
