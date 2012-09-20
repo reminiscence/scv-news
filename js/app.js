@@ -32,7 +32,7 @@ $(function() {
 	configBox.init();
 	dataLoader.loadData();
 	storage.loadBookmarkData();
-	
+
 	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
 	var ua = navigator.userAgent.toLowerCase(),
 		isAndroid = ua.indexOf('android'),
@@ -64,6 +64,7 @@ $(function() {
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#configbox').hide();
+			$('#bookmarkbox').hide();
 			$('#selectbox').fadeIn();
 			cpButtonToggle = true;
 		} else{
@@ -79,6 +80,7 @@ $(function() {
 			$('#commentbox').hide();
 			$('#configbox').hide();
 			$('#selectbox').hide();
+			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 			articleButtonToggle = true;
 		} else {
@@ -94,6 +96,7 @@ $(function() {
 			$('#commentbox').hide();
 			$('#selectbox').hide();
 			$('#configbox').hide();
+			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
 			listButtonToggle = true;
 		}else{
@@ -109,6 +112,7 @@ $(function() {
 			$('#articlebox').hide();
 			$('#selectbox').hide();
 			$('#configbox').hide();
+			$('#bookmarkbox').hide();
 			$('#commentbox').fadeIn();
 			commentButtonToggle = true;
 		} else {
@@ -143,6 +147,7 @@ $(function() {
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#selectbox').hide();
+			$('#bookmarkbox').hide();
 			$('#configbox').fadeIn();
 			configButtonToggle = true;
 		} else {
@@ -170,6 +175,10 @@ $(function() {
 			$('#bookmarkbox').fadeOut();
 			bookmarkButtonToggle = false;
 		}
+	});
+
+	$('#closeBookmarkBox').click(function(){
+		$('#bookmarkbox').fadeOut();
 	});
 
 	//trigger & bind event
