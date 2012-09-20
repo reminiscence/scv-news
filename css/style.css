@@ -173,7 +173,7 @@
 .horizentalBox {
     width:3000px;
     height:inherit;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .title { 
