@@ -64,6 +64,7 @@ BagNews.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
 
+		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
 			var $target = $(e.target),
 				$box = $(this);
@@ -74,20 +75,22 @@ BagNews.prototype.buildList = function (){
 			} else {
 				var list = {};
 				FB.getLoginStatus(function (response) {
-					if(response.status === 'connected') {
+					if(response.status === 'connected') { //로그인 됬을 때, 모아 볼 동영상 정보 json 형태로 담아두기
 						bookmark.uid = response.authResponse.userID;
-						bookmark.newsList[count] = {};
-						bookmark.newsList[count].vid = $box.attr('vid');
-						bookmark.newsList[count].imageUrl = $box.children('img').attr('src');
-						bookmark.newsList[count].title = $box.children('h5').text();
-						bookmark.newsList[count].cpKorName = $box.find('span:eq(2)').text();
-						bookmark.newsList[count].regDate = $box.find('span:eq(4)').text();
-
+						list.vid = $box.attr('vid');
+						list.imageUrl = $box.children('img').attr('src');
+						list.title = $box.children('h5').text();
+						list.cpKorName = $box.find('span:eq(2)').text();
+						list.regDate = $box.find('span:eq(4)').text();
+						
 						bookmark.newsList[count] = list;
 						config.bookmarkList = bookmark;
 						config.count = count++;
-					} else {
-						
+
+						doc.trigger('setBookmark');
+					} else { 
+						//로그인 하도록 유도
+						alert("로그인이 필요한 서비스입니다. 로그인해 주십시오.");
 					}
 				});
 			}

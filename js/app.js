@@ -8,7 +8,8 @@ $(function() {
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
 		configBox = new ConfigBox(),
-		headline = new Headline();
+		headline = new Headline(),
+		storage = new DataStorage();
 
 
 	//버튼 selector 선언
@@ -231,5 +232,9 @@ $(function() {
 		BV.init(); //플레이어 control bar 도 초기화
 		bagNewsViewer.setNewsList(config.vid);
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
+	});
+
+	$doc.bind('setBookmark', function(){
+		storage.saveData();
 	});
 });
