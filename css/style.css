@@ -166,9 +166,14 @@
 
 #boxList {
     width:50%;
-    height:100%;
+    height:148px;
     border:1px solid #000;
-    overflow: scroll;
+}
+
+.horizentalBox {
+    width:3000px;
+    height:inherit;
+    overflow-x: scroll;
 }
 
 .title { 
