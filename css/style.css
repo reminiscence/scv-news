@@ -168,12 +168,12 @@
     width:50%;
     height:148px;
     border:1px solid #000;
+    overflow-x: auto;
 }
 
 .horizentalBox {
     width:3000px;
     height:inherit;
-    overflow-x: auto;
 }
 
 .title { 
