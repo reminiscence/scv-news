@@ -10,7 +10,7 @@ DataStorage.prototype.saveData = function(){
 	  apikey: 'e1ff58f5b1634eff928f7c895388c57f'
 	});
 
-	ws.set(bookmark).on('success', function(data, response){
+	ws.set('bookmark', bookmark).on('success', function(data, response){
 		console.log(data);
 	});
 };
