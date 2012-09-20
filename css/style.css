@@ -139,14 +139,13 @@
     bottom:0;
     left:0;
     z-index: 1010;
-    width:3000px;
+    width:100%;
     height: 150px;
-    overflow: scroll;
 }
 
 .miniBox {
     position: relative;
-    width: 200px;
+    width: 220px;
     height: 100px;
     float : left;
     margin: 5px;
@@ -160,6 +159,17 @@
     height: 80px;
 }
 
+.miniBox span {
+    font-size: 10px;
+    display: block;
+}
+
+#boxList {
+    width:50%;
+    height:100%;
+    border:1px solid #000;
+    overflow: scroll;
+}
 
 .title { 
     position: relative;
