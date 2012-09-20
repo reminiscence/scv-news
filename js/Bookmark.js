@@ -13,7 +13,7 @@ Bookmark.prototype.showBookmarkList = function(){
 	$.get('./jst/bookmark-template.jst',function(tmpl){
 		for(var i =0; i < length; i++){
 			news = bookmark[i];
-			$.tmpl(tmpl, news).appendTo(bookmarkBox);
+			$.tmpl(tmpl, news).appendTo($bookmarkBox);
 		}
 		
 		
