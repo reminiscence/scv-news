@@ -163,6 +163,7 @@ $(function() {
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
 		if(!bookmarkButtonToggle){
+			storage.loadBookmarkData();
 			bookmark.showBookmarkList();
 			$('#listbox').hide();
 			$('#articlebox').hide();
@@ -177,7 +178,7 @@ $(function() {
 		}
 	});
 
-	$('#closeBookmarkBox').click(function(){
+	$('#closebookmarkBox').click(function(){
 		$('#bookmarkbox').fadeOut();
 	});
 
