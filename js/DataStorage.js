@@ -23,6 +23,6 @@ DataStorage.prototype.loadBookmarkData = function(){
 
 	ws.get('bookmark').on('success', function(data, response){
 		console.log(data);
-		config.bookmarkList = data;
+		config.bookmarkList = data.bookmark;
 	});
 };
