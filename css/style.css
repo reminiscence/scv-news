@@ -140,9 +140,22 @@
     left:0;
     z-index: 1010;
     width:3000px;
-    height: 100px;
+    height: 150px;
     overflow: scroll;
 }
+
+.minibox {
+    width: 200px;
+    height: 100px;
+    float : left;
+    border : 1px solid #777;
+}
+
+.minibox img {
+    width: 100px;
+    height: 80px;
+}
+
 
 .title { 
     position: relative;
