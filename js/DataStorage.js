@@ -3,7 +3,7 @@ function DataStorage(){
 }
 
 DataStorage.prototype.saveData = function(){
-	var bookmark = config.bookmark;
+	var bookmark = config.bookmarkList;
 
 	var ws = new cloudmine.WebService({
 	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
