@@ -11,6 +11,6 @@ DataStorage.prototype.saveData = function(){
 	});
 
 	ws.set('bookmark', bookmark).on('success', function(data, response){
-		console.log(data);
+		console.log(data, response);
 	});
 };
