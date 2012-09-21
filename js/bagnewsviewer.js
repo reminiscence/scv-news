@@ -88,11 +88,10 @@ BagNews.prototype.buildList = function (){
 						list.cpKorName = $box.find('span:eq(2)').text();
 						list.regDate = $box.find('span:eq(4)').text();
 						
-						console.log(list,bookmark, count);
 						bookmark.newsList[count] = list;
 						config.bookmarkList = bookmark;
 						config.count = ++count;
-						console.log('configCount : '+config.count);
+
 						doc.trigger('setBookmark');
 					} else { 
 						//로그인 하도록 유도
