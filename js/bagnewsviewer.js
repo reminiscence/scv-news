@@ -91,7 +91,7 @@ BagNews.prototype.buildList = function (){
 						console.log(list,bookmark, count);
 						bookmark.newsList[count] = list;
 						config.bookmarkList = bookmark;
-						config.count = count++;
+						config.count = ++count;
 						console.log('configCount : '+config.count);
 						doc.trigger('setBookmark');
 					} else { 
