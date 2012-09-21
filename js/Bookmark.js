@@ -14,6 +14,7 @@ Bookmark.prototype.showBookmarkList = function(){
 	$.get('./jst/bookmark-template.jst',function(tmpl){
 		for(var i =0; i < length; i++){
 			news = bookmark[i];
+			console.log(news);
 			$.tmpl(tmpl, news).appendTo($('.horizentalBox'));
 		}
 
