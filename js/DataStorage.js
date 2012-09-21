@@ -38,6 +38,6 @@ DataStorage.prototype.loadBookmarkData = function(){
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 
-		console.log(config.bookmarkList);
+		console.log("test : "+config.bookmarkList);
 	});
 };
