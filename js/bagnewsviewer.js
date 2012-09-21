@@ -80,7 +80,7 @@ BagNews.prototype.buildList = function (){
 
 						bookmark = config.bookmarkList;
 						count = config.count; //이전 데이터 개수를 넣어줌.
-						
+						console.log('configCount : '+config.count);
 						bookmark.uid = response.authResponse.userID;
 						list.vid = $box.attr('vid');
 						list.imageUrl = $box.children('img').attr('src');
