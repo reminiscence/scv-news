@@ -43,7 +43,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 	});
 
 	response.on('error',function(data,response){
-		config.bookmarkList = {};
+		config.bookmarkList = {uid : 0, newsList : []};
 		config.count = length;
 
 		console.log("test error : "+config.bookmarkList);
