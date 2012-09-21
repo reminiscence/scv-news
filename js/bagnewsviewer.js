@@ -50,7 +50,7 @@ BagNews.prototype.buildList = function (){
 		i=0,
 		news='',
 		doc = this.doc,
-		bookmark = config.bookmarkList,
+		bookmark = '',
 		count = 0;
 	
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
@@ -77,7 +77,10 @@ BagNews.prototype.buildList = function (){
 				var list = {};
 				FB.getLoginStatus(function (response) {
 					if(response.status === 'connected') { //로그인 됬을 때, 모아 볼 동영상 정보 json 형태로 담아두기
+
+						bookmark = config.bookmarkList;
 						count = config.count; //이전 데이터 개수를 넣어줌.
+						
 						bookmark.uid = response.authResponse.userID;
 						list.vid = $box.attr('vid');
 						list.imageUrl = $box.children('img').attr('src');

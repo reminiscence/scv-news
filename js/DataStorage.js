@@ -32,11 +32,10 @@ DataStorage.prototype.loadBookmarkData = function(){
 	});
 
 	var length = 0;
-	console.log("test");
+
 	ws.get('bookmark').on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;
-		console.log(length);
 		config.count = length;
 	});
 };
