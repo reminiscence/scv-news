@@ -33,11 +33,19 @@ DataStorage.prototype.loadBookmarkData = function(){
 
 	var length = 0;
 
-	ws.get('bookmark').on('success', function(data, response){
+	var response = ws.get('bookmark');
+	response.on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 
-		console.log("test : "+config.bookmarkList);
+		console.log("test success : "+config.bookmarkList);
+	});
+
+	response.on('error',function(data,response){
+		config.bookmarkList = {};
+		config.count = length;
+
+		console.log("test error : "+config.bookmarkList);
 	});
 };
