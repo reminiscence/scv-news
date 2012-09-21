@@ -52,7 +52,7 @@ BagNews.prototype.buildList = function (){
 		doc = this.doc,
 		bookmark = config.bookmarkList,
 		count = config.count;
-
+	console.log('test'+config.count);	
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
 	//$listbox.html();
 	$listbox.html('<div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button>')
