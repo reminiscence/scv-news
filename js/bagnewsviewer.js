@@ -63,7 +63,7 @@ BagNews.prototype.buildList = function (){
 
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
-		console.log(config.count);
+
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
 			var $target = $(e.target),
@@ -73,6 +73,7 @@ BagNews.prototype.buildList = function (){
 				doc.trigger('clickBox');
 				doc.trigger('toggleControl');
 			} else {
+				console.log(config.count);
 				var list = {};
 				FB.getLoginStatus(function (response) {
 					if(response.status === 'connected') { //로그인 됬을 때, 모아 볼 동영상 정보 json 형태로 담아두기
