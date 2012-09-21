@@ -31,10 +31,11 @@ DataStorage.prototype.loadBookmarkData = function(){
 	  apikey: '02e619ec0ee34bccb975fca744e79717'
 	});
 
-	var length = config.bookmarkList.newsList.length;
+	var length;
 
 	ws.get('bookmark').on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
+		length = config.bookmarkList.newsList.length;
 		config.count = length;
 	});
 };

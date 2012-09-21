@@ -63,7 +63,7 @@ BagNews.prototype.buildList = function (){
 
 			$.tmpl(tmpl, news).appendTo($listbox);
 		}
-
+		console.log(config.count);
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
 			var $target = $(e.target),
