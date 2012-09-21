@@ -30,8 +30,9 @@ $(function() {
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
-	dataLoader.loadData();
 	storage.loadBookmarkData();
+	dataLoader.loadData();
+	
 
 	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
 	var ua = navigator.userAgent.toLowerCase(),
