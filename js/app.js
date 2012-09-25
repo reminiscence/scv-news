@@ -309,7 +309,7 @@ $(function() {
 	});
 
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
-	$('#selectbox').on('click','.dropdown-menu a', function(e){
+	$('#selectbox').on('click','option', function(e){
 		console.log(e.target);
 		//return false;
 		// var $children = $(e.currentTarget),
