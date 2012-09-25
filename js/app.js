@@ -318,7 +318,6 @@ $(function() {
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
-		console.log("test2");
 		var cp = $('#selectbox').find('#dLabel').text();
 		$('#selectbox').fadeOut();
 		config.check = 7;
