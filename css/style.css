@@ -1,10 +1,8 @@
 
 .modal {width:360px; top: 70%; left:60%; }
 .dropdown {width: 150px; margin:0 auto; }
-.dropdown-menu {position: relative;}
+.dropdown-menu {position: relative; z-index: 1100;}
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
-
-
 
 .menu {
     width:370px;
