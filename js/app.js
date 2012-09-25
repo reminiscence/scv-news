@@ -310,7 +310,7 @@ $(function() {
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
-		BV.init(); //플레이어 control bar 도 초기화
+		BV.togglePlayControl();
 		var cp = $('#cp-selecter').val();
 		$('#selectbox').fadeOut();
 		config.check = 7;
