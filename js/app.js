@@ -58,10 +58,10 @@ $(function() {
 		cpButtonToggle = false,
 		commentButtonToggle = false,
 		configButtonToggle = false,
-		commentButtonToggle = false,
-		config.listButtonToggle,
-		config.articleButtonToggle,
-		config.bookmarkButtonToggle;
+		commentButtonToggle = false;
+		config.listButtonToggle = false,
+		config.articleButtonToggle = false,
+		config.bookmarkButtonToggle = false;
 
 	//event
 	//뉴스사 선택 event
