@@ -165,6 +165,7 @@
 		}
 
 		function playControl(a) {
+			console.log(a);
 			var action = a || 'toggle';
 			if (action === 'toggle') action = isPlaying ? 'pause' : 'play';
 			if (action === 'pause') {
