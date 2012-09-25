@@ -171,7 +171,11 @@ $(function() {
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
 		if(!config.bookmarkButtonToggle){
-			storage.loadBookmarkData();
+			FB.getLoginStatus(function (response) {
+				if(response.status === 'connected') {
+					storage.loadBookmarkData();
+				}
+			});
 			bookmark.showBookmarkList();
 			$('#listbox').hide();
 			$('#articlebox').hide();
