@@ -110,7 +110,7 @@
 
 		function initPlayControl() {
 			// create video controller
-			var markup = '<div id="big-video-control-container">';
+			var markup = '<div id="big-video-control-container" class="control-bar">';
 			markup += '<div id="big-video-control">';
 			markup += '<a href="#" id="big-video-control-play"></a>';
 			markup += '<div id="big-video-control-middle">';

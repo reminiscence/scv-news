@@ -6,7 +6,7 @@
 
 
 
-#btnbox {
+.menu {
     width:370px;
     position:absolute;
     bottom:20px; right:10px;
@@ -16,9 +16,14 @@
     /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
 }
 
-#btnbox a {
+.menu a {
      float: left;
      margin:6px;
+}
+
+.open {
+    right : 230px;
+    background: rgba(0,0,0,.8);
 }
 
 #listbox {
@@ -125,6 +130,14 @@
 
 .headline {
     width:40%;height:16px;position:absolute; bottom : 60px; left:20px; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+}
+
+.on {
+    z-index: 1100;
+    width:29%;
+    bottom:61px;
+    right: 225px;
+    background: rgba(0,0,0,.8);
 }
 
 #rand_title {
@@ -366,7 +379,7 @@ span.mid_tit {
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-#big-video-control-container{position:fixed;bottom:20px; left : 20px; width:47%;
+.control-bar {position:fixed;bottom:20px; left : 20px; width:47%;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
@@ -385,16 +398,23 @@ span.mid_tit {
 .vjs-big-play-button{display:none !important;}
 .vjs-tech {box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);}
 
+/*bookmark click*/
+.right {
+    bottom : 100px;
+    right :110px;
+    width: 40%;
+    z-index: 1100;
+}
 
 /*media query*/
 @media screen and (max-width : 700px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
     .headline {width:50%; height:10px; right:20px; background: rgba(0,0,0,0.2); }
-    #btnbox { background:rgba(0,0,0,0.2); width:41px; right: 10px;  }
-    #btnbox a { display : block; clear:both; margin : 3px;}
+    .menu { background:rgba(0,0,0,0.2); width:41px; right: 10px;  }
+    .menu a { display : block; clear:both; margin : 3px;}
     #big-video-control{ background: rgba(0,0,0,0.2); }
-    #big-video-control-container {width:58%;}
+    .control-bar {width:58%;}
     #big-video-control-timer{position:absolute;top:7px; right:5%;color:#fff;font-size:11px; width:55px;}
     #login { bottom: 90px; left:20px;}
     .main { margin:0; height:40px;}
@@ -413,8 +433,8 @@ span.mid_tit {
     #listbox .box { width:350px; height:150px; padding: 0; overflow: visible; margin:10px 0 0 5px; }
     #listbox img { margin: 5px 0 5px 5px; height: 95%; }
     #listbox h5 { font-size: 1em; margin: 0px 0 0 10px; width: 200px;}
-    #btnbox { background:rgba(0,0,0,0.2); width:300px; left:20px; }
-    #btnbox a { display : inline-block; margin : 3px; clear:none;}
+    .menu { background:rgba(0,0,0,0.2); width:300px; left:20px; }
+    .menu a { display : inline-block; margin : 3px; clear:none;}
     span.mid_tit { font-size : 1em;}
     .box span { width:200px; padding-left: 10px; padding-top:0;}
     .content { height: 130px;}
@@ -425,6 +445,6 @@ span.mid_tit {
 
      .headline { left: 20px; width: 85%; }
     .slides_container { top : -5px;}
-    #big-video-control-container { width : 100%; bottom : 100px; }
+    .control-bar { width : 100%; bottom : 100px; }
      #big-video-control{ background: rgba(0,0,0,0.2); }
 }

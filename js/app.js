@@ -173,8 +173,15 @@ $(function() {
 			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
 			bookmarkButtonToggle = true;
+
+			$('#slides').toggleClass('on');
+			$('#btnbox').toggleClass('open');
+			$('.control-bar').toggleClass('right');
 		} else {
 			$('#bookmarkbox').fadeOut();
+			$('#slides').toggleClass('on');
+			$('#btnbox').toggleClass('open');
+			$('.control-bar').toggleClass('right');
 			bookmarkButtonToggle = false;
 		}
 	});
