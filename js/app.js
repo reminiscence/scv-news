@@ -308,22 +308,12 @@ $(function() {
 		config.check = 7;
 	});
 
-	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
-	// $('#selectbox').on('click','.select', function(e){
-	// 	console.log(e.target);
-	// 	//return false;
-	// 	// var $children = $(e.currentTarget),
-	// 	// $cpKorName = $children.text();
-	// 	// selectCpBox.selectCp($cpKorName);
-	// });
-
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
-		console.log($('#cp-selecter').val());
-		// var cp = $('#selectbox').find('#dLabel').text();
-		// $('#selectbox').fadeOut();
-		// config.check = 7;
-		// dataLoader.loadData(cp);
+		var cp = $('#cp-selecter').val()
+		$('#selectbox').fadeOut();
+		config.check = 7;
+		dataLoader.loadData(cp);
 	});
 
 	$doc.bind('changeConfig', function(){

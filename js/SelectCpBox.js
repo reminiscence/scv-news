@@ -24,14 +24,6 @@ SelectCpBox.prototype.init = function(cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}
 
-		$('#cp-selecter').click(function(e){
-			console.log(e.target);
-			//return false;
-			// var $children = $(e.currentTarget),
-			// $cpKorName = $children.text();
-			// selectCpBox.selectCp($cpKorName);
-		});
-
 		$('#closeSelectBox').click(function(){
 			doc.trigger('closeSB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
 						//추측1. 태그가 동적으로 만들어지므로, app.js에서 작동 안함
