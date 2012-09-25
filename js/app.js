@@ -78,7 +78,7 @@ $(function() {
 			
 		} else{
 			$('#selectbox').fadeOut();
-			config.toggle = 7;
+			config.check = 7;
 		}
 	});
 
@@ -122,7 +122,7 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = 2;
+			config.check = 2;
 		}else{
 			$('#listbox').fadeOut();
 			config.check = 7;
@@ -149,7 +149,7 @@ $(function() {
 			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
-			config.toggle = 7;
+			config.check = 7;
 		}
 	});
 
@@ -188,10 +188,10 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = 5;
+			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
-			config.toggle = 7;
+			config.check = 7;
 		}
 	});
 
