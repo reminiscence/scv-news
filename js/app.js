@@ -68,7 +68,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#selectbox').fadeIn();
 
-			if($('#btnbox').hasClass('open')){
+			if($('#btnbox').hasClass('menu-open')){
 				$('#slides').toggleClass('on');
 				$('#btnbox').toggleClass('menu-open');
 				$('.control-bar').toggleClass('right');
@@ -93,7 +93,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 
-			if($('#btnbox').hasClass('open')){
+			if($('#btnbox').hasClass('menu-open')){
 				$('#slides').toggleClass('on');
 				$('#btnbox').toggleClass('menu-open');
 				$('.control-bar').toggleClass('right');
@@ -116,7 +116,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
 
-			if($('#btnbox').hasClass('open')){
+			if($('#btnbox').hasClass('menu-open')){
 				$('#slides').toggleClass('on');
 				$('#btnbox').toggleClass('menu-open');
 				$('.control-bar').toggleClass('right');
@@ -140,7 +140,7 @@ $(function() {
 			$('#commentbox').fadeIn();
 
 			
-			if($('#btnbox').hasClass('open')){
+			if($('#btnbox').hasClass('menu-open')){
 				$('#slides').toggleClass('on');
 				$('#btnbox').toggleClass('menu-open');
 				$('.control-bar').toggleClass('right');
@@ -182,7 +182,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#configbox').fadeIn();
 
-			if($('#btnbox').hasClass('open')){
+			if($('#btnbox').hasClass('menu-open')){
 				$('#slides').toggleClass('on');
 				$('#btnbox').toggleClass('menu-open');
 				$('.control-bar').toggleClass('right');
