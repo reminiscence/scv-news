@@ -24,7 +24,13 @@ SelectCpBox.prototype.init = function(cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}
 
-		$('.dropdown-toggle').dropdown();
+		$('#selectbox').on('click','.select', function(e){
+			console.log(e.target);
+			//return false;
+			// var $children = $(e.currentTarget),
+			// $cpKorName = $children.text();
+			// selectCpBox.selectCp($cpKorName);
+		});
 
 		$('#closeSelectBox').click(function(){
 			doc.trigger('closeSB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
