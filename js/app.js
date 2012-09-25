@@ -30,7 +30,12 @@ $(function() {
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
-	storage.loadBookmarkData();
+
+	FB.getLoginStatus(function (response) {
+		if(response.status === 'connected') {
+			storage.loadBookmarkData();
+		}
+	});
 	dataLoader.loadData();
 	
 
