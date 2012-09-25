@@ -82,7 +82,7 @@ $(function() {
 
 	//기사 보기 버튼 event
 	$articleButton.click(function(){
-		if(!articleButtonToggle){
+		if(!config.articleButtonToggle){
 			$('#listbox').hide();
 			$('#commentbox').hide();
 			$('#configbox').hide();
@@ -98,7 +98,7 @@ $(function() {
 
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
-		if(!listButtonToggle){
+		if(!config.listButtonToggle){
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#selectbox').hide();
@@ -170,7 +170,7 @@ $(function() {
 
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
-		if(!bookmarkButtonToggle){
+		if(!config.bookmarkButtonToggle){
 			storage.loadBookmarkData();
 			bookmark.showBookmarkList();
 			$('#listbox').hide();
