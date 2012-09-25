@@ -256,6 +256,7 @@ $(function() {
 		$('#listbox').hide();
 		$('#selectbox').hide();
 		$('#articlebox').hide();
+		config.check = 7;
 		bagNewsViewer.showNewsInfo();
 	});
 
@@ -280,6 +281,7 @@ $(function() {
 	$prevButton.bind('click', function(){
 		$('#selectbox').hide();
 		$('#configbox').hide();
+		config.check = 7;
 		BV.prev();
 		$doc.trigger('toggleControl');
 	});
@@ -288,6 +290,7 @@ $(function() {
 	$nextButton.bind('click', function(){
 		$('#selectbox').hide();
 		$('#configbox').hide();
+		config.check = 7;
 		BV.next();
 		$doc.trigger('toggleControl');
 	});
@@ -305,25 +308,26 @@ $(function() {
 		config.check = 7;
 	});
 
-	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
-	$('#selectbox').on('click','.dropdown-menu a', function(e){
-		e.preventDefault();
-		var $children = $(e.currentTarget);
-		$cpKorName = $children.text();
-		selectCpBox.selectCp($cpKorName);
-	});
+	// //뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
+	// $('#selectbox').on('click','.dropdown-menu a', function(e){
+	// 	e.preventDefault();
+	// 	var $children = $(e.currentTarget),
+	// 	$cpKorName = $children.text();
+	// 	selectCpBox.selectCp($cpKorName);
+	// });
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
-		console.log($('#selectbox').find('#dLabel').text());
 		var cp = $('#selectbox').find('#dLabel').text();
 		$('#selectbox').fadeOut();
+		config.check = 7;
 		dataLoader.loadData(cp);
 	});
 
 	$doc.bind('changeConfig', function(){
 		configBox.setAutoPlay();
 		$('#configbox').fadeOut();
+		config.check = 7;
 	});
 
 	$doc.bind('toggleControl', function(){

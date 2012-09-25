@@ -11,7 +11,8 @@ SelectCpBox.prototype.init = function(cpKorName){
 	var selectBox = this.selectBox,
 		newsList = config.newsList,
 		order = config.currentNewsOrder,
-		doc = this.doc;
+		doc = this.doc,
+		that = this;
 
 	selectBox.empty();
 
@@ -24,6 +25,15 @@ SelectCpBox.prototype.init = function(cpKorName){
 		}
 
 		$('.dropdown-toggle').dropdown();
+
+
+		//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
+		$('#selectbox').on('click','.dropdown-menu a', function(e){
+			e.preventDefault();
+			var $children = $(e.currentTarget),
+			$cpKorName = $children.text();
+			that.selectCp($cpKorName);
+		});
 
 		$('#closeSelectBox').click(function(){
 			doc.trigger('closeSB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
