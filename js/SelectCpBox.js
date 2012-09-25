@@ -24,11 +24,12 @@ SelectCpBox.prototype.init = function(cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}
 
-		$('#selectbox').on('click','.dropdown-menu a', function(e){
+		$('#selectbox').on('click','.dropdown-menu', function(e){
+			console.log(e);
 			e.preventDefault();
-			var $children = $(e.currentTarget),
-			$cpKorName = $children.text();
-			that.selectCp($cpKorName);
+			//var $children = $(e.currentTarget),
+			//$cpKorName = $children.text();
+			//that.selectCp($cpKorName);
 		});
 
 		$('.dropdown-toggle').dropdown();
