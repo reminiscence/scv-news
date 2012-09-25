@@ -60,7 +60,7 @@ $(function() {
 		articleButtonToggle = false,
 		commentButtonToggle = false,
 		configButtonToggle = false,
-		bookmarkButtonToggle = false;
+		commentButtonToggle = false;
 
 	//event
 	//뉴스사 선택 event
@@ -163,7 +163,8 @@ $(function() {
 	});
 
 	$('#closeCommentBox').click(function(){
-		$('#commentbox').fadeOut();				
+		$('#commentbox').fadeOut();
+		commentButtonToggle = false;				
 	});
 
 	//모아보기 버튼 클릭시
@@ -256,12 +257,14 @@ $(function() {
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeSB',function(){
 		$('#selectbox').fadeOut();
+		cpButtonToggle = false;
 		selectCpBox.init();
 	});
 
 	//설정 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeCB',function(){
 		$('#configbox').fadeOut();
+		configButtonToggle = false;
 	});
 
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
