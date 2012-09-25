@@ -319,10 +319,11 @@ $(function() {
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
-		var cp = $('#selectbox').find('#dLabel').text();
-		$('#selectbox').fadeOut();
-		config.check = 7;
-		dataLoader.loadData(cp);
+		console.log($('#cp-selecter option').attr('value'));
+		// var cp = $('#selectbox').find('#dLabel').text();
+		// $('#selectbox').fadeOut();
+		// config.check = 7;
+		// dataLoader.loadData(cp);
 	});
 
 	$doc.bind('changeConfig', function(){
