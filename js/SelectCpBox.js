@@ -13,9 +13,11 @@ SelectCpBox.prototype.init = function(cpKorName){
 		order = config.currentNewsOrder,
 		doc = this.doc,
 		that = this;
-	console.log(this.selectBox);
+
+	console.log(selectBox);
+	console.log("this"+this.selectBox);
 	selectBox.empty();
-	
+	// console.log(selectBox);
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
