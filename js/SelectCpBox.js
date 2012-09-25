@@ -41,6 +41,7 @@ SelectCpBox.prototype.init = function(cpKorName){
 		});
 
 		$('#submit').click(function(){
+			console.log("test1");
 			doc.trigger('changeNews'); //바꾼 뉴스사의 뉴스 출력
 		});
 	});	
