@@ -10,9 +10,7 @@ var config = {
 	autoPlay : true,
 	bookmarkList : {uid : 0, newsList : []},
 	count : 0,
-	listButtonToggle : false,
-	articleButtonToggle : false,
-	bookmarkButtonToggle : false,
+	toggle : false,
 	getId : function getVid(videoUrl){
 		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
 	},

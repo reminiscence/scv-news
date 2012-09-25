@@ -54,19 +54,14 @@ $(function() {
 		$nextButton.tooltip();
 		$configButton.tooltip();
 	}*/
-	var infoToggle = true,//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
-		cpButtonToggle = false,
-		commentButtonToggle = false,
-		configButtonToggle = false,
-		commentButtonToggle = false;
-		config.listButtonToggle = false,
-		config.articleButtonToggle = false,
-		config.bookmarkButtonToggle = false;
+	var infoToggle = true;//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
+	
 
 	//event
 	//뉴스사 선택 event
 	$cpButton.click(function(){
-		if(!cpButtonToggle){
+		config.toggle = false;
+		if(!config.toggle){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
@@ -80,21 +75,17 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			cpButtonToggle = true;
-			config.bookmarkButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = false;
-			config.listButtonToggle = false;
-			config.articleButtonToggle = false;
+			config.toggle = true;
 		} else{
 			$('#selectbox').fadeOut();
-			cpButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
 	//기사 보기 버튼 event
 	$articleButton.click(function(){
-		if(!config.articleButtonToggle){
+		config.toggle = false;
+		if(!config.toggle){
 			$('#listbox').hide();
 			$('#commentbox').hide();
 			$('#configbox').hide();
@@ -108,21 +99,17 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			cpButtonToggle = false;
-			config.bookmarkButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = false;
-			config.listButtonToggle = false;
-			config.articleButtonToggle = true;
+			config.toggle = true;
 		} else {
 			$('#articlebox').fadeOut();
-			config.articleButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
-		if(!config.listButtonToggle){
+		config.toggle = false;
+		if(!config.toggle){
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#selectbox').hide();
@@ -136,21 +123,17 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			cpButtonToggle = false;
-			config.articleButtonToggle = false;
-			config.bookmarkButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = false;
-			config.listButtonToggle = true;
+			config.toggle = true;
 		}else{
 			$('#listbox').fadeOut();
-			config.listButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
 	//소셜댓글 버튼 클릭
 	$commentButton.click(function(){
-		if(!commentButtonToggle){
+		config.toggle = false;
+		if(!config.toggle){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#selectbox').hide();
@@ -165,15 +148,10 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			cpButtonToggle = false;
-			config.articleButtonToggle = false;
-			config.listButtonToggle = false;
-			config.bookmarkButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = true;
+			config.toggle = true;
 		} else {
 			$('#commentbox').fadeOut();
-			commentButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
@@ -198,7 +176,8 @@ $(function() {
 
 	//설정 메뉴 버튼 클릭
 	$configButton.click(function(){
-		if(!configButtonToggle){
+		config.toggle = false;
+		if(!config.toggle){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
@@ -212,26 +191,22 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.bookmarkButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = false;
-			config.listButtonToggle = false;
-			config.articleButtonToggle = false;
-			configButtonToggle = true;
+			config.toggle = true;
 		} else {
 			$('#configbox').fadeOut();
-			configButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
 	$('#closeCommentBox').click(function(){
 		$('#commentbox').fadeOut();
-		commentButtonToggle = false;				
+		config.toggle = false;				
 	});
 
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
-		if(!config.bookmarkButtonToggle){
+		config.toggle = false;
+		if(!toggle){
 			FB.getLoginStatus(function (response) {
 				if(response.status === 'connected') {
 					storage.loadBookmarkData();
@@ -250,19 +225,14 @@ $(function() {
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
 
-			cpButtonToggle = false;
-			configButtonToggle = false;
-			commentButtonToggle = false;
-			config.listButtonToggle = false;
-			config.articleButtonToggle = false;
-			config.bookmarkButtonToggle = true;
+			config.toggle = true;
 		} else {
 			$('#bookmarkbox').fadeOut();
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
-			config.bookmarkButtonToggle = false;
+			config.toggle = false;
 		}
 	});
 
