@@ -104,7 +104,7 @@ BagNews.prototype.buildList = function (){
 
 		$('#closeListBox').click(function(){
 			$('#listbox').fadeOut();
-			config.listButtonToggle = false;
+			config.check = 7;
 		});
 
 		
@@ -121,7 +121,7 @@ BagNews.prototype.buildArticle = function(article){
 
 		$('#closeArticleBox').click(function(){
 			$('#articlebox').fadeOut();
-			config.articleButtonToggle = false;
+			config.check = 7;
 		});
 	});
 };

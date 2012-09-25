@@ -60,8 +60,7 @@ $(function() {
 	//event
 	//뉴스사 선택 event
 	$cpButton.click(function(){
-		config.toggle = false;
-		if(!config.toggle){
+		if(config.check != 0){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
@@ -75,17 +74,18 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = true;
+			config.check = 0;
+			
 		} else{
 			$('#selectbox').fadeOut();
-			config.toggle = false;
+			config.toggle = 7;
 		}
 	});
 
 	//기사 보기 버튼 event
 	$articleButton.click(function(){
-		config.toggle = false;
-		if(!config.toggle){
+		
+		if(config.check != 1){
 			$('#listbox').hide();
 			$('#commentbox').hide();
 			$('#configbox').hide();
@@ -99,17 +99,16 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = true;
+			config.check = 1;
 		} else {
 			$('#articlebox').fadeOut();
-			config.toggle = false;
+			config.check = 7;
 		}
 	});
 
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
-		config.toggle = false;
-		if(!config.toggle){
+		if(config.check !=2){
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#selectbox').hide();
@@ -123,17 +122,16 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = true;
+			config.toggle = 2;
 		}else{
 			$('#listbox').fadeOut();
-			config.toggle = false;
+			config.check = 7;
 		}
 	});
 
 	//소셜댓글 버튼 클릭
 	$commentButton.click(function(){
-		config.toggle = false;
-		if(!config.toggle){
+		if(config.check != 3){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#selectbox').hide();
@@ -148,10 +146,10 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = true;
+			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
-			config.toggle = false;
+			config.toggle = 7;
 		}
 	});
 
@@ -176,8 +174,7 @@ $(function() {
 
 	//설정 메뉴 버튼 클릭
 	$configButton.click(function(){
-		config.toggle = false;
-		if(!config.toggle){
+		if(config.check != 5){
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
@@ -191,22 +188,21 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
-			config.toggle = true;
+			config.toggle = 5;
 		} else {
 			$('#configbox').fadeOut();
-			config.toggle = false;
+			config.toggle = 7;
 		}
 	});
 
 	$('#closeCommentBox').click(function(){
 		$('#commentbox').fadeOut();
-		config.toggle = false;				
+		config.check = 7;			
 	});
 
 	//모아보기 버튼 클릭시
 	$bookmarkButton.click(function(){
-		config.toggle = false;
-		if(!toggle){
+		if(config.check != 4){
 			FB.getLoginStatus(function (response) {
 				if(response.status === 'connected') {
 					storage.loadBookmarkData();
@@ -225,14 +221,14 @@ $(function() {
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
 
-			config.toggle = true;
+			config.check = 4;
 		} else {
 			$('#bookmarkbox').fadeOut();
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
-			config.toggle = false;
+			config.check = 7;
 		}
 	});
 
