@@ -35,7 +35,7 @@ $(function() {
 	
 
 	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
-	var ua = navigator.userAgent.toLowerCase(),
+	/*var ua = navigator.userAgent.toLowerCase(),
 		isAndroid = ua.indexOf('android'),
 		isIphone= ua.indexOf('iphone'),
 		isIpad = ua.indexOf('ipad');
@@ -48,7 +48,7 @@ $(function() {
 		$prevButton.tooltip();
 		$nextButton.tooltip();
 		$configButton.tooltip();
-	}
+	}*/
 	var infoToggle = true,//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
 		cpButtonToggle = false,
 		listButtonToggle = false,

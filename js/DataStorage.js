@@ -29,14 +29,10 @@ DataStorage.prototype.loadBookmarkData = function(){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
-
-		console.log("test success : "+config.bookmarkList);
 	});
 
 	response.on('error',function(data,response){
 		config.bookmarkList = {uid : 0, newsList : []};
 		config.count = length;
-
-		console.log("test error : "+config.bookmarkList);
 	});
 };
