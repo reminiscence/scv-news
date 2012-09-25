@@ -24,6 +24,10 @@ SelectCpBox.prototype.init = function(cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
 		}
 
+		$.click(function(e){
+			console.log(e.currentTarget);
+		});
+
 		$('.dropdown-toggle').dropdown();
 
 		$('#closeSelectBox').click(function(){
