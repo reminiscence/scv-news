@@ -177,11 +177,13 @@ $(function() {
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
+			$('#login').toggleClass('flt');
 		} else {
 			$('#bookmarkbox').fadeOut();
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
+			$('#login').toggleClass('flt');
 			bookmarkButtonToggle = false;
 		}
 	});

@@ -22,7 +22,7 @@
 }
 
 .open {
-    right : 230px;
+    left: 51%;
     background: rgba(0,0,0,.8);
 }
 
@@ -372,7 +372,9 @@ span.mid_tit {
 
 /*facebook comment plugin*/
 .fb-comments{ margin: 15px 0;}
-#login {position : absolute; bottom:70px; right:10px;}
+.fb-login {position : absolute; bottom:70px; right:10px;}
+.flt {bottom : 30px; z-index: 1100;}
+
 
 /*  BigVideo Styles 
   You may need to adjust these styles to get this working right in your design. 
@@ -416,7 +418,7 @@ span.mid_tit {
     #big-video-control{ background: rgba(0,0,0,0.2); }
     .control-bar {width:58%;}
     #big-video-control-timer{position:absolute;top:7px; right:5%;color:#fff;font-size:11px; width:55px;}
-    #login { bottom: 90px; left:20px;}
+    .fb-login { bottom: 90px; left:20px;}
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
     .content { height: 130px;}
