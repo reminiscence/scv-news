@@ -308,13 +308,13 @@ $(function() {
 		config.check = 7;
 	});
 
-	// //뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
-	// $('#selectbox').on('click','.dropdown-menu a', function(e){
-	// 	e.preventDefault();
-	// 	var $children = $(e.currentTarget),
-	// 	$cpKorName = $children.text();
-	// 	selectCpBox.selectCp($cpKorName);
-	// });
+	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
+	$('#selectbox').on('click','.dropdown-menu a', function(e){
+		e.preventDefault();
+		var $children = $(e.currentTarget),
+		$cpKorName = $children.text();
+		selectCpBox.selectCp($cpKorName);
+	});
 
 	//뉴스사 선택 완료 후, 확인 버튼 클릭 시 선택한 뉴스사 데이터 로드부터 동작
 	$doc.bind('changeNews',function(){
