@@ -81,6 +81,11 @@ $(function() {
 				$('#login').toggleClass('flt');
 			}
 			cpButtonToggle = true;
+			config.bookmarkButtonToggle = false;
+			configButtonToggle = false;
+			commentButtonToggle = false;
+			config.listButtonToggle = false;
+			config.articleButtonToggle = false;
 		} else{
 			$('#selectbox').fadeOut();
 			cpButtonToggle = false;
@@ -103,6 +108,11 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
+			cpButtonToggle = false;
+			config.bookmarkButtonToggle = false;
+			configButtonToggle = false;
+			commentButtonToggle = false;
+			config.listButtonToggle = false;
 			config.articleButtonToggle = true;
 		} else {
 			$('#articlebox').fadeOut();
@@ -126,6 +136,11 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
+			cpButtonToggle = false;
+			config.articleButtonToggle = false;
+			config.bookmarkButtonToggle = false;
+			configButtonToggle = false;
+			commentButtonToggle = false;
 			config.listButtonToggle = true;
 		}else{
 			$('#listbox').fadeOut();
@@ -150,6 +165,11 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
+			cpButtonToggle = false;
+			config.articleButtonToggle = false;
+			config.listButtonToggle = false;
+			config.bookmarkButtonToggle = false;
+			configButtonToggle = false;
 			commentButtonToggle = true;
 		} else {
 			$('#commentbox').fadeOut();
@@ -192,6 +212,11 @@ $(function() {
 				$('.control-bar').toggleClass('right');
 				$('#login').toggleClass('flt');
 			}
+			config.bookmarkButtonToggle = false;
+			configButtonToggle = false;
+			commentButtonToggle = false;
+			config.listButtonToggle = false;
+			config.articleButtonToggle = false;
 			configButtonToggle = true;
 		} else {
 			$('#configbox').fadeOut();
@@ -225,6 +250,11 @@ $(function() {
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
 
+			cpButtonToggle = false;
+			configButtonToggle = false;
+			commentButtonToggle = false;
+			config.listButtonToggle = false;
+			config.articleButtonToggle = false;
 			config.bookmarkButtonToggle = true;
 		} else {
 			$('#bookmarkbox').fadeOut();
