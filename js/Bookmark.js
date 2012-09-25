@@ -27,7 +27,7 @@ Bookmark.prototype.showBookmarkList = function(){
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
-			bookmarkButtonToggle = false;
+			config.bookmarkButtonToggle = false;
 		});
 	});		
 };

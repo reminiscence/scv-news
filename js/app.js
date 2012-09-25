@@ -179,12 +179,13 @@ $(function() {
 			$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
-			config.bookmarkButtonToggle = true;
 
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
+
+			config.bookmarkButtonToggle = true;
 		} else {
 			$('#bookmarkbox').fadeOut();
 			$('#slides').toggleClass('on');
