@@ -60,7 +60,8 @@ $(function() {
 		articleButtonToggle = false,
 		commentButtonToggle = false,
 		configButtonToggle = false,
-		commentButtonToggle = false;
+		commentButtonToggle = false,
+		bookmarkButtonToggle = false;
 
 	//event
 	//뉴스사 선택 event
