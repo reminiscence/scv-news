@@ -14,10 +14,8 @@ SelectCpBox.prototype.init = function(cpKorName){
 		doc = this.doc,
 		that = this;
 
-	console.log(selectBox);
-	console.log("this", this.selectBox);
-	selectBox.empty();
-	// console.log(selectBox);
+	$('#selectbox').empty();
+
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
 			$.tmpl(tmpl, newsList[order]).appendTo(selectBox);
