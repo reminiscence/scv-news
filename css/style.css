@@ -373,7 +373,7 @@ span.mid_tit {
 /*facebook comment plugin*/
 .fb-comments{ margin: 15px 0;}
 .fb-login {position : absolute; bottom:70px; right:10px;}
-.flt {bottom : 30px; z-index: 1100;}
+.flt {top : 30px; z-index: 1100;}
 
 
 /*  BigVideo Styles 
