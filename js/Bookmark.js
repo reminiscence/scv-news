@@ -24,7 +24,7 @@ Bookmark.prototype.showBookmarkList = function(){
 		$('#closebookmarkBox').click(function(){
 			$('#bookmarkbox').fadeOut();
 			$('#slides').toggleClass('on');
-			$('#btnbox').toggleClass('open');
+			$('#btnbox').toggleClass('menu-open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
 			config.check = 7;
