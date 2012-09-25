@@ -313,6 +313,7 @@ $(function() {
 		var cp = $('#cp-selecter').val()
 		$('#selectbox').fadeOut();
 		config.check = 7;
+		BV.init(); //플레이어 control bar 도 초기화
 		dataLoader.loadData(cp);
 	});
 
