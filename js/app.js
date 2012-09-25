@@ -54,14 +54,14 @@ $(function() {
 		$nextButton.tooltip();
 		$configButton.tooltip();
 	}*/
-	var infoToggle = true,//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남
+	var infoToggle = true,//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
 		cpButtonToggle = false,
-		listButtonToggle = false,
-		articleButtonToggle = false,
 		commentButtonToggle = false,
 		configButtonToggle = false,
 		commentButtonToggle = false,
-		bookmarkButtonToggle = false;
+		config.listButtonToggle,
+		config.articleButtonToggle,
+		config.bookmarkButtonToggle;
 
 	//event
 	//뉴스사 선택 event
@@ -89,10 +89,10 @@ $(function() {
 			$('#selectbox').hide();
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
-			articleButtonToggle = true;
+			config.articleButtonToggle = true;
 		} else {
 			$('#articlebox').fadeOut();
-			articleButtonToggle = false;
+			config.articleButtonToggle = false;
 		}
 	});
 
@@ -105,10 +105,10 @@ $(function() {
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
-			listButtonToggle = true;
+			config.listButtonToggle = true;
 		}else{
 			$('#listbox').fadeOut();
-			listButtonToggle = false;
+			config.listButtonToggle = false;
 		}
 	});
 
@@ -179,7 +179,7 @@ $(function() {
 			$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
-			bookmarkButtonToggle = true;
+			config.bookmarkButtonToggle = true;
 
 			$('#slides').toggleClass('on');
 			$('#btnbox').toggleClass('open');
@@ -191,7 +191,7 @@ $(function() {
 			$('#btnbox').toggleClass('open');
 			$('.control-bar').toggleClass('right');
 			$('#login').toggleClass('flt');
-			bookmarkButtonToggle = false;
+			config.bookmarkButtonToggle = false;
 		}
 	});
 

@@ -104,7 +104,7 @@ BagNews.prototype.buildList = function (){
 
 		$('#closeListBox').click(function(){
 			$('#listbox').fadeOut();
-			listButtonToggle = false;
+			config.listButtonToggle = false;
 		});
 
 		
