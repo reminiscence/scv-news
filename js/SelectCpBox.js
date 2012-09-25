@@ -15,7 +15,7 @@ SelectCpBox.prototype.init = function(cpKorName){
 		that = this;
 
 	console.log(selectBox);
-	console.log("this"+this.selectBox);
+	console.log("this", this.selectBox);
 	selectBox.empty();
 	// console.log(selectBox);
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
