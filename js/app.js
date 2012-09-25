@@ -308,6 +308,10 @@ $(function() {
 		config.check = 7;
 	});
 
+	$.click(function(e){
+		console.log(e.currentTarget);
+	});
+	
 	//뉴스사 선택 메뉴에서 뉴스를 선택시, 바꿔주는 역할
 	$('#selectbox').on('click','.dropdown-menu a', function(e){
 		e.preventDefault();
