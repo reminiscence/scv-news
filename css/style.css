@@ -406,6 +406,7 @@ span.mid_tit {
     left : 51%;
     width: 40%;
     z-index: 1100;
+    background: rgba(0,0,0,.8);
 }
 
 /*media query*/
