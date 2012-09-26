@@ -72,7 +72,9 @@ $(function() {
 			config.check = 0;
 			
 		} else{
-			$('#selectbox').model('hide');
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 7;
 		}
 	});
@@ -84,10 +86,13 @@ $(function() {
 			$('#listbox').hide();
 			$('#commentbox').hide();
 			$('#configbox').hide();
-			$('#selectbox').hide();
+			// $('#selectbox').hide();
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 1;
 		} else {
 			$('#articlebox').fadeOut();
@@ -100,11 +105,14 @@ $(function() {
 		if(config.check !=2){
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			$('#selectbox').hide();
+			//$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
 
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 2;
 		}else{
 			$('#listbox').fadeOut();
@@ -117,11 +125,14 @@ $(function() {
 		if(config.check != 3){
 			$('#listbox').hide();
 			$('#articlebox').hide();
-			$('#selectbox').hide();
+			//$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#commentbox').fadeIn();
 
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
@@ -154,10 +165,14 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			$('#selectbox').hide();
+			//$('#selectbox').hide();
 			$('#bookmarkbox').hide();
 			$('#configbox').fadeIn();
 
+
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
@@ -182,10 +197,14 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			$('#selectbox').hide();
+			//$('#selectbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
 
+
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('hide)');
+			});
 			config.check = 4;
 		} else {
 			$('#bookmarkbox').fadeOut();
@@ -215,7 +234,11 @@ $(function() {
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
 		$('#listbox').hide();
-		$('#selectbox').hide();
+		//$('#selectbox').hide();
+		
+		$('#selectbox').find('#myModel',function(){
+			$('#myModel').model('hide)');
+		});
 		$('#articlebox').hide();
 		config.check = 7;
 		bagNewsViewer.showNewsInfo();
@@ -240,7 +263,11 @@ $(function() {
 	});
 
 	$prevButton.bind('click', function(){
-		$('#selectbox').hide();
+		//$('#selectbox').hide();
+		
+		$('#selectbox').find('#myModel',function(){
+			$('#myModel').model('hide)');
+		});
 		$('#configbox').hide();
 		config.check = 7;
 		BV.prev();
@@ -249,7 +276,11 @@ $(function() {
 
 	//다음 동영상 클릭 시 -> 다음 동영상 화면 로드
 	$nextButton.bind('click', function(){
-		$('#selectbox').hide();
+		//$('#selectbox').hide();
+		
+		$('#selectbox').find('#myModel',function(){
+			$('#myModel').model('hide)');
+		});
 		$('#configbox').hide();
 		config.check = 7;
 		BV.next();
@@ -258,7 +289,11 @@ $(function() {
 
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeSB',function(){
-		$('#selectbox').fadeOut();
+		//$('#selectbox').fadeOut();
+		
+		$('#selectbox').find('#myModel',function(){
+			$('#myModel').model('hide)');
+		});
 		config.check = 7;
 		selectCpBox.init();
 	});
@@ -273,7 +308,11 @@ $(function() {
 	$doc.bind('changeNews',function(){
 		BV.togglePlayControl();
 		var cp = $('#cp-selecter').val();
-		$('#selectbox').fadeOut();
+		//$('#selectbox').fadeOut();
+		
+		$('#selectbox').find('#myModel',function(){
+			$('#myModel').model('hide)');
+		});
 		config.check = 7;
 		dataLoader.loadData(cp);
 	});
