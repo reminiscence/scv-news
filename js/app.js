@@ -67,7 +67,7 @@ $(function() {
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			
-			//$('#selectbox').find('#myModel').modal('show');
+			$('#selectbox').find('#myModel').modal('show');
 			
 			config.check = 0;
 			
