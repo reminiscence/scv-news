@@ -5,9 +5,9 @@
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
 
 .menu {
-    width:38%;
+    width:44%;
     position:absolute;
-    bottom:10px; left: 20px;
+    bottom:11px; left: 20px;
     background:rgba(255,255,255,0.2);
     border-radius:5px;
     z-index: 1100;
@@ -16,7 +16,7 @@
 
 .menu a {
      float: left;
-     margin:7px;
+     margin:6px;
 }
 
 .menu-open {
@@ -127,7 +127,7 @@
 }
 
 .headline {
-    width:37%;height:16px;position:absolute; bottom : 105px; left:20px; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    width:42.5%;height:16px;position:absolute; bottom : 105px; left:20px; padding:8px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
 #rand_title {
@@ -350,7 +350,7 @@ span.mid_tit {
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-.control-bar {position:absolute; bottom:65px; left : 20px; width:39%;
+.control-bar {position:absolute; bottom:65px; left : 20px; width:44%;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
