@@ -69,5 +69,5 @@ Bookmark.prototype.showBookmarkList = function(){
 	// 	});
 
 		
-	// });		
+	});		
 };
