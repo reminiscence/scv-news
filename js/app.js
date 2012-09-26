@@ -158,7 +158,7 @@ $(function() {
 			$('#configbox').find('#configModal').modal('show');
 			config.check = 5;
 		} else {
-			$('#configbox').fadeOut();
+			$('#configbox').find('#configModal').modal('hide');
 			config.check = 7;
 		}
 	});
