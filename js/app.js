@@ -66,7 +66,7 @@ $(function() {
 			// $('#commentbox').hide();
 			// $('#configbox').hide();
 			// $('#bookmarkbox').hide();
-			$('#selectbox').slideDown();
+			$('#selectbox').fadeIn();
 
 			config.check = 0;
 			
