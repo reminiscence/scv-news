@@ -66,7 +66,9 @@ $(function() {
 			// $('#commentbox').hide();
 			// $('#configbox').hide();
 			// $('#bookmarkbox').hide();
-			$('#selectbox').model('show');
+			$('#selectbox').find('#myModel',function(){
+				$('#myModel').model('show)');
+			});
 			config.check = 0;
 			
 		} else{
