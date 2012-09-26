@@ -66,7 +66,7 @@ $(function() {
 			$('#commentbox').hide();
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
-			$('#selectbox').fadeIn();
+			$('#selectbox').show('slow');
 
 			config.check = 0;
 			
