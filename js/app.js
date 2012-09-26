@@ -66,12 +66,11 @@ $(function() {
 			// $('#commentbox').hide();
 			// $('#configbox').hide();
 			// $('#bookmarkbox').hide();
-			$('#selectbox').fadeIn();
-
+			$('#selectbox').model('show');
 			config.check = 0;
 			
 		} else{
-			$('#selectbox').fadeOut();
+			$('#selectbox').model('hide');
 			config.check = 7;
 		}
 	});
