@@ -56,7 +56,7 @@ $(function() {
 	}*/
 	var infoToggle = true;//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
 	
-
+configModal
 	//event
 	//뉴스사 선택 event
 	$cpButton.click(function(){
@@ -64,9 +64,9 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			$('#configbox').hide();
 			$('#bookmarkbox').hide();
-			
+			$('#configbox').find('#configModal').modal('hide');
+
 			$('#selectbox').find('#selectModal').modal('show');
 			
 			config.check = 0;
@@ -81,14 +81,13 @@ $(function() {
 	$articleButton.click(function(){
 		
 		if(config.check != 1){
+			$('#configbox').find('#configModal').modal('hide');
+			$('#selectbox').find('#selectModal').modal('hide');
 			$('#listbox').hide();
 			$('#commentbox').hide();
-			$('#configbox').hide();
-			// $('#selectbox').hide();
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 
-			$('#selectbox').find('#selectModal').modal('hide');
 			config.check = 1;
 		} else {
 			$('#articlebox').fadeOut();
@@ -99,14 +98,13 @@ $(function() {
 	//뉴스 리스트 버튼 event
 	$listButton.click(function(){
 		if(config.check !=2){
+			$('#selectbox').find('#selectModal').modal('hide');
+			$('#configbox').find('#configModal').modal('hide');
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			//$('#selectbox').hide();
-			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
 			
-			$('#selectbox').find('#selectModal').modal('hide');
 			config.check = 2;
 		}else{
 			$('#listbox').fadeOut();
@@ -117,14 +115,13 @@ $(function() {
 	//소셜댓글 버튼 클릭
 	$commentButton.click(function(){
 		if(config.check != 3){
+			$('#selectbox').find('#selectModal').modal('hide');
+			$('#configbox').find('#configModal').modal('hide');
 			$('#listbox').hide();
 			$('#articlebox').hide();
-			//$('#selectbox').hide();
-			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#commentbox').fadeIn();
 
-			$('#selectbox').find('#selectModal').modal('hide');
 			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
@@ -157,12 +154,9 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			//$('#selectbox').hide();
 			$('#bookmarkbox').hide();
-			$('#configbox').fadeIn();
-
-
-			$('#selectbox').find('#selectModal').modal('hide');
+			$('#configbox').find('#configModal').modal('hide');
+			$('#selectbox').find('#selectModal').modal('show');
 			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
@@ -184,15 +178,14 @@ $(function() {
 				}
 			});
 			bookmark.showBookmarkList();
+
+			$('#configbox').find('#configModal').modal('hide');
+			$('#selectbox').find('#selectModal').modal('hide');
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
-			//$('#selectbox').hide();
-			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
 
-
-			$('#selectbox').find('#selectModal').modal('hide');
 			config.check = 4;
 		} else {
 			$('#bookmarkbox').fadeOut();
@@ -222,8 +215,7 @@ $(function() {
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
 		$('#listbox').hide();
-		//$('#selectbox').hide();
-		
+		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
 		$('#articlebox').hide();
 		config.check = 7;
@@ -249,10 +241,8 @@ $(function() {
 	});
 
 	$prevButton.bind('click', function(){
-		//$('#selectbox').hide();
-		
+		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
-		$('#configbox').hide();
 		config.check = 7;
 		BV.prev();
 		$doc.trigger('toggleControl');
@@ -260,10 +250,8 @@ $(function() {
 
 	//다음 동영상 클릭 시 -> 다음 동영상 화면 로드
 	$nextButton.bind('click', function(){
-		//$('#selectbox').hide();
-		
+		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
-		$('#configbox').hide();
 		config.check = 7;
 		BV.next();
 		$doc.trigger('toggleControl');
@@ -271,8 +259,6 @@ $(function() {
 
 	//뉴스사 선택 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeSB',function(){
-		//$('#selectbox').fadeOut();
-		
 		$('#selectbox').find('#selectModal').modal('hide');
 		config.check = 7;
 		selectCpBox.init();
@@ -280,7 +266,7 @@ $(function() {
 
 	//설정 box의 x버튼을 클릭시 닫아줌
 	$doc.bind('closeCB',function(){
-		$('#configbox').fadeOut();
+		$('#configbox').find('#configModal').modal('hide');
 		config.check = 7;
 	});
 
@@ -288,7 +274,6 @@ $(function() {
 	$doc.bind('changeNews',function(){
 		BV.togglePlayControl();
 		var cp = $('#cp-selecter').val();
-		//$('#selectbox').fadeOut();
 		
 		$('#selectbox').find('#selectModal').modal('hide');
 		config.check = 7;
@@ -297,7 +282,7 @@ $(function() {
 
 	$doc.bind('changeConfig', function(){
 		configBox.setAutoPlay();
-		$('#configbox').fadeOut();
+		$('#configbox').find('#configModal').modal('hide');
 		config.check = 7;
 	});
 
