@@ -1,21 +1,20 @@
-<div class="select_box">
-  <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" id="closeSelectBox" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">뉴스사 선택</h3>
+<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" id="closeSelectBox" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">뉴스사 선택</h3>
+  </div>
+  <div class="modal-body">
+      <select id="cp-selecter">
+          <option value="mbc">MBC</option>
+          <option value="sbs">SBS</option>
+          <option value="ytn">YTN</option>
+          <option value="mbn">MBN</option>
+          <option value="yonhap">연합뉴스</option>
+          <option value="all">전체</option>
+      </select>
     </div>
-    <div class="modal-body">
-        <select id="cp-selecter">
-            <option value="mbc">MBC</option>
-            <option value="sbs">SBS</option>
-            <option value="ytn">YTN</option>
-            <option value="mbn">MBN</option>
-            <option value="yonhap">연합뉴스</option>
-            <option value="all">전체</option>
-        </select>
-      </div>
-    <div class="modal-footer">
-      <button id="submit" class="btn btn-primary">확인</button>
-    </div>
+  <div class="modal-footer">
+    <button id="submit" class="btn btn-primary">확인</button>
   </div>
 </div>
+
