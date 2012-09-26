@@ -24,7 +24,7 @@
     background: rgba(0,0,0,.8);
 }
 
-#listbox {
+#listbox, #bookmarkbox {
     background:rgba(255,255,255,.2);
     position:absolute;
     top:0;
@@ -35,7 +35,7 @@
     overflow: scroll;
 }
 
-#listbox .box{
+#listbox .box, #bookmarkbox .box{
     position: relative;
     background:rgba(0,0,0,.9);
     padding:3px;
@@ -59,14 +59,14 @@
     padding : 20px;
 }
 
-#listbox img {
+#listbox img, #bookmarkbox img {
     float:left;
     width:110px;
     height: 85%;
     margin : 15px 0 5px 5px;
 }
 
-#listbox h5{
+#listbox h5, #bookmarkbox h5{
     color:#fff;
     float:left;
     font-size:15px;
@@ -135,17 +135,6 @@
 }
 
 #btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
-
-#bookmarkbox {
-      background:rgba(255,255,255,.2);
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: 1100;
-    width:100%;
-    height: 100%;
-    overflow: scroll;
-}
 
 #boxList {
     width:50%;
