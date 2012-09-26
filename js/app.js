@@ -67,6 +67,7 @@ $(function() {
 			// $('#configbox').hide();
 			// $('#bookmarkbox').hide();
 			$('#selectbox').find('#myModel',function(){
+				console.log("asdf");
 				$('#myModel').model('show)');
 			});
 			config.check = 0;
