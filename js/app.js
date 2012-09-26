@@ -61,11 +61,11 @@ $(function() {
 	//뉴스사 선택 event
 	$cpButton.click(function(){
 		if(config.check != 0){
-			$('#listbox').hide();
-			$('#articlebox').hide();
-			$('#commentbox').hide();
-			$('#configbox').hide();
-			$('#bookmarkbox').hide();
+			// $('#listbox').hide();
+			// $('#articlebox').hide();
+			// $('#commentbox').hide();
+			// $('#configbox').hide();
+			// $('#bookmarkbox').hide();
 			$('#selectbox').show('slow');
 
 			config.check = 0;
