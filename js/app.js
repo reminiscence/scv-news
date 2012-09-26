@@ -154,8 +154,8 @@ $(function() {
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#bookmarkbox').hide();
-			$('#configbox').find('#configModal').modal('hide');
-			$('#selectbox').find('#selectModal').modal('show');
+			$('#selectbox').find('#selectModal').modal('hide');
+			$('#configbox').find('#configModal').modal('show');
 			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
@@ -213,10 +213,10 @@ $(function() {
 
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
-		$('#listbox').hide();
-		$('#configbox').find('#configModal').modal('hide');
-		$('#selectbox').find('#selectModal').modal('hide');
-		$('#articlebox').hide();
+		// $('#listbox').hide();
+		// $('#configbox').find('#configModal').modal('hide');
+		// $('#selectbox').find('#selectModal').modal('hide');
+		// $('#articlebox').hide();
 		config.check = 7;
 		bagNewsViewer.showNewsInfo();
 	});
@@ -242,6 +242,10 @@ $(function() {
 	$prevButton.bind('click', function(){
 		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
+		$('#listbox').hide();
+		$('#articlebox').hide();
+		$('#commentbox').hide();
+		$('#bookmarkbox').fadeIn();
 		config.check = 7;
 		BV.prev();
 		$doc.trigger('toggleControl');
@@ -251,6 +255,10 @@ $(function() {
 	$nextButton.bind('click', function(){
 		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
+		$('#listbox').hide();
+		$('#articlebox').hide();
+		$('#commentbox').hide();
+		$('#bookmarkbox').fadeIn();
 		config.check = 7;
 		BV.next();
 		$doc.trigger('toggleControl');
