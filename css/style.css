@@ -94,7 +94,7 @@
     right:5px;
 }
 
-#closeListBox {
+#closeListBox, #closebookmarkBox {
     color : #fff;
     opacity: .9;
     position: fixed;
