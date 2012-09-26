@@ -68,12 +68,6 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#selectbox').fadeIn();
 
-			if($('#btnbox').hasClass('menu-open')){
-				$('#slides').toggleClass('on');
-				$('#btnbox').toggleClass('menu-open');
-				$('.control-bar').toggleClass('right');
-				$('#login').toggleClass('flt');
-			}
 			config.check = 0;
 			
 		} else{
@@ -93,12 +87,6 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 
-			if($('#btnbox').hasClass('menu-open')){
-				$('#slides').toggleClass('on');
-				$('#btnbox').toggleClass('menu-open');
-				$('.control-bar').toggleClass('right');
-				$('#login').toggleClass('flt');
-			}
 			config.check = 1;
 		} else {
 			$('#articlebox').fadeOut();
@@ -116,12 +104,6 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
 
-			if($('#btnbox').hasClass('menu-open')){
-				$('#slides').toggleClass('on');
-				$('#btnbox').toggleClass('menu-open');
-				$('.control-bar').toggleClass('right');
-				$('#login').toggleClass('flt');
-			}
 			config.check = 2;
 		}else{
 			$('#listbox').fadeOut();
@@ -139,13 +121,6 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#commentbox').fadeIn();
 
-			
-			if($('#btnbox').hasClass('menu-open')){
-				$('#slides').toggleClass('on');
-				$('#btnbox').toggleClass('menu-open');
-				$('.control-bar').toggleClass('right');
-				$('#login').toggleClass('flt');
-			}
 			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
@@ -182,12 +157,6 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#configbox').fadeIn();
 
-			if($('#btnbox').hasClass('menu-open')){
-				$('#slides').toggleClass('on');
-				$('#btnbox').toggleClass('menu-open');
-				$('.control-bar').toggleClass('right');
-				$('#login').toggleClass('flt');
-			}
 			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
@@ -216,18 +185,9 @@ $(function() {
 			$('#configbox').hide();
 			$('#bookmarkbox').fadeIn();
 
-			$('#slides').toggleClass('on');
-			$('#btnbox').toggleClass('menu-open');
-			$('.control-bar').toggleClass('right');
-			$('#login').toggleClass('flt');
-
 			config.check = 4;
 		} else {
 			$('#bookmarkbox').fadeOut();
-			$('#slides').toggleClass('on');
-			$('#btnbox').toggleClass('menu-open');
-			$('.control-bar').toggleClass('right');
-			$('#login').toggleClass('flt');
 			config.check = 7;
 		}
 	});
