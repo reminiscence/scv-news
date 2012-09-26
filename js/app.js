@@ -66,16 +66,13 @@ $(function() {
 			// $('#commentbox').hide();
 			// $('#configbox').hide();
 			// $('#bookmarkbox').hide();
-			$('#selectbox').find('#myModel',function(){
-				console.log("asdf");
-				$('#myModel').model('show)');
-			});
+			console.log("click!");
+			$('#selectbox').find('#myModel').model('show');
+			
 			config.check = 0;
 			
 		} else{
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 7;
 		}
 	});
@@ -91,9 +88,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#articlebox').fadeIn();
 
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 1;
 		} else {
 			$('#articlebox').fadeOut();
@@ -110,10 +105,8 @@ $(function() {
 			$('#configbox').hide();
 			$('#bookmarkbox').hide();
 			$('#listbox').fadeIn();
-
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 2;
 		}else{
 			$('#listbox').fadeOut();
@@ -131,9 +124,7 @@ $(function() {
 			$('#bookmarkbox').hide();
 			$('#commentbox').fadeIn();
 
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 3;
 		} else {
 			$('#commentbox').fadeOut();
@@ -171,9 +162,7 @@ $(function() {
 			$('#configbox').fadeIn();
 
 
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 5;
 		} else {
 			$('#configbox').fadeOut();
@@ -203,9 +192,7 @@ $(function() {
 			$('#bookmarkbox').fadeIn();
 
 
-			$('#selectbox').find('#myModel',function(){
-				$('#myModel').model('hide)');
-			});
+			$('#selectbox').find('#myModel').model('hide');
 			config.check = 4;
 		} else {
 			$('#bookmarkbox').fadeOut();
@@ -237,9 +224,7 @@ $(function() {
 		$('#listbox').hide();
 		//$('#selectbox').hide();
 		
-		$('#selectbox').find('#myModel',function(){
-			$('#myModel').model('hide)');
-		});
+		$('#selectbox').find('#myModel').model('hide');
 		$('#articlebox').hide();
 		config.check = 7;
 		bagNewsViewer.showNewsInfo();
@@ -266,9 +251,7 @@ $(function() {
 	$prevButton.bind('click', function(){
 		//$('#selectbox').hide();
 		
-		$('#selectbox').find('#myModel',function(){
-			$('#myModel').model('hide)');
-		});
+		$('#selectbox').find('#myModel').model('hide');
 		$('#configbox').hide();
 		config.check = 7;
 		BV.prev();
@@ -279,9 +262,7 @@ $(function() {
 	$nextButton.bind('click', function(){
 		//$('#selectbox').hide();
 		
-		$('#selectbox').find('#myModel',function(){
-			$('#myModel').model('hide)');
-		});
+		$('#selectbox').find('#myModel').model('hide');
 		$('#configbox').hide();
 		config.check = 7;
 		BV.next();
@@ -292,9 +273,7 @@ $(function() {
 	$doc.bind('closeSB',function(){
 		//$('#selectbox').fadeOut();
 		
-		$('#selectbox').find('#myModel',function(){
-			$('#myModel').model('hide)');
-		});
+		$('#selectbox').find('#myModel').model('hide');
 		config.check = 7;
 		selectCpBox.init();
 	});
@@ -311,9 +290,7 @@ $(function() {
 		var cp = $('#cp-selecter').val();
 		//$('#selectbox').fadeOut();
 		
-		$('#selectbox').find('#myModel',function(){
-			$('#myModel').model('hide)');
-		});
+		$('#selectbox').find('#myModel').model('hide');
 		config.check = 7;
 		dataLoader.loadData(cp);
 	});
