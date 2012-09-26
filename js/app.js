@@ -281,10 +281,15 @@ $(function() {
 	$doc.bind('changeNews',function(){
 		BV.togglePlayControl();
 		var cp = $('#cp-selecter').val();
-		
+
 		$('#selectbox').find('#selectModal').modal('hide');
 		config.check = 7;
-		dataLoader.loadData(cp);
+		if(cp === 'all'){
+			dataLoader.loadData();
+		} else {
+			dataLoader.loadData(cp);
+		}
+		
 	});
 
 	$doc.bind('changeConfig', function(){
