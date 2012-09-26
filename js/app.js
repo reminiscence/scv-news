@@ -240,12 +240,12 @@ $(function() {
 	});
 
 	$prevButton.bind('click', function(){
-		// $('#configbox').find('#configModal').modal('hide');
-		// $('#selectbox').find('#selectModal').modal('hide');
-		// $('#listbox').hide();
-		// $('#articlebox').hide();
-		// $('#commentbox').hide();
-		// $('#bookmarkbox').hide();
+		$('#configbox').find('#configModal').modal('hide');
+		$('#selectbox').find('#selectModal').modal('hide');
+		$('#listbox').hide();
+		$('#articlebox').hide();
+		$('#commentbox').hide();
+		$('#bookmarkbox').hide();
 		config.check = 7;
 		BV.prev();
 		$doc.trigger('toggleControl');
@@ -253,12 +253,12 @@ $(function() {
 
 	//다음 동영상 클릭 시 -> 다음 동영상 화면 로드
 	$nextButton.bind('click', function(){
-		// $('#configbox').find('#configModal').modal('hide');
-		// $('#selectbox').find('#selectModal').modal('hide');
-		// $('#listbox').hide();
-		// $('#articlebox').hide();
-		// $('#commentbox').hide();
-		// $('#bookmarkbox').hide();
+		$('#configbox').find('#configModal').modal('hide');
+		$('#selectbox').find('#selectModal').modal('hide');
+		$('#listbox').hide();
+		$('#articlebox').hide();
+		$('#commentbox').hide();
+		$('#bookmarkbox').hide();
 		config.check = 7;
 		BV.next();
 		$doc.trigger('toggleControl');
