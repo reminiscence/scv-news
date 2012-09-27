@@ -213,10 +213,12 @@ $(function() {
 
 	//뉴스 동영상이 뿌려졌다면, 그에 관한 제목,날짜 등의 정보를 보여줌
 	$doc.bind('playNewsVideo', function(){
-		// $('#listbox').hide();
-		// $('#configbox').find('#configModal').modal('hide');
-		// $('#selectbox').find('#selectModal').modal('hide');
-		// $('#articlebox').hide();
+		$('#listbox').hide();
+		$('#configbox').find('#configModal').modal('hide');
+		$('#selectbox').find('#selectModal').modal('hide');
+		$('#articlebox').hide();
+		$('#bookmarkbox').hide();
+		$('#commentbox').hide();
 		config.check = 7;
 		bagNewsViewer.showNewsInfo();
 	});

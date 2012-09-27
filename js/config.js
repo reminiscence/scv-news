@@ -11,6 +11,7 @@ var config = {
 	bookmarkList : {uid : 0, newsList : []},
 	count : 0,
 	check : 7,
+	clickList : true,
 	getId : function getVid(videoUrl){
 		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
 	}

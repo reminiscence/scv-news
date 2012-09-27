@@ -39,6 +39,7 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 	}
 
 	config.vidList = vidList;
+	config.clickList = clickList;
 	doc.trigger('setNewsData');
 };
 
@@ -46,14 +47,25 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 BagNews.prototype.showNewsInfo = function (){
 	var doc = this.doc, 
 		news = config.newsList,
-		order = config.currentNewsOrder;
+		order = config.currentNewsOrder,
+		bookmark = config.bookmarkList.newsList,
+		clickList = config.clickList;
 
-	$('#title').html(news[order].title);
-	$("#cp").html(news[order].cpKorName);
-	$("#date").html(news[order].regDate);
+	if(clickList == true || clickList == undefined){
+		$('#title').html(news[order].title);
+		$("#cp").html(news[order].cpKorName);
+		$("#date").html(news[order].regDate);
 	
-	config.newsId = news[order].newsId;
-	$('.newsImage').css('src',news[order].imageUrl);
+		config.newsId = news[order].newsId;
+		$('.newsImage').css('src',news[order].imageUrl);
+	} else {
+		$('#title').html(bookmark[order].title);
+		$("#cp").html(bookmark[order].cpKorName);
+		$("#date").html(bookmark[order].regDate);
+	
+		config.newsId = bookmark[order].newsId;
+		$('.newsImage').css('src',bookmark[order].imageUrl);
+	}
 	doc.trigger('showNews');
 };
 
@@ -98,6 +110,7 @@ BagNews.prototype.buildList = function (){
 						
 						bookmark.uid = response.authResponse.userID;
 						list.vid = $box.attr('vid');
+						list.newsId = $box.attr('newsid');
 						list.imageUrl = $box.children('img').attr('src');
 						list.title = $box.children('h5').text();
 						list.cpKorName = $box.find('span:eq(2)').text();
