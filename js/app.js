@@ -313,9 +313,10 @@ $(function() {
 	});
 
 	$doc.bind('clickNews',function(){
+		var clickList = true;
 		$('.slides_container').empty();
 		BV.init(); //플레이어 control bar 도 초기화
-		bagNewsViewer.setNewsList(config.vid);
+		bagNewsViewer.setNewsList(config.vid, clickList);
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
 
