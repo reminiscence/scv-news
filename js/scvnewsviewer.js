@@ -195,7 +195,6 @@ Bookmark.prototype.showBookmarkList = function(){
 			} else {
 				var vid = $(this).attr('vid');
 				that.deleteBookmark(vid);
-				$(this).hide();
 			}
 		});
 
@@ -214,11 +213,11 @@ Bookmark.prototype.deleteBookmark = function(vid){
 		check = false,
 		doc = this.doc;
 
-	for(var i = 0, j = 0; i < length; i++, j++){
+	for(var i = 0, j = 0; i < length; i++){
 		if(vid === bookmark[i].vid){
 			check = true;
 		} else {
-			news[j]= bookmark[i];
+			news[j++]= bookmark[i];
 		}
 	}
 
@@ -226,7 +225,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 		if(confirm("삭제하시겠습니까?")){
 			config.bookmarkList.newsList = [];
 			config.bookmarkList.newsList = news;
-			console.log(config.bookmarkList);
+			
 			doc.trigger("reShowBookmark");
 		} else {
 			return;
