@@ -12,7 +12,8 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 	config.currentNewsOrder = 0;
 
 	console.log(vid, clickList);
-	if(vid&&clickList == true){
+	if(vid&&(clickList == true)){
+		console.log("vid & clickList is true");
 		for(var i=0; i<length; i++){
 			if(vid === config.getId(newsList[i].videoUrl) ){
 				config.currentNewsOrder = i;  //클릭한 뉴스의 위치만 알아냄. 전체목록에서 클릭한 뉴스부터 뉴스 동영상이 재생됨.
@@ -20,6 +21,7 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 			}
 		}
 	} else if(vid&&(clickList == false)) {
+		console.log("vid true, clickList is false");
 		for(var i = 0; i < bookmark.length; i++){
 			if(vid === bookmark[i].vid){
 				config.currentNewsOrder = i;
@@ -29,10 +31,12 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 	}
 
 	if(clickList == true || clickList == undefined){
+		console.log("clickList is not false");
 		for(var i=0; i<length; i++){
 			vidList[i] = config.getId(newsList[i].videoUrl);
 		}
 	} else {
+		console.log("clicklist is false");
 		for(var i = 0; i < bookmark.length; i++){
 			vidList[i] = bookmark[i].vid;
 		}
