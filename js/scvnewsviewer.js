@@ -194,8 +194,8 @@ Bookmark.prototype.showBookmarkList = function(){
 				doc.trigger('toggleControl');
 			} else {
 				var vid = $(this).attr('vid');
-				$(this).hide();
 				that.deleteBookmark(vid);
+				$(this).hide();
 			}
 		});
 
