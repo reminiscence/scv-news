@@ -146,15 +146,16 @@ BagNews.prototype.controlView = function(){
 	this.buildList();
 };
 
-function Bookmark (){
-	
+function Bookmark (){}
+	this.doc = $(document.body);
 }
 
 Bookmark.prototype.showBookmarkList = function(){
 	var bookmark = config.bookmarkList.newsList,
 		length = 0,
 		news = '',
-		$bookmarkBox = $('#bookmarkbox');
+		$bookmarkBox = $('#bookmarkbox'),
+		doc = this.doc;
 
 	if(bookmark != undefined){
 		length = bookmark.length;
