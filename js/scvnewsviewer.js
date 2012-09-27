@@ -196,7 +196,8 @@ Bookmark.prototype.showBookmarkList = function(){
 				var vid = $(this).attr('vid');
 				console.log(vid);
 				that.deleteBookmark(vid);
-				$(this).hide();
+				console.log($(this));
+				//$(this).hide();
 			}
 		});
 
