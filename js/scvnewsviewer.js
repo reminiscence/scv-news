@@ -224,7 +224,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 
 	if(check === true){
 		if(confirm("삭제하시겠습니까?")){
-			config.bookmarkList = news;
+			config.bookmarkList.newsList = news;
 			doc.trigger("reShowBookmark");
 		} else {
 			return;
@@ -379,7 +379,6 @@ Headline.prototype.showNewsTitle = function(){
 
 	for(var i = 0; i < 15; i++){
 		randNum = Math.floor(Math.random()* newsList.length);
-		console.log(randNum);
 		str = newsList[randNum].title;
 		news[i] = {};
 		if($(window).innerWidth() > 600)
