@@ -19,7 +19,7 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 				break;
 			}
 		}
-	} else if(vid&&clickList == false)  {
+	} else if(vid&&(clickList == false)) {
 		for(var i = 0; i < bookmark.length; i++){
 			if(vid === bookmark[i].vid){
 				config.currentNewsOrder = i;
