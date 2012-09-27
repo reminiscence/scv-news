@@ -235,8 +235,9 @@ $(function() {
 
 	//뉴스 리스트에서 기사 하나를 선택 시 -> 화면에 새로 뿌려줌
 	$doc.bind('clickBox',function(){
+		var clickList = true;
 		BV.init(); //플레이어 control bar 도 초기화
-		bagNewsViewer.setNewsList(config.vid);
+		bagNewsViewer.setNewsList(config.vid,clickList);
 	});
 
 	$prevButton.bind('click', function(){

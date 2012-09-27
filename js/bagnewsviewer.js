@@ -3,14 +3,15 @@ function BagNews(doc){
 }
 
 //뉴스 목록을 setting함
-BagNews.prototype.setNewsList = function(vid){
+BagNews.prototype.setNewsList = function(vid,clickList){
 	var newsList = config.newsList,
 		length=newsList.length,
 		vidList = [],
 		doc = this.doc;
 	config.currentNewsOrder = 0;
 
-	if(vid){
+	console.log(clickList);
+	if(vid&&clickList){
 		for(var i=0; i<length; i++){
 			if(vid === config.getId(newsList[i].videoUrl) ){
 				config.currentNewsOrder = i;  //클릭한 뉴스의 위치만 알아냄. 전체목록에서 클릭한 뉴스부터 뉴스 동영상이 재생됨.
