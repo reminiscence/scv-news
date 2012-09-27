@@ -217,12 +217,12 @@ Bookmark.prototype.deleteBookmark = function(vid){
 	for(var i = 0; i < length; i++){
 		if(vid === bookmark[i].vid){
 			if(confirm("삭제하시겠습니까?")){
-				ws.destroy('newsList[vid="'+vid+'"]').on('success', function(data, response){
+				ws.destroy('bookmark',{'newsList[0]'}).on('success', function(data, response){
 					console.log("success");
 					console.log(data,response);
 				});
 
-				ws.destroy('newsList[vid="'+vid+'"]').on('error',function(data,response){
+				ws.destroy('bookmark',{'newsList[0]'}).on('error',function(data,response){
 					console.log("failed");
 					console.log(data,response);
 				});
