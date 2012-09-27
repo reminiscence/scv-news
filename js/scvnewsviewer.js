@@ -222,7 +222,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 					console.log(data,response);
 				});
 
-				ws.destroy(newsList[0]).on('error',function(data,response){
+				ws.destroy('newsList[vid="'+vid+'"]').on('error',function(data,response){
 					console.log("failed");
 					console.log(data,response);
 				});
