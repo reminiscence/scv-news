@@ -214,7 +214,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 		check = false,
 		doc = this.doc;
 
-	for(var i = 0, var j = 0; i < length; i++, j++){
+	for(var i = 0, j = 0; i < length; i++, j++){
 		if(vid === bookmark[i].vid){
 			check = true;
 		} else {
