@@ -196,6 +196,7 @@ Bookmark.prototype.showBookmarkList = function(){
 				var vid = $(this).attr('vid');
 				console.log(vid);
 				that.deleteBookmark(vid);
+				$(this).hide();
 			}
 		});
 
@@ -206,29 +207,28 @@ Bookmark.prototype.showBookmarkList = function(){
 	});	
 };
 
+//북마크 삭제 메소드
 Bookmark.prototype.deleteBookmark = function(vid){
 	var bookmark = config.bookmarkList.newsList,
 		length = bookmark.length,
-		ws = new cloudmine.WebService({
-		  appid: 'a53f225b5b9b465fac29085d6f98b18f',
-		  apikey: '02e619ec0ee34bccb975fca744e79717'
-		});
+		news = '',
+		check = false,
+		doc = this.doc;
 
 	for(var i = 0; i < length; i++){
 		if(vid === bookmark[i].vid){
-			if(confirm("삭제하시겠습니까?")){
-				ws.destroy('vid = "'+vid+ '"').on('success', function(data, response){
-					console.log("success");
-					console.log(data,response);
-				});
+			check = true;
+		} else {
+			news = bookmark[i];
+		}
+	}
 
-				ws.destroy('vid = "'+vid+ '"').on('error',function(data,response){
-					console.log("failed");
-					console.log(data,response);
-				});
-			} else {
-				return;
-			}
+	if(check === true){
+		if(confirm("삭제하시겠습니까?")){
+			config.bookMarkList = news;
+			doc.trigger("reShowBookmark");
+		} else {
+			return;
 		}
 	}
 };

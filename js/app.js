@@ -320,6 +320,11 @@ $(function() {
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
 
+	$doc.bind('reShowBookmark', function(){
+		bookmark.showBookmarkList();
+		storage.saveData();
+	});
+
 	$doc.bind('setBookmark', function(){
 		storage.saveData();
 	});
