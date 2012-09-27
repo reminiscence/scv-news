@@ -106,7 +106,7 @@ BagNews.prototype.buildList = function (){
 
 						bookmark = config.bookmarkList;
 						count = config.count; //이전 데이터 개수를 넣어줌.
-						console.log(count);
+						
 						bookmark.uid = response.authResponse.userID;
 						list.vid = $box.attr('vid');
 						list.newsId = $box.attr('newsid');
@@ -224,6 +224,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 		if(confirm("삭제하시겠습니까?")){
 			config.bookmarkList.newsList = [];
 			config.bookmarkList.newsList = news;
+			config.count--;
 			doc.trigger("reShowBookmark");
 		} else {
 			return;
