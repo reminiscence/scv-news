@@ -194,6 +194,7 @@ Bookmark.prototype.showBookmarkList = function(){
 			} else {
 				var vid = $(this).attr('vid');
 				console.log(vid);
+				this.deleteBookmark(vid);
 			}
 		});
 
@@ -204,8 +205,31 @@ Bookmark.prototype.showBookmarkList = function(){
 	});	
 };
 
-Bookmark.prototype.deleteBookmark = function(){
+Bookmark.prototype.deleteBookmark = function(vid){
+	var bookmark = config.bookmarkList.newsList,
+		length = bookmark.length,
+		ws = new cloudmine.WebService({
+		  appid: 'a53f225b5b9b465fac29085d6f98b18f',
+		  apikey: '02e619ec0ee34bccb975fca744e79717'
+		});
 
+	for(var i = 0; i < length; i++){
+		if(vid === bookmark[i].vid){
+			if(confirm("삭제하시겠습니까?")){
+				ws.delete(newsList[0]).on('success', function(data, response){
+					console.log("success");
+					console.log(data,response);
+				});
+
+				ws.delete(newsList[0]).on('error',function(data,response){
+					console.log("failed");
+					console.log(data,response);
+				});
+			} else {
+				return;
+			}
+		}
+	}
 };
 
 function ConfigBox(){
