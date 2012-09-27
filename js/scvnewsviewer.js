@@ -184,16 +184,17 @@ Bookmark.prototype.showBookmarkList = function(){
 			$.tmpl(tmpl, news).appendTo($bookmarkBox);
 		}
 
-		$bookmarkBox.find('.box').click(function(){
-			config.vid = $(this).attr('vid');
-			doc.trigger('clickBookmark');
-			doc.trigger('toggleControl');
-		});
-
-		$('#btn-deleteBookmark').click(function(){
-			var vid = $(this).attr('vid');
-			console.log(vid);
-			//this.deleteBookmark();
+		$bookmarkBox.find('.box').click(function(e){
+			var $target = $(e.target),
+				$box = $(this);
+			if($target.attr('id') != 'btn-deleteBookmark' && $target.attr('class') != 'icon-trash'){
+				config.vid = $(this).attr('vid');
+				doc.trigger('clickBookmark');
+				doc.trigger('toggleControl');
+			} else {
+				var vid = $(this).attr('vid');
+				console.log(vid);
+			}
 		});
 
 		$('#closebookmarkBox').click(function(){
