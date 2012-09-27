@@ -146,7 +146,7 @@ BagNews.prototype.controlView = function(){
 	this.buildList();
 };
 
-function Bookmark (){}
+function Bookmark (){
 	this.doc = $(document.body);
 }
 
@@ -273,16 +273,15 @@ DataLoader.prototype.loadArticle = function(){
 };
 
 function DataStorage(){
-
-}
-
-DataStorage.prototype.saveData = function(){
-	var bookmark = config.bookmarkList;
-
-	var ws = new cloudmine.WebService({
+	this.ws = new cloudmine.WebService({
 	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
 	  apikey: '02e619ec0ee34bccb975fca744e79717'
 	});
+}
+
+DataStorage.prototype.saveData = function(){
+	var bookmark = config.bookmarkList,
+		ws = this.ws;
 
 	ws.set('bookmark', bookmark).on('success', function(data, response){
 		console.log(data, response);
@@ -291,14 +290,10 @@ DataStorage.prototype.saveData = function(){
 };
 
 DataStorage.prototype.loadBookmarkData = function(){
-	var ws = new cloudmine.WebService({
-	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
-	  apikey: '02e619ec0ee34bccb975fca744e79717'
-	});
-
-	var length = 0;
-
-	var response = ws.get('bookmark');
+	var ws = this.ws,
+		length = 0,
+		response = ws.get('bookmark');
+		
 	response.on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;
