@@ -224,7 +224,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 
 	if(check === true){
 		if(confirm("삭제하시겠습니까?")){
-			config.bookMarkList = news;
+			config.bookmarkList = news;
 			doc.trigger("reShowBookmark");
 		} else {
 			return;
