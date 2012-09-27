@@ -217,7 +217,7 @@ Bookmark.prototype.deleteBookmark = function(vid){
 	for(var i = 0; i < length; i++){
 		if(vid === bookmark[i].vid){
 			if(confirm("삭제하시겠습니까?")){
-				ws.delete(newsList[0]).on('success', function(data, response){
+				ws.delete('newsList[vid="'+vid+'"]').on('success', function(data, response){
 					console.log("success");
 					console.log(data,response);
 				});
