@@ -171,7 +171,7 @@ Bookmark.prototype.showBookmarkList = function(){
 
 		$bookmarkBox.find('.box').click(function(){
 			config.vid = $(this).attr('vid');
-			doc.trigger('clickBox');
+			doc.trigger('clickBookmark');
 			doc.trigger('toggleControl');
 		});
 
@@ -293,7 +293,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 	var ws = this.ws,
 		length = 0,
 		response = ws.get('bookmark');
-		
+
 	response.on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;

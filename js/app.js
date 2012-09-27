@@ -240,6 +240,13 @@ $(function() {
 		bagNewsViewer.setNewsList(config.vid,clickList);
 	});
 
+	//bookmark 리스트에서 기사 하나를 선택 시 -> 화면에 새로 뿌려줌
+	$doc.bind('clickBookmark',function(){
+		var clickList = false;
+		BV.init(); //플레이어 control bar 도 초기화
+		bagNewsViewer.setNewsList(config.vid,clickList);
+	});
+
 	$prevButton.bind('click', function(){
 		$('#configbox').find('#configModal').modal('hide');
 		$('#selectbox').find('#selectModal').modal('hide');
