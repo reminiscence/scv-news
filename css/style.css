@@ -134,17 +134,13 @@
 }
 
 #btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
+#btn-deleteBookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
 
 #boxList {
     width:50%;
     height:148px;
     border:1px solid #000;
     overflow-x: auto;
-}
-
-.horizentalBox {
-    width:3000px;
-    height:inherit;
 }
 
 .title { 

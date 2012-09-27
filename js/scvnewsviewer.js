@@ -120,6 +120,8 @@ BagNews.prototype.buildList = function (){
 						config.bookmarkList = bookmark;
 						config.count = ++count;
 
+						alert("항목이 추가되었습니다.");
+
 						doc.trigger('setBookmark');
 					} else { 
 						//로그인 하도록 유도
@@ -188,11 +190,21 @@ Bookmark.prototype.showBookmarkList = function(){
 			doc.trigger('toggleControl');
 		});
 
+		$('#btn-deleteBookmark').click(function(){
+			var vid = $(this).attr('vid');
+			console.log(vid);
+			//this.deleteBookmark();
+		});
+
 		$('#closebookmarkBox').click(function(){
 			$('#bookmarkbox').fadeOut();
 			config.check = 7;
 		});
 	});	
+};
+
+Bookmark.prototype.deleteBookmark = function(){
+
 };
 
 function ConfigBox(){
