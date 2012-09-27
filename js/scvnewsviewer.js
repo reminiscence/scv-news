@@ -210,15 +210,15 @@ Bookmark.prototype.showBookmarkList = function(){
 Bookmark.prototype.deleteBookmark = function(vid){
 	var bookmark = config.bookmarkList.newsList,
 		length = bookmark.length,
-		news = '',
+		news = [],
 		check = false,
 		doc = this.doc;
 
-	for(var i = 0; i < length; i++){
+	for(var i = 0, var j = 0; i < length; i++, j++){
 		if(vid === bookmark[i].vid){
 			check = true;
 		} else {
-			news = bookmark[i];
+			news[j]= bookmark[i];
 		}
 	}
 
