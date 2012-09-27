@@ -33,7 +33,7 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 			vidList[i] = config.getId(newsList[i].videoUrl);
 		}
 	} else {
-		for(var = i = 0; i < bookmark.length; i++){
+		for(var i = 0; i < bookmark.length; i++){
 			vidList[i] = bookmark[i].vid;
 		}
 	}
