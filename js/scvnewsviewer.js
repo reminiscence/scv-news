@@ -170,7 +170,8 @@ Bookmark.prototype.showBookmarkList = function(){
 		length = 0,
 		news = '',
 		$bookmarkBox = $('#bookmarkbox'),
-		doc = this.doc;
+		doc = this.doc
+		that = this;
 
 	if(bookmark != undefined){
 		length = bookmark.length;
@@ -194,7 +195,7 @@ Bookmark.prototype.showBookmarkList = function(){
 			} else {
 				var vid = $(this).attr('vid');
 				console.log(vid);
-				this.deleteBookmark(vid);
+				that.deleteBookmark(vid);
 			}
 		});
 
