@@ -20,6 +20,12 @@ Bookmark.prototype.showBookmarkList = function(){
 			$.tmpl(tmpl, news).appendTo($bookmarkBox);
 		}
 
+		$bookmarkBox.find('.box').click(function(){
+			config.vid = $(this).attr('vid');
+			doc.trigger('clickBox');
+			doc.trigger('toggleControl');
+		});
+
 		$('#closebookmarkBox').click(function(){
 			$('#bookmarkbox').fadeOut();
 			config.check = 7;
