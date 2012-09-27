@@ -336,14 +336,13 @@ Headline.prototype.showNewsTitle = function(){
 		doc = this.doc;
 
 	if(newsList[0].title === undefined){
-		console.log("...");
 		return;
 	}
 		
 
 	for(var i = 0; i < 15; i++){
 		randNum = Math.floor(Math.random()* newsList.length);
-
+		console.log(randNum);
 		str = newsList[randNum].title;
 		news[i] = {};
 		if($(window).innerWidth() > 600)
