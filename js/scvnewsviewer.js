@@ -335,8 +335,11 @@ Headline.prototype.showNewsTitle = function(){
 		titlebox = this.title,
 		doc = this.doc;
 
-	if(newsList[0].title === undefined)
+	if(newsList[0].title === undefined){
+		console.log("...");
 		return;
+	}
+		
 
 	for(var i = 0; i < 15; i++){
 		randNum = Math.floor(Math.random()* newsList.length);
