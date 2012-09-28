@@ -305,6 +305,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 			type : "get",
 			success : function(newsData){
 				config.newsList = newsData;
+				console.log("tsetset");
 				console.log(config.newsList);
 				//doc.trigger('loadedData');	
 			}
