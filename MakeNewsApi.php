@@ -24,7 +24,11 @@
 		exit;
 
 	$list = array();
-	$mbc = array(), $sbs = array(), $ytn = array(), $mbn = array(), $yonhap = array();
+	$mbc = array();
+	$sbs = array();
+	$ytn = array();
+	$mbn = array();
+	$yonhap = array();
 	while($tmp = mysql_fetch_array($result)){
 		$cpKorName=$tmp['cpKorName'];
 		$newsId=$tmp['newsId'];
@@ -35,36 +39,55 @@
 		$regTime=$tmp['regTime'];
 		$totalRowCount = $tmp['totalRowCount'];
 
-		//$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
+		$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 		
-		//$list[] = $arr;
+		$list[] = $arr;
 
 		switch ($cpKorName) {
-			case 'MBC':
+			case 'mbc':
 				$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 				$mbc[] = $arr;
 				break;
-			case 'SBS':
+			case 'sbs':
 				$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 				$sbs[] = $arr;
 				break;
-			case 'YTN':
+			case 'ytn':
 				$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 				$ytn[] = $arr;
 				break;
-			case 'MBN':
+			case 'mbn':
 				$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 				$mbn[] = $arr;
 				break;
-			case '연합뉴스':
+			case 'yonhap':
 				$arr = array('newsId' => $newsId, 'cpKorName'=>$cpKorName, 'title'=>urldecode($title), 'imageUrl'=>$imageUrl, 'videoUrl'=>$videoUrl, 'regDate'=>$regDate, 'regTime'=>$regTime);
 				$yonhap[] = $arr;
-				break;	
+				break;
 		}
 		$pageCount++;
 	}
-	$list[]
-	$newsApi['data'] = $list;
+	switch($_GET['cpKorName']){
+		case 'mbc':
+			$newsApi['data'] = $mbc;	
+			break;
+		case 'sbs':
+			$newsApi['data'] = $sbs;
+			break;
+		case 'ytn':
+			$newsApi['data'] = $ytn;
+			break;
+		case 'mbn':
+			$newsApi['data'] = $mbn;
+			break;
+		case 'yonhap':
+			$newsApi['data'] = $yonhap;
+			break;
+		default :
+			$newsApi['data'] = $list;
+	}
+	
+	// $newsApi['data'] = $list;
 	$newsApi['totalPageCount']=$pageCount;
 	echo json_encode($newsApi);
 	
