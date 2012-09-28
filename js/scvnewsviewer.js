@@ -298,16 +298,35 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		date = this.date;
 
 	if(!cp){
-		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
-			config.newsList = data.tv.newsList.data;
-			doc.trigger('loadedData');
+		$.ajax({
+			url : "./MakeNewsApi.php", 
+			dataType : "json",
+			type : "get",
+			success : function(newsData){
+				config.newsList = newsData;
+				doc.trigger('loadedData');	
+			}
 		});
+		// $.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
+		// 	config.newsList = data.tv.newsList.data;
+		// 	doc.trigger('loadedData');
+		// });
 	}
 	else {
-		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
-			config.newsList = data.tv.newsList.data;
-			doc.trigger('loadedData');
+		var url = "./MakeNewsApi.php?cpKorName="+cp+"&regDate=#{regdate}";
+		$.ajax({
+			url : url.replace("#{regdate}", date), 
+			dataType : "json",
+			type : "get",
+			success : function(newsData){
+				config.newsList = newsData;
+				doc.trigger('loadedData');	
+			}
 		});
+		// $.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
+		// 	config.newsList = data.tv.newsList.data;
+		// 	doc.trigger('loadedData');
+		// });
 	}
 };
 
