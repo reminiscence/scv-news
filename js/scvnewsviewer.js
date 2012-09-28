@@ -304,7 +304,8 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 			type : "get",
 			success : function(newsData){
 				config.newsList = newsData;
-				doc.trigger('loadedData');	
+				console.log(config.newsList);
+				//doc.trigger('loadedData');	
 			}
 		});
 		// $.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
@@ -320,7 +321,8 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 			type : "get",
 			success : function(newsData){
 				config.newsList = newsData;
-				doc.trigger('loadedData');	
+				console.log(config.newsList);
+				//doc.trigger('loadedData');	
 			}
 		});
 		// $.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
