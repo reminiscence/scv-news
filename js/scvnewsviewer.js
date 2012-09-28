@@ -308,6 +308,8 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 				console.log("tsetset");
 				console.log(config.newsList);
 				//doc.trigger('loadedData');	
+			}, error : function(data){
+				console.log(data);
 			}
 		});
 		console.log("test1");
