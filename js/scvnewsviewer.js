@@ -387,7 +387,8 @@ Headline.prototype.showNewsTitle = function(){
 			news[i].tit = str.substring(0, 10) + '...';
 		news[i].vid = config.getId(newsList[randNum].videoUrl);
 	}
-	title.empty();
+
+	titlebox.empty();
 	$.get('./jst/headline-template.jst',function(tmpl){
 		$.tmpl(tmpl, news).appendTo(titlebox);
 	 	$('#slides').slides({
