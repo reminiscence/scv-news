@@ -301,7 +301,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		console.log("test");
 		$.ajax({
 			url : "./MakeNewsApi.php", 
-			dataType : "jsonp",
+			dataType : "json",
 			type : "get",
 			success : function(newsData){
 				config.newsList = newsData;
