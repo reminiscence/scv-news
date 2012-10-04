@@ -377,7 +377,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 	});
 
 	response.on('error',function(data,response){
-		config.bookmarkList = {uid : 0, newsList : []};
+		config.bookmarkList = {newsList : []};
 		config.count = length;
 	});
 };
