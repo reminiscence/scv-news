@@ -362,7 +362,6 @@ DataStorage.prototype.saveData = function(){
 	ws.set(config.uid, bookmark).on('success', function(data, response){
 		console.log(data, response);
 	});
-
 };
 
 DataStorage.prototype.loadBookmarkData = function(){
@@ -371,10 +370,11 @@ DataStorage.prototype.loadBookmarkData = function(){
 		response = ws.get(config.uid);
 
 	response.on('success', function(data, response){
-		config.bookmarkList = data.bookmark;
-		console.log(config.bookmarkList);
-		length = config.bookmarkList.newsList.length;
-		config.count = length;
+		console.log(data);
+		//config.bookmarkList = data.bookmark;
+		//console.log(config.bookmarkList);
+		//length = config.bookmarkList.newsList.length;
+		//config.count = length;
 	});
 
 	response.on('error',function(data,response){
