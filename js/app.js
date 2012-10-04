@@ -197,6 +197,9 @@ $(function() {
 				if(response.status === 'connected') {
 					config.uid = response.authResponse.userID;
 					storage.loadBookmarkData();
+				} else {
+					config.uid = 0;
+					config.bookmarkList = {newsList : []};
 				}
 			});
 			bookmark.showBookmarkList();
