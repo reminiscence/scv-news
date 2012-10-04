@@ -60,19 +60,6 @@ $(function() {
 	
 	//event
 	//facebook login
-	$('#login').click(function(){
-		$doc.trigger('clickLogin');
-		// FB.login(function(response) {
-		// 	if (response.session) {
-		// 		console.log("login success");
-		// 		$('#logout').show();
-		// 		$('#login').hide();
-		// 	} else {
-		// 		console.log("login  cancel");
-		// 	}
-		// });
-	});
-
 	$('#logout').click(function(){
 		FB.logout(function(response) {
 			$('#login').show();
