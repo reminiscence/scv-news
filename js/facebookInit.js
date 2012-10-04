@@ -3,7 +3,6 @@ window.fbAsyncInit = function() {
 		channelUrl : 'scv.mistrie.pe.kr/channel.html', 
 		status: true, 
 		cookie: true, 
-		xfbml: true,  
-		oauth:true 
+		xfbml: true
 	});
 };
