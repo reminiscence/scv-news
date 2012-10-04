@@ -173,6 +173,7 @@ $(function() {
 		if(config.check != 4){
 			FB.getLoginStatus(function (response) {
 				if(response.status === 'connected') {
+					config.uid = response.authResponse.userID;
 					storage.loadBookmarkData();
 				}
 			});
