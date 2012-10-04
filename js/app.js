@@ -33,10 +33,10 @@ $(function() {
 
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
-			config.uid = response.authResponse.userID;
-			storage.loadBookmarkData();
 			$('#login').hide();
 			$('#logout').show();
+			config.uid = response.authResponse.userID;
+			storage.loadBookmarkData();
 		}
 	});
 	dataLoader.loadData();
