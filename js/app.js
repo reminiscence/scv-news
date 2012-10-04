@@ -34,6 +34,7 @@ $(function() {
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
 			storage.loadBookmarkData();
+			$('#logout').show();
 		}
 	});
 	dataLoader.loadData();
