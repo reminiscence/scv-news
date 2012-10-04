@@ -33,6 +33,7 @@ $(function() {
 
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
+			config.uid = response.authResponse.userID;
 			storage.loadBookmarkData();
 			$('#logout').show();
 		}
@@ -192,6 +193,12 @@ $(function() {
 			$('#bookmarkbox').fadeOut();
 			config.check = 7;
 		}
+	});
+
+	$('#logout').click(function(){
+		FB.logout(function(response) {
+		  // user is now logged out
+		});
 	});
 
 	//trigger & bind event
