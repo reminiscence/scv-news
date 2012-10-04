@@ -107,7 +107,7 @@ BagNews.prototype.buildList = function (){
 						bookmark = config.bookmarkList;
 						count = config.count; //이전 데이터 개수를 넣어줌.
 						
-						bookmark.uid = response.authResponse.userID;
+						config.uid = response.authResponse.userID;
 						list.vid = $box.attr('vid');
 						list.newsId = $box.attr('newsid');
 						list.imageUrl = $box.children('img').attr('src');
@@ -359,7 +359,7 @@ DataStorage.prototype.saveData = function(){
 	var bookmark = config.bookmarkList,
 		ws = this.ws;
 
-	ws.set('bookmark', bookmark).on('success', function(data, response){
+	ws.set(config.uid, bookmark).on('success', function(data, response){
 		console.log(data, response);
 	});
 
@@ -368,7 +368,7 @@ DataStorage.prototype.saveData = function(){
 DataStorage.prototype.loadBookmarkData = function(){
 	var ws = this.ws,
 		length = 0,
-		response = ws.get('bookmark');
+		response = ws.get(config.uid);
 
 	response.on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
@@ -459,8 +459,7 @@ SelectCpBox.prototype.init = function(cpKorName){
 		}
 
 		$('#closeSelectBox').click(function(){
-			doc.trigger('closeSB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
-						//추측1. 태그가 동적으로 만들어지므로, app.js에서 작동 안함
+			doc.trigger('closeSB');
 		});
 
 		$('#submit').click(function(){

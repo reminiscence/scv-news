@@ -10,7 +10,7 @@ DataStorage.prototype.saveData = function(){
 	  apikey: '02e619ec0ee34bccb975fca744e79717'
 	});
 
-	ws.set('bookmark', bookmark).on('success', function(data, response){
+	ws.set(config.uid, bookmark).on('success', function(data, response){
 		console.log(data, response);
 	});
 
@@ -24,7 +24,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 
 	var length = 0;
 
-	var response = ws.get('bookmark');
+	var response = ws.get(config.uid);
 	response.on('success', function(data, response){
 		config.bookmarkList = data.bookmark;
 		length = config.bookmarkList.newsList.length;
