@@ -63,10 +63,20 @@ $(function() {
 	$('#login').click(function(){
 		FB.login(function(response) {
 			if (response.session) {
-				// user successfully logged in
+				config.uid = response.authResponse.userID;
+				storage.loadBookmarkData();
+				$('#logout').show();
+				$('#login').hide();
 			} else {
 				// user cancelled login
 			}
+		});
+	});
+
+	$('#logout').click(function(){
+		FB.logout(function(response) {
+			$('#login').show();
+			$('#logout').hide();
 		});
 	});
 
@@ -204,12 +214,6 @@ $(function() {
 			$('#bookmarkbox').fadeOut();
 			config.check = 7;
 		}
-	});
-
-	$('#logout').click(function(){
-		FB.logout(function(response) {
-		  // user is now logged out
-		});
 	});
 
 	//trigger & bind event
