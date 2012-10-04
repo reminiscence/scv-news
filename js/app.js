@@ -60,6 +60,17 @@ $(function() {
 	
 	//event
 	//facebook login
+	$('#login').click(function(){
+		FB.login(function(response){
+			if(response.session){
+				$('#login').hide();
+				$('#logout').show();
+			} else {
+				;
+			}
+		});
+	});
+
 	$('#logout').click(function(){
 		FB.logout(function(response) {
 			$('#login').show();
