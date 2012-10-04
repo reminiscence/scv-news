@@ -367,14 +367,15 @@ DataStorage.prototype.saveData = function(){
 DataStorage.prototype.loadBookmarkData = function(){
 	var ws = this.ws,
 		length = 0,
-		response = ws.get(config.uid);
+		uid = config.uid,
+		response = ws.get(uid);
 
 	response.on('success', function(data, response){
-		console.log(data);
-		//config.bookmarkList = data.bookmark;
-		//console.log(config.bookmarkList);
-		//length = config.bookmarkList.newsList.length;
-		//config.count = length;
+		//console.log(data[uid]);
+		config.bookmarkList = data[uid];
+		console.log(config.bookmarkList);
+		length = config.bookmarkList.newsList.length;
+		config.count = length;
 	});
 
 	response.on('error',function(data,response){
