@@ -373,7 +373,6 @@ DataStorage.prototype.loadBookmarkData = function(){
 	response.on('success', function(data, response){
 		//console.log(data[uid]);
 		config.bookmarkList = data[uid];
-		console.log(config.bookmarkList);
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 	});

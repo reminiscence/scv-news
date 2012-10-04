@@ -59,6 +59,17 @@ $(function() {
 	var infoToggle = true;//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
 	
 	//event
+	//facebook login
+	$('#login').click(function(){
+		FB.login(function(response) {
+			if (response.session) {
+				// user successfully logged in
+			} else {
+				// user cancelled login
+			}
+		});
+	});
+
 	//뉴스사 선택 event
 	$cpButton.click(function(){
 		if(config.check != 0){
