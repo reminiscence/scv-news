@@ -63,7 +63,7 @@ $(function() {
 	//facebook login
 	$('#login').click(function(){
 		FB.login(function(response){
-			if(response.session){
+			if(response.authResponse){
 				$('#login').hide();
 				$('#logout').show();
 			} else {
