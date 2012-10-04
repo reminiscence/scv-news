@@ -66,8 +66,7 @@ $(function() {
 			if(response.authResponse){
 				$('#login').hide();
 				$('#logout').show();
-			} else {
-				;
+				storage.loadBookmarkData();
 			}
 		});
 	});
@@ -196,7 +195,7 @@ $(function() {
 			FB.getLoginStatus(function (response) {
 				if(response.status === 'connected') {
 					config.uid = response.authResponse.userID;
-					storage.loadBookmarkData();
+					
 				} else {
 					config.uid = 0;
 					config.bookmarkList = {newsList : []};
