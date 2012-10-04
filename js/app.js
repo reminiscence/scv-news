@@ -35,6 +35,7 @@ $(function() {
 		if(response.status === 'connected') {
 			config.uid = response.authResponse.userID;
 			storage.loadBookmarkData();
+			$('#login').hide();
 			$('#logout').show();
 		}
 	});
