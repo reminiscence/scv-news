@@ -194,11 +194,10 @@ $(function() {
 		if(config.check != 4){
 			FB.getLoginStatus(function (response) {
 				if(response.status === 'connected') {
-					config.uid = response.authResponse.userID;
-					
+					config.uid = response.authResponse.userID; //uid 세팅, 모아보기 리스트 로드 시 uid를 key값으로 사용하여 데이터 가져옴.
 				} else {
 					config.uid = 0;
-					config.bookmarkList = {newsList : []};
+					config.bookmarkList = {newsList : []}; //로그아웃이 됬을 경우, bookmarkList와 uid 값을 초기화시켜줌.
 				}
 			});
 			bookmark.showBookmarkList();
