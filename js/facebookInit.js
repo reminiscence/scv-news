@@ -3,3 +3,17 @@ window.fbAsyncInit = function() {
 		xfbml: true});
 };
 
+$('#login').click(function(){
+	login();
+});
+
+function login(){
+	FB.login(function(response){
+		LoginSuccessGo();
+	});
+}
+
+function LoginSuccessGo(){
+	$('#login').hide();
+	$('#logout').show();
+}
