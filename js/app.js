@@ -61,16 +61,17 @@ $(function() {
 	//event
 	//facebook login
 	$('#login').click(function(){
-		FB.login(function(response) {
-			
-		},{cb : test});
+		$doc.trigger('clickLogin');
+		// FB.login(function(response) {
+		// 	if (response.session) {
+		// 		console.log("login success");
+		// 		$('#logout').show();
+		// 		$('#login').hide();
+		// 	} else {
+		// 		console.log("login  cancel");
+		// 	}
+		// });
 	});
-
-	function test(){
-		console.log("login success");
-		$('#logout').show();
-		$('#login').hide();
-	}
 
 	$('#logout').click(function(){
 		FB.logout(function(response) {
