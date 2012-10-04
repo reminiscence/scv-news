@@ -62,15 +62,15 @@ $(function() {
 	//facebook login
 	$('#login').click(function(){
 		FB.login(function(response) {
-			if (response.session) {
-				console.log("login success");
-				$('#logout').show();
-				$('#login').hide();
-			} else {
-				console.log("login  cancel");
-			}
-		});
+			
+		},{cb : test});
 	});
+
+	function test(){
+		console.log("login success");
+		$('#logout').show();
+		$('#login').hide();
+	}
 
 	$('#logout').click(function(){
 		FB.logout(function(response) {
