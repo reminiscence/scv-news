@@ -63,12 +63,13 @@ $(function() {
 	$('#login').click(function(){
 		FB.login(function(response) {
 			if (response.session) {
+				console.log("login success");
 				config.uid = response.authResponse.userID;
 				storage.loadBookmarkData();
 				$('#logout').show();
 				$('#login').hide();
 			} else {
-				// user cancelled login
+				console.log("login  cancel");
 			}
 		});
 	});
