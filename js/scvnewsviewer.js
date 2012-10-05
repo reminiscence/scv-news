@@ -300,7 +300,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 	if(!cp){
 		console.log("test");
 		$.ajax({
-			url : "./MakeNewsApi.php", 
+			url : "../MakeNewsApi.php", 
 			dataType : "json",
 			type : "get",
 			success : function(newsData){
@@ -319,7 +319,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		// });
 	}
 	else {
-		var url = "./MakeNewsApi.php?cpKorName="+cp+"&regDate=#{regdate}";
+		var url = "../MakeNewsApi.php?cpKorName="+cp+"&regDate=#{regdate}";
 		$.ajax({
 			url : url.replace("#{regdate}", date), 
 			dataType : "json",
