@@ -298,7 +298,6 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		date = this.date;
 
 	if(!cp){
-		console.log("test");
 		// $.ajax({
 		// 	url : "./php/MakeNewsApi.php", 
 		// 	dataType : "jsonp",
@@ -360,7 +359,7 @@ DataStorage.prototype.saveData = function(){
 		ws = this.ws;
 
 	ws.set(config.uid, bookmark).on('success', function(data, response){
-		console.log(data, response);
+		//console.log(data, response);
 	});
 };
 
