@@ -368,10 +368,10 @@ span.mid_tit {
 @media screen and (max-width : 768px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    .headline { bottom : 185px; }
-    .menu { bottom : 118px; left : 400px; }
+    .headline { bottom : 165px; }
+    .menu { bottom : 98px; left : 400px; }
     #big-video-control{ background: rgba(0,0,0,0.2); }
-    .control-bar {bottom : 145px;}
+    .control-bar {bottom : 125px;}
     .fb-login { bottom: 90px; left:20px;}
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
