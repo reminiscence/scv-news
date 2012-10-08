@@ -312,7 +312,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		// 	}
 		// });
 		// console.log("test1");
-		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=100&regdate='+date+'&callback=?',function(data){
+		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=50&regdate='+date+'&callback=?',function(data){
 			config.newsList = data.tv.newsList.data;
 			doc.trigger('loadedData');
 		});
@@ -329,7 +329,7 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		// 		//doc.trigger('loadedData');	
 		// 	}
 		// });
-		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=100&regdate='+date+'&callback=?',function(data){
+		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=50&regdate='+date+'&callback=?',function(data){
 			config.newsList = data.tv.newsList.data;
 			doc.trigger('loadedData');
 		});
