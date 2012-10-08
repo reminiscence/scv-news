@@ -365,15 +365,13 @@ span.mid_tit {
 }
 
 /*media query*/
-@media screen and (max-width : 700px){
+@media screen and (max-width : 768px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    .headline {width:50%; height:10px; right:20px; background: rgba(0,0,0,0.2); }
-    .menu { background:rgba(0,0,0,0.2); width:41px; right: 10px;  }
-    .menu a { display : block; clear:both; margin : 3px;}
+    .headline { bottom : 185px; }
+    .menu { bottom : 118px; left : 400px; }
     #big-video-control{ background: rgba(0,0,0,0.2); }
-    .control-bar {width:58%;}
-    #big-video-control-timer{position:absolute;top:7px; right:5%;color:#fff;font-size:11px; width:55px;}
+    .control-bar {bottom : 145px;}
     .fb-login { bottom: 90px; left:20px;}
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
