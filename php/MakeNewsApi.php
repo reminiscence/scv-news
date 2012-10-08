@@ -1,5 +1,5 @@
 <?php
-	header("Content-Type: text/javascript; charset=utf-8");
+	header("Content-Type: text/html; charset=utf-8");
 
 	//DB값 있나 체크(있으면 update, 없으면 insert)
 	$conn = mysql_connect('localhost', 'root', '1234');
