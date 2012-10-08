@@ -12,8 +12,25 @@
     </head>
     <body>
         <div id="fb-root"></div>
-       <!-- <script type="text/javascript" src="js/facebookInit.js"></script> -->
-       <!--<script src="//connect.facebook.net/ko_KR/all.js"></script> -->
+        <script type="text/javascript">
+            window.fbAsyncInit = function() {
+                FB.init({appId: '524760984205471', 
+                    channelUrl : 'scv.mistrie.pe.kr/channel.html', 
+                    status: true, 
+                    cookie: true, 
+                    xfbml: true
+                    });
+            };
+
+            (function(d){
+                    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement('script'); js.id = id; js.async = true;
+                    js.src = "//connect.facebook.net/ko_KR/all.js";
+                    ref.parentNode.insertBefore(js, ref);
+            }(document));
+        </script>
+       <!-- <script src="//connect.facebook.net/ko_KR/all.js"></script> -->
         <div class="main">
             <div id="overview" class="box">
                 <h1 id="title"></h1>
@@ -70,8 +87,7 @@
     <script type="text/javascript" src="js/slides.jquery.js"></script>
     <script type="text/javascript" src="js/bigvideo.js"></script>
     <script type="text/javascript" src="js/config.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/scvnewsviewer.js"></script>
-    
+    <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
