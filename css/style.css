@@ -329,6 +329,7 @@ span.mid_tit {
 .fb-comments{ margin: 15px 0;}
 #login {position : absolute; top:30px; right : 10px; background: rgba(255,255,255,0.3); width: 70px; height : 20px; text-align: center; border-radius:5px; font-size:20px;}
 .flt {top : 30px; z-index: 1100;}
+.mvs {display: none;}
 
 
 /*  BigVideo Styles 
@@ -371,7 +372,7 @@ span.mid_tit {
     .headline { bottom : 165px;  width : 57%;}
     .menu { bottom : 70px; left : 20px; width : 59%;}
     .control-bar {bottom : 125px; width: 59%;}
-    #login, #logout { top : 10px; right: 130px;}
+    #login, #logout { top : 10px; }
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
     .content { height: 130px;}
