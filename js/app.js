@@ -61,14 +61,21 @@ $(function() {
 	
 	//event
 	//facebook login
-	$('#login').click(function(){
-		FB.login(function(response){
-			if(response.authResponse){
-				$('#login').hide();
-				$('#logout').show();
-				storage.loadBookmarkData();
-			}
-		});
+	// $('#login').click(function(){
+	// 	FB.login(function(response){
+	// 		if(response.authResponse){
+	// 			$('#login').hide();
+	// 			$('#logout').show();
+	// 			storage.loadBookmarkData();
+	// 		}
+	// 	});
+	// });
+	FB.Event.subscribe('auth.login', function(response) {
+		if(response.authResponse){
+			$('#login').hide();
+			$('#logout').show();
+			storage.loadBookmarkData();
+		}
 	});
 
 	$('#logout').click(function(){
