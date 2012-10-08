@@ -368,9 +368,9 @@ span.mid_tit {
 @media screen and (max-width : 768px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    .headline { bottom : 165px; }
-    .menu { bottom : 98px; left : 400px; }
-    .control-bar {bottom : 125px;}
+    .headline { bottom : 165px;  width : 57%;}
+    .menu { bottom : 70px; left : 20px; width : 59%;}
+    .control-bar {bottom : 125px; width: 59%;}
     #login, #logout { top : 10px; right: 130px;}
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
