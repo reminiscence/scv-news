@@ -61,15 +61,7 @@ $(function() {
 	
 	//event
 	//facebook login
-	// $('#login').click(function(){
-	// 	FB.login(function(response){
-	// 		if(response.authResponse){
-	// 			$('#login').hide();
-	// 			$('#logout').show();
-	// 			storage.loadBookmarkData();
-	// 		}
-	// 	});
-	// });
+	//로그인 되는 순간, 로그아웃 버튼이 나오도록 변경.
 	FB.Event.subscribe('auth.login', function(response) {
 		if(response.authResponse){
 			$('#login').hide();
