@@ -348,7 +348,7 @@ span.mid_tit {
 }
 
 /*facebook comment plugin*/
-#myName{position : absolute; top:30px; right : 100px; width: 70px; height : 30px; text-align: center; color: #fff;}
+#myName{position : absolute; top:35px; right : 80px; width: 1600px; height : 30px; text-align: center; color: #fff;}
 #logout {position : absolute; top:30px; right : 10px; width: 70px; height : 30px; text-align: center; border-radius:5px; font-size:20px;}
 .fb-comments{ margin: 15px 0;}
 #login {position : absolute; top:30px; right : 10px;  width: 70px; height : 20px; text-align: center; border-radius:5px; font-size:20px;}
