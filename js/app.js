@@ -35,7 +35,7 @@ $(function() {
 		if(response.status === 'connected') {
 			console.log(response);
 			FB.api('/me', function(response) {
-				console.log(response.name);
+				$('#myName').html('<span>'+response.name+'님 환영합니다.</span>');
 			});
 			$('#login').hide();
 			$('#logout').show();
@@ -76,6 +76,7 @@ $(function() {
 
 	$('#logout').click(function(){
 		FB.logout(function(response) {
+			$('#myName').empty();
 			$('#login').show();
 			$('#logout').hide();
 		});
