@@ -13,6 +13,7 @@ var config = {
 	count : 0,
 	check : 7,
 	clickList : true,
+	lengthCount : 0,
 	getId : function getVid(videoUrl){
 		return videoUrl.replace("http://flvs.daum.net/flvPlayer.swf?vid=","");
 	}
