@@ -84,6 +84,7 @@ $(function() {
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#bookmarkbox').hide();
+			$('#more').hide();
 			$('#configbox').find('#configModal').modal('hide');
 
 			$('#selectbox').find('#selectModal').modal('show');
@@ -105,6 +106,7 @@ $(function() {
 			$('#listbox').hide();
 			$('#commentbox').hide();
 			$('#bookmarkbox').hide();
+			$('#more').hide();
 			$('#articlebox').fadeIn();
 
 			config.check = 1;
@@ -143,6 +145,7 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#bookmarkbox').hide();
+			$('#more').hide();
 			$('#commentbox').fadeIn();
 
 			config.check = 3;
@@ -178,6 +181,7 @@ $(function() {
 			$('#articlebox').hide();
 			$('#commentbox').hide();
 			$('#bookmarkbox').hide();
+			$('#more').hide();
 			$('#selectbox').find('#selectModal').modal('hide');
 			$('#configbox').find('#configModal').modal('show');
 			config.check = 5;
@@ -210,6 +214,7 @@ $(function() {
 			$('#listbox').hide();
 			$('#articlebox').hide();
 			$('#commentbox').hide();
+			$('#more').hide();
 			$('#bookmarkbox').fadeIn();
 
 			config.check = 4;
