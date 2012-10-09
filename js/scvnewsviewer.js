@@ -11,10 +11,11 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 		bookmark = config.bookmarkList.newsList;
 	config.currentNewsOrder = 0;
 
+	//클릭한 뉴스의 위치만 알아냄. 전체목록에서 클릭한 뉴스부터 뉴스 동영상이 재생됨. clickList = true : 리스트, clickList = false : 북마크리스트
 	if(vid&&(clickList == true)){
 		for(var i=0; i<length; i++){
 			if(vid === config.getId(newsList[i].videoUrl) ){
-				config.currentNewsOrder = i;  //클릭한 뉴스의 위치만 알아냄. 전체목록에서 클릭한 뉴스부터 뉴스 동영상이 재생됨.
+				config.currentNewsOrder = i;  
 				break;
 			}
 		}
@@ -27,6 +28,7 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 		}
 	}
 
+	//재생할 뉴스의 video Id를 뽑아냄.
 	if(clickList == true || clickList == undefined){
 		for(var i=0; i<length; i++){
 			vidList[i] = config.getId(newsList[i].videoUrl);
@@ -298,37 +300,12 @@ DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않
 		date = this.date;
 
 	if(!cp){
-		// $.ajax({
-		// 	url : "./php/MakeNewsApi.php", 
-		// 	dataType : "jsonp",
-		// 	type : "get",
-		// 	success : function(newsData){
-		// 		config.newsList = newsData;
-		// 		console.log("tsetset");
-		// 		console.log(config.newsList);
-		// 		//doc.trigger('loadedData');	
-		// 	}, error : function(data){
-		// 		console.log(data);
-		// 	}
-		// });
-		// console.log("test1");
 		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=10&regdate='+date+'&callback=?',function(data){
 			config.newsList = data.tv.newsList.data;
 			doc.trigger('loadedData');
 		});
 	}
 	else {
-		// var url = "./php/MakeNewsApi.php?cpKorName="+cp+"&regDate=#{regdate}";
-		// $.ajax({
-		// 	url : url.replace("#{regdate}", date), 
-		// 	dataType : "jsonp",
-		// 	type : "get",
-		// 	success : function(newsData){
-		// 		config.newsList = newsData;
-		// 		console.log(config.newsList);
-		// 		//doc.trigger('loadedData');	
-		// 	}
-		// });
 		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=10&regdate='+date+'&callback=?',function(data){
 			config.newsList = data.tv.newsList.data;
 			doc.trigger('loadedData');
@@ -384,10 +361,12 @@ DataStorage.prototype.loadBookmarkData = function(){
 
 function Headline(){
 	var $titlebox = $('.slides_container'),
-		$doc = $(document.body);
+		$doc = $(document.body),
+		$slides = $('#slides');
 
 	this.title = $titlebox,
-	this.doc = $doc;
+	this.doc = $doc.
+	this.slides = $slides;
 }
 
 Headline.prototype.showNewsTitle = function(){
@@ -396,7 +375,8 @@ Headline.prototype.showNewsTitle = function(){
 		news = [],
 		randNum = 0,
 		titlebox = this.title,
-		doc = this.doc;
+		doc = this.doc,
+		slideBox = this.slides;
 
 	if(newsList[0].title === undefined){
 		return;
@@ -417,7 +397,7 @@ Headline.prototype.showNewsTitle = function(){
 	titlebox.empty();
 	$.get('./jst/headline-template.jst',function(tmpl){
 		$.tmpl(tmpl, news).appendTo(titlebox);
-	 	$('#slides').slides({
+	 	slideBox.slides({
 	 		generatePagination: false,
 	 		play: 9000      
 		});
@@ -448,7 +428,8 @@ SelectCpBox.prototype.init = function(cpKorName){
 		doc = this.doc,
 		that = this;
 
-	$('#selectbox').empty();
+	// $('#selectbox').empty();
+	selectBox.empty();
 
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
