@@ -83,10 +83,12 @@ BagNews.prototype.buildList = function (){
 		count = 0
 		lengthCount = config.lengthCount;
 	
-	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
-	//$listbox.html();
-	$listbox.html('<div class="title-bar"><div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button></div>')
-	$listbox.append('<div class="boxlist">');
+	if(lengthCount == 0){
+		$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
+		$listbox.html('<div class="title-bar"><div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button></div>')
+		$listbox.append('<div class="boxlist">');
+	}
+	
 	$.get('./jst/news-template.jst',function(tmpl){
 		for(i=lengthCount; i<lengthCount + 10; i++){
 			news = newsList[i],
@@ -94,8 +96,11 @@ BagNews.prototype.buildList = function (){
 
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
+		if(lengthCount == 0){
+			$('#more').show();
+		}
 		config.lengthCount = i;
-		//$listbox.append('</div>');
+
 
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
@@ -191,7 +196,7 @@ Bookmark.prototype.showBookmarkList = function(){
 			news = bookmark[i];
 			$.tmpl(tmpl, news).appendTo($('.bookmarkboxlist'));
 		}
-		$bookmarkBox.append('</div>')
+
 		$bookmarkBox.find('.box').click(function(e){
 			var $target = $(e.target),
 				$box = $(this);
