@@ -220,7 +220,7 @@ $(function() {
 	});
 
 	$('#more').click(function(){
-		bagNewsViewer.bulidList();
+		bagNewsViewer.buildList();
 	});
 
 	//trigger & bind event
