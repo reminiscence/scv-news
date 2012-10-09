@@ -68,6 +68,9 @@ $(function() {
 	//로그인 되는 순간, 로그아웃 버튼이 나오도록 변경.
 	FB.Event.subscribe('auth.login', function(response) {
 		if(response.authResponse){
+			FB.api('/me', function(response) {
+				$('#myName').html('<span>'+response.name+'님 환영합니다.</span>');
+			});
 			$('#login').hide();
 			$('#logout').show();
 			storage.loadBookmarkData();
