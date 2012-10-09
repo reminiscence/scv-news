@@ -34,6 +34,9 @@ $(function() {
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
 			console.log(response);
+			FB.api('/me', function(response) {
+				console.log(response.name);
+			});
 			$('#login').hide();
 			$('#logout').show();
 			config.uid = response.authResponse.userID;
