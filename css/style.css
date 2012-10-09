@@ -31,7 +31,7 @@
     z-index: 1100;
     width:100%;
     height: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 #listbox .box, #bookmarkbox .box{
