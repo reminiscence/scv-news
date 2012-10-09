@@ -72,6 +72,7 @@ BagNews.prototype.showNewsInfo = function (){
 
 //뉴스 목록을 구성함
 BagNews.prototype.buildList = function (){
+	console.log("test");
 	var newsList = config.newsList,
 		$listbox = $('#listbox'),
 		length = newsList.length,
