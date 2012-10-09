@@ -365,7 +365,7 @@ function Headline(){
 		$slides = $('#slides');
 
 	this.title = $titlebox,
-	this.doc = $doc.
+	this.doc = $doc,
 	this.slides = $slides;
 }
 
