@@ -330,6 +330,8 @@ $(function() {
 
 		$('#selectbox').find('#selectModal').modal('hide');
 		config.check = 7;
+		config.lengthCount = 0; //뉴스 리스트 카운트 개수 초기화.
+
 		if(cp === 'all'){
 			dataLoader.loadData();
 		} else {

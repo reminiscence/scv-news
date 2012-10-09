@@ -72,7 +72,6 @@ BagNews.prototype.showNewsInfo = function (){
 
 //뉴스 목록을 구성함
 BagNews.prototype.buildList = function (){
-	console.log("test");
 	var newsList = config.newsList,
 		$listbox = $('#listbox'),
 		length = newsList.length,
@@ -81,7 +80,7 @@ BagNews.prototype.buildList = function (){
 		doc = this.doc,
 		bookmark = '',
 		count = 0
-		lengthCount = config.lengthCount;
+		lengthCount = config.lengthCount; //최초 리스트 10개씩만 출력, 더보기 버튼 누를시 lengthCount와 비교하여 다음 것을 추가로 불러옴.
 	
 	if(lengthCount == 0){
 		$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
