@@ -83,7 +83,7 @@ BagNews.prototype.buildList = function (){
 	
 	$listbox.empty(); //이전 항목을 지움. 새로이 불러올 항목을 $.get 부분에서 새로 뿌려줌
 	//$listbox.html();
-	$listbox.html('<div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button>')
+	$listbox.html('<div class="title-bar"><div class="list-title">'+newsList[i].cpKorName+'</div><button type="button" class="close" id="closeListBox" data-dismiss="modal" aria-hidden="true">×</button></div>')
 	$.get('./jst/news-template.jst',function(tmpl){
 		for(i=0; i<length; i++){
 			news = newsList[i],
@@ -428,8 +428,7 @@ SelectCpBox.prototype.init = function(cpKorName){
 		doc = this.doc,
 		that = this;
 
-	$('#selectbox').empty();
-	//selectBox.empty();
+	selectBox.empty();
 
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
