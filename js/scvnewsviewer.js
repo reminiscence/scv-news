@@ -90,7 +90,7 @@ BagNews.prototype.buildList = function (){
 			news = newsList[i],
 			news.vid = config.getId(news.videoUrl);
 
-			$.tmpl(tmpl, news).appendTo($listbox);
+			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
 		$listbox.append('</div>');
 
