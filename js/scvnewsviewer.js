@@ -428,8 +428,8 @@ SelectCpBox.prototype.init = function(cpKorName){
 		doc = this.doc,
 		that = this;
 
-	// $('#selectbox').empty();
-	selectBox.empty();
+	$('#selectbox').empty();
+	//selectBox.empty();
 
 	$.get('./jst/selectCpBox-template.jst',function(tmpl){
 		if(!cpKorName){
