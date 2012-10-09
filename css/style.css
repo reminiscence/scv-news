@@ -23,6 +23,14 @@
     width : 360px;
 }
 
+#more {
+    position : absolute;
+    bottom : 20px;
+    right : 20px;
+    width : 80px;
+    height: 30px;
+}
+
 #listbox, #bookmarkbox {
     background:rgba(255,255,255,.2);
     position:absolute;
@@ -53,7 +61,7 @@
 
 .boxlist, .bookmarkboxlist{
     width: 100%;
-    height: 90%;
+    height: 75%;
     margin:0;
     padding:0;
     overflow-y: auto;
