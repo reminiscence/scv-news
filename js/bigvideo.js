@@ -71,7 +71,8 @@
 				
 					$(vidEl+'_html5_api').css('width','100%').css('height','70%');
 					//$(vidEl+'_html5_api').css('width',windowH*mediaAspect).css('height','70%');
-					$(vidEl+'_flash_api').css('width',windowH*mediaAspect);
+					//$(vidEl+'_flash_api').css('width',windowH*mediaAspect);
+					$(vidEl+'_flash_api').css('width','100%').css('height','70%');
 				} else {
 					// is image
 					$('#big-video-image')
