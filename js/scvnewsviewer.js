@@ -96,9 +96,6 @@ BagNews.prototype.buildList = function (){
 
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
-		if(lengthCount == 0){
-			$('#more').show();
-		}
 		config.lengthCount = i;
 
 

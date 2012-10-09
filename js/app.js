@@ -125,8 +125,12 @@ $(function() {
 			$('#listbox').fadeIn();
 			
 			config.check = 2;
+			if(config.lengthCount < config.newsList.length){
+				$('#more').show();
+			}
 		}else{
 			$('#listbox').fadeOut();
+			$('#more').hide();
 			config.check = 7;
 		}
 	});
