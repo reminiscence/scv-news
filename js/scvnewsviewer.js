@@ -104,6 +104,7 @@ BagNews.prototype.buildList = function (){
 			var $target = $(e.target),
 				$box = $(this);
 			if($target.attr('id') != 'btn-bookmark' && $target.attr('class') != 'icon-star-empty'){
+				$('#more').hide();
 				config.vid = $(this).attr('vid');
 				doc.trigger('clickBox');
 				doc.trigger('toggleControl');
