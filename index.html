@@ -21,15 +21,8 @@
                     xfbml: true
                     });
             };
-
-            (function(d){
-                    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-                    if (d.getElementById(id)) {return;}
-                    js = d.createElement('script'); js.id = id; js.async = false;
-                    js.src = "//connect.facebook.net/ko_KR/all.js";
-                    ref.parentNode.insertBefore(js, ref);
-            }(document));
         </script>
+        <script id="facebook-jssdk"  src="//connect.facebook.net/ko_KR/all.js"></script>
         <div class="main">
             <div id="overview" class="box">
                 <h1 id="title"></h1>
