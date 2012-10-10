@@ -31,20 +31,6 @@ $(function() {
 	BV.init();
 	configBox.init();
 
-	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
-	var cookie = $.cookie('autoPlay');
-	console.log(cookie, typeof cookie);
-
-	if(cookie == null){
-		config.autoPlay = true;
-	} else {
-		if(cookie == "true"){
-			config.autoPlay = true;
-		} else {
-			configBox.setAutoPlay(cookie);
-		}
-	}
-
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
 			console.log(response);
