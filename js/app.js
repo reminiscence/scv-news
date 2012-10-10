@@ -40,6 +40,7 @@ $(function() {
 		config.autoPlay = true;
 	} else {
 		console.log("1");
+		console.log(cookie, typeof cookie, tes, typeof tes);
 		if(cookie == "true"){
 			console.log("2");
 			config.autoPlay = true;
