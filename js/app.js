@@ -37,7 +37,7 @@ $(function() {
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
-		if(cookie == 'true'){
+		if(cookie == "true"){
 			config.autoPlay = true;
 		} else {
 			config.autoPlay = false;
