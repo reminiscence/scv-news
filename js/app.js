@@ -40,7 +40,6 @@ $(function() {
 		if(cookie == "true"){
 			config.autoPlay = true;
 		} else {
-			config.autoPlay = false;
 			configBox.setAutoPlay(cookie);
 		}
 	}
