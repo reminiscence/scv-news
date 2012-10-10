@@ -30,7 +30,7 @@ $(function() {
 	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
 
 	var cookie = $.cookie('autoPlay');
-
+	console.log(cookie);
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
