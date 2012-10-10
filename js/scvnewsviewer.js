@@ -269,7 +269,7 @@ ConfigBox.prototype.init = function(){
 
 ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
-
+	console.log(cookie);
 	if(cookie == null){
 		if($active.text()=="ON"){
 			config.autoPlay = true;
@@ -284,6 +284,7 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	
 	//cookie에 autoPlay 설정 값 저장. expires는 1주일(7일)
 	$.cookie('autoPlay', config.autoPlay, {expires : 7, path : '/'});
+	console.log($.cookie('autoPlay'));
 };
 
 function DataLoader(){
