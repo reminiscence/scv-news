@@ -258,7 +258,6 @@ ConfigBox.prototype.init = function(){
 
 		//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
 		var cookie = $.cookie('autoPlay');
-		console.log(cookie, typeof cookie);
 
 		if(cookie == null){
 			config.autoPlay = true;
@@ -286,12 +285,10 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 
 	if($active.text()=="ON"){
-		console.log("on true");
 		config.autoPlay = true;
 		$active.button('toggle');
 	} else {
 		config.autoPlay = false;
-		console.log("off false");
 		$('#autoPlayOff').button('toggle');
 	}
 	
