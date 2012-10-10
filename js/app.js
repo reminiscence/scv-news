@@ -33,19 +33,15 @@ $(function() {
 
 	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
 	var cookie = $.cookie('autoPlay');
-	var tes = true;
-	console.log(cookie, typeof cookie, tes, typeof tes);
+	console.log(cookie, typeof cookie);
 
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
-		console.log("1");
 		console.log(cookie, typeof cookie, tes, typeof tes);
 		if(cookie == "true"){
-			console.log("2");
 			config.autoPlay = true;
 		} else {
-			console.log("3");
 			configBox.setAutoPlay(cookie);
 		}
 	}
