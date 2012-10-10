@@ -256,6 +256,20 @@ ConfigBox.prototype.init = function(){
 	$.get('./jst/configbox-template.jst', function(tmpl){
 		$.tmpl(tmpl).appendTo($configBox);
 
+		//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
+		var cookie = $.cookie('autoPlay');
+		console.log(cookie, typeof cookie);
+
+		if(cookie == null){
+			config.autoPlay = true;
+		} else {
+			if(cookie == "true"){
+				config.autoPlay = true;
+			} else {
+				configBox.setAutoPlay(cookie);
+			}
+		}
+
 		$('#closeConfigBox').click(function(){
 			doc.trigger('closeCB');//app.js 에 두면 작동을 안함...왜 그럴까? 질문!
 						//추측1. 태그가 동적으로 만들어지므로, app.js에서 작동 안함
@@ -270,24 +284,15 @@ ConfigBox.prototype.init = function(){
 ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 
-	console.log($('.active').button('toggle'), $('#autoPlayOn').button('toggle'), $('#autoPlayOff').button('toggle'));
-	if(cookie == null){
-		if($active.text()=="ON"){
-			console.log("on true");
-			config.autoPlay = true;
-			$active.button('toggle');
-		} else {
-			config.autoPlay = false;
-			console.log("off false");
-			$('#autoPlayOff').button('toggle');
-			console.log($('#autoPlayOff'));
-		}
+	if($active.text()=="ON"){
+		console.log("on true");
+		config.autoPlay = true;
+		$active.button('toggle');
 	} else {
-		console.log("cookie false");
 		config.autoPlay = false;
+		console.log("off false");
 		$('#autoPlayOff').button('toggle');
 		console.log($('#autoPlayOff'));
-
 	}
 	
 	//cookie에 autoPlay 설정 값 저장. expires는 1주일(7일)
