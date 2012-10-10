@@ -37,10 +37,8 @@ $(function() {
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
-		console.log(cookie, config.autoPlay);
 		config.autoPlay = cookie;
-		if(cookie == false){
-
+		if(!cookie){
 			configBox.setAutoPlay(cookie);
 		}
 	}
