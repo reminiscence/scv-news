@@ -91,7 +91,6 @@ DataStorage.prototype.loadBookmarkData = function(){
 		response = ws.get(uid);
 
 	response.on('success', function(data, response){
-		//console.log(data[uid]);
 		config.bookmarkList = data[uid];
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
@@ -160,8 +159,7 @@ NewsViewer.prototype.showNewsInfo = function (){
 		order = config.currentNewsOrder,
 		bookmark = config.bookmarkList.newsList,
 		clickList = config.clickList;
-
-	console.log(clickList);
+		
 	if(clickList == true || clickList == undefined){
 		$('#title').html(news[order].title);
 		$("#cp").html(news[order].cpKorName);

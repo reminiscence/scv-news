@@ -3,7 +3,7 @@ $(function() {
 	var $doc =$(document.body);
 	
 	//viewer, DL,BV 객체 생성
-	var bagNewsViewer = new NewsViewer($doc),
+	var newsViewer = new NewsViewer($doc),
 		dataLoader = new DataLoader(),
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
@@ -34,7 +34,6 @@ $(function() {
 	//facebook 로그인이 된 상태로 접속시, 접속 상태를 login 상태로 변경.
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
-			console.log(response);
 			FB.api('/me', function(response) {
 				$('#myName').html('<span>'+response.name+'님 환영합니다.</span>');
 			});
@@ -153,7 +152,6 @@ $(function() {
 	//화면 클릭시 메뉴들이 전부 fadeOut, 다시 클릭 시 fadeIn하도록.
 	$('.vjs-tech').click(function(){
 		if(infoToggle){
-			console.log("toggle true");
 			$('.main').fadeOut();
 			$('#big-video-control-container').fadeOut();
 			$('#slides').fadeOut();
@@ -161,7 +159,6 @@ $(function() {
 			$('#btnbox').fadeOut();
 			infoToggle = false;
 		} else {
-			console.log("toggle false");
 			$('.main').fadeIn();
 			$('#big-video-control-container').fadeIn();
 			$('#slides').fadeIn();
@@ -223,7 +220,7 @@ $(function() {
 	});
 
 	$('#more').click(function(){
-		bagNewsViewer.buildList();
+		newsViewer.buildList();
 	});
 
 	/*
@@ -237,8 +234,9 @@ $(function() {
 	*
 	*
 	*/
-	$doc.bind('loadedData', function(){ //뉴스 데이터 로드가 됬다면 control view 실행, 뉴스 제목만 랜덤으로 띄워주는 메소드 실행함
-		bagNewsViewer.controlView();
+	//뉴스 데이터 로드가 됬다면 control view 실행, 뉴스 제목만 랜덤으로 띄워주는 메소드 실행함
+	$doc.bind('loadedData', function(){ 
+		newsViewer.controlView();
 		headline.showNewsTitle();
 	});	
 
@@ -246,7 +244,7 @@ $(function() {
 	//기사가 로드가 되었다면,  config 값들이 채워져 있으므로 뉴스사 선택 객체의 init() 을 실행하여 초기 세팅
 	$doc.bind('loadedArticle', function(){
 		var article = config.articleData; 
-		bagNewsViewer.buildArticle(article);
+		newsViewer.buildArticle(article);
 		selectCpBox.init();
 	});
 
@@ -264,7 +262,7 @@ $(function() {
 		$('#bookmarkbox').hide();
 		$('#commentbox').hide();
 		config.check = 7;
-		bagNewsViewer.showNewsInfo();
+		newsViewer.showNewsInfo();
 	});
 
 	//뉴스 데이터가 조건에 맞게 config에 세팅이 됬음. BV 객체가 동영상을 보여주는 메소드를 실행
@@ -283,14 +281,14 @@ $(function() {
 	$doc.bind('clickBox',function(){
 		var clickList = true;
 		BV.init(); //플레이어 control bar 도 초기화
-		bagNewsViewer.setNewsList(config.vid,clickList);
+		newsViewer.setNewsList(config.vid,clickList);
 	});
 
 	//bookmark 리스트에서 기사 하나를 선택 시 -> 화면에 새로 뿌려줌
 	$doc.bind('clickBookmark',function(){
 		var clickList = false;
 		BV.init(); //플레이어 control bar 도 초기화
-		bagNewsViewer.setNewsList(config.vid,clickList);
+		newsViewer.setNewsList(config.vid,clickList);
 	});
 
 	$prevButton.bind('click', function(){
@@ -365,7 +363,7 @@ $(function() {
 		var clickList = true;
 		$('.slides_container').empty();
 		BV.init(); //플레이어 control bar 도 초기화
-		bagNewsViewer.setNewsList(config.vid, clickList);
+		newsViewer.setNewsList(config.vid, clickList);
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
 
