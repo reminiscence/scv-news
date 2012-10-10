@@ -36,6 +36,7 @@ $(function() {
 	} else {
 		config.autoPlay = cookie;
 		if(cookie == false){
+			var $active = $('.active');
 			$active.button('toggle');
 		}
 	}
