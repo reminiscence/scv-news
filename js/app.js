@@ -166,6 +166,7 @@ $(function() {
 	//화면 클릭시 메뉴들이 전부 fadeOut, 다시 클릭 시 fadeIn하도록.
 	$('.vjs-tech').click(function(){
 		if(infoToggle){
+			console.log("toggle true");
 			$('.main').fadeOut();
 			$('#big-video-control-container').fadeOut();
 			$('#slides').fadeOut();
@@ -173,6 +174,7 @@ $(function() {
 			$('#btnbox').fadeOut();
 			infoToggle = false;
 		} else {
+			console.log("toggle false");
 			$('.main').fadeIn();
 			$('#big-video-control-container').fadeIn();
 			$('#slides').fadeIn();
