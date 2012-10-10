@@ -271,7 +271,7 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 
 	console.log(cookie);
-	if(cookie == null || cookie == true){
+	if(cookie != false){
 		if($active.text()=="ON"){
 			config.autoPlay = true;
 		} else {
