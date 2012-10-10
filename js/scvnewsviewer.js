@@ -267,16 +267,21 @@ ConfigBox.prototype.init = function(){
 	});
 };
 
-ConfigBox.prototype.setAutoPlay = function(){
+ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 
-	if($active.text()=="ON"){
-		config.autoPlay = true;
+	if(cookie== null ){
+		if($active.text()=="ON"){
+			config.autoPlay = true;
+		} else {
+			config.autoPlay = false;
+		}
+		$active.button('toggle');
 	} else {
 		config.autoPlay = false;
+		$active.button('toggle');
 	}
-	$active.button('toggle');
-
+	
 	//cookie에 autoPlay 설정 값 저장. expires는 1주일(7일)
 	$.cookie('autoPlay', config.autoPlay, {expires : 7, path : '/'});
 };

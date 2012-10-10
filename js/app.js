@@ -26,9 +26,12 @@ $(function() {
 
 	//슬라이드 박스 pirnt
 	$('#slides').fadeIn();
-	
-	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
 
+	//BV 초기화 및 데이터 로드 시작
+	BV.init();
+	configBox.init();
+
+	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
 	var cookie = $.cookie('autoPlay');
 	console.log(cookie);
 	if(cookie == null){
@@ -36,14 +39,9 @@ $(function() {
 	} else {
 		config.autoPlay = cookie;
 		if(cookie == false){
-			var $active = $('.active');
-			$active.button('toggle');
+			configBox.setAutoPlay(cookie);
 		}
 	}
-
-	//BV 초기화 및 데이터 로드 시작
-	BV.init();
-	configBox.init();
 
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
