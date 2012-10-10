@@ -271,13 +271,16 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 	if(cookie == null){
 		if($active.text()=="ON"){
+			console.log("on true");
 			config.autoPlay = true;
 			$active.button('toggle');
 		} else {
 			config.autoPlay = false;
+			console.log("off false");
 			$('#autoPlayOff').button('toggle');
 		}
 	} else {
+		console.log("cookie false");
 		config.autoPlay = false;
 		$('#autoPlayOff').button('toggle');
 	}
