@@ -3,7 +3,7 @@ $(function() {
 	var $doc =$(document.body);
 	
 	//viewer, DL,BV 객체 생성
-	var bagNewsViewer = new BagNews($doc),
+	var bagNewsViewer = new NewsViewer($doc),
 		dataLoader = new DataLoader(),
 		BV = new $.BigVideo(),
 		selectCpBox = new SelectCpBox(),
@@ -31,6 +31,7 @@ $(function() {
 	BV.init();
 	configBox.init();
 
+	//facebook 로그인이 된 상태로 접속시, 접속 상태를 login 상태로 변경.
 	FB.getLoginStatus(function (response) {
 		if(response.status === 'connected') {
 			console.log(response);
@@ -45,22 +46,6 @@ $(function() {
 	});
 	dataLoader.loadData();
 	
-
-	//tooltip 작동(모바일 기기, 태블릿에선 작동 x)
-	/*var ua = navigator.userAgent.toLowerCase(),
-		isAndroid = ua.indexOf('android'),
-		isIphone= ua.indexOf('iphone'),
-		isIpad = ua.indexOf('ipad');
-	if(isAndroid == -1 && isIphone == -1  && isIpad == -1){
-		
-		$cpButton.tooltip();
-		$articleButton.tooltip();
-		$listButton.tooltip();
-		$commentButton.tooltip();
-		$prevButton.tooltip();
-		$nextButton.tooltip();
-		$configButton.tooltip();
-	}*/
 	var infoToggle = true;//이벤트 발생시, toggle 통해서 제목 탭 사라지거나 나타남, list, article, bookmark는 x 버튼이 동적 추가 이므로 전역으로 넘겨줌.
 	
 	//event
@@ -78,6 +63,7 @@ $(function() {
 		}
 	});
 
+	//로그아웃 이벤트. 로그아웃 버튼 클릭 시 이벤트 처리.
 	$('#logout').click(function(){
 		FB.logout(function(response) {
 			$('#myName').empty();
@@ -86,7 +72,7 @@ $(function() {
 		});
 	});
 
-	//뉴스사 선택 event
+	//뉴스사 선택 event 이벤트 발생시 이벤트 처리.
 	$cpButton.click(function(){
 		if(config.check != 0){
 			$('#listbox').hide();
@@ -106,7 +92,7 @@ $(function() {
 		}
 	});
 
-	//기사 보기 버튼 event
+	//기사 보기 버튼 event 발생시 이벤트 처리.
 	$articleButton.click(function(){
 		
 		if(config.check != 1){
@@ -125,7 +111,7 @@ $(function() {
 		}
 	});
 
-	//뉴스 리스트 버튼 event
+	//뉴스 리스트 버튼 event 발생시 이벤트 처리.
 	$listButton.click(function(){
 		if(config.check !=2){
 			$('#selectbox').find('#selectModal').modal('hide');
@@ -185,7 +171,7 @@ $(function() {
 		}
 	});
 
-	//설정 메뉴 버튼 클릭
+	//설정 메뉴 버튼 클릭시 이벤트 처리.
 	$configButton.click(function(){
 		if(config.check != 5){
 			$('#listbox').hide();
@@ -202,6 +188,7 @@ $(function() {
 		}
 	});
 
+	//소셜 댓글 box의 x 버튼 누를 시 이벤트 처리
 	$('#closeCommentBox').click(function(){
 		$('#commentbox').fadeOut();
 		config.check = 7;			
@@ -239,7 +226,17 @@ $(function() {
 		bagNewsViewer.buildList();
 	});
 
-	//trigger & bind event
+	/*
+	*
+	*
+	*
+		trigger & bind event
+		각 모듈에서 요청된 custom event를 받아서 처리함.
+
+	*
+	*
+	*
+	*/
 	$doc.bind('loadedData', function(){ //뉴스 데이터 로드가 됬다면 control view 실행, 뉴스 제목만 랜덤으로 띄워주는 메소드 실행함
 		bagNewsViewer.controlView();
 		headline.showNewsTitle();
@@ -351,17 +348,20 @@ $(function() {
 		
 	});
 
+	//환경설정 변경 시 변경 사항 적용.
 	$doc.bind('changeConfig', function(){
 		configBox.setAutoPlay();
 		$('#configbox').find('#configModal').modal('hide');
 		config.check = 7;
 	});
 
+	//play 버튼과 pause버튼 toggle
 	$doc.bind('toggleControl', function(){
 		BV.togglePlayControl();
 	});
 
-	$doc.bind('clickNews',function(){
+	//헤드라인 클릭 시 해당 뉴스를 새로 뿌려줌.
+	$doc.bind('clickHeadline',function(){
 		var clickList = true;
 		$('.slides_container').empty();
 		BV.init(); //플레이어 control bar 도 초기화
@@ -369,6 +369,7 @@ $(function() {
 		headline.showNewsTitle(); //헤드라인 새로 뿌려줌
 	});
 
+	//북마크 삭제시 북마크 리스트 새로 뿌려줌
 	$doc.bind('reShowBookmark', function(){
 		bookmark.showBookmarkList();
 		storage.saveData();

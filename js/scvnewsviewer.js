@@ -1,9 +1,118 @@
-function BagNews(doc){
+/*
+	scv news 내부 Class
+
+*/
+
+/* 
+***DataLoader Class***
+뉴스 리스트와 기사에 대한 data를 로드하는 객체
+*/ 
+function DataLoader(){
+	var  $doc = $(document.body);
+
+	this.apiUrl = config.apiUrl;
+	this.articleUrl = config.articleUrl;
+	this.doc = $doc;
+	var date = new Date();
+		year = date.getFullYear();
+		month = date.getMonth() + 1;
+		day = date.getDate();
+
+	//오늘 날짜의 뉴스만 받아오도록 하기. 옵션에서 조절 가능
+	if(month < 10){
+		if(day < 10)
+			this.date = year +'0'+ month+'0'+ day;
+		else
+			this.date = year +'0'+ month + day;
+	} else {
+		if(day < 10)
+			this.date = year + month+'0'+ day;
+		else
+			this.date = year + month + day;
+	}
+}
+
+//뉴스 api에서 뉴스 정보(json)를 불러오는 부분
+DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않으면 default로 전체 뉴스, 뉴스사 값이 들어오면 그 뉴스사의 뉴스를 띄움
+	var doc = this.doc,
+		date = this.date;
+
+	if(!cp){
+		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
+			config.newsList = data.tv.newsList.data;
+			doc.trigger('loadedData');
+		});
+	}
+	else {
+		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=80&regdate='+date+'&callback=?',function(data){
+			config.newsList = data.tv.newsList.data;
+			doc.trigger('loadedData');
+		});
+	}
+};
+
+//newsId값을 이용하여 기사를 로드함
+DataLoader.prototype.loadArticle = function(){
+	var newsId = config.newsId,
+		doc = this.doc;
+	var articleApiUrl = "http://media.daum.net/api/service/news/view.jsonp?newsId="+ newsId + "&callback=?";
+	$.getJSON(articleApiUrl,function(article){
+		config.articleData = article;
+		doc.trigger('loadedArticle');
+	});
+};
+
+/* 
+***DataStorage Class***
+cloudmine 서비스에 북마크 리스트를 저장하거나 꺼내오는 클래스
+*/ 
+function DataStorage(){
+	this.ws = new cloudmine.WebService({
+	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
+	  apikey: '02e619ec0ee34bccb975fca744e79717'
+	});
+}
+
+//북마크된 데이터 클라우드에 저장하는 메소드.
+DataStorage.prototype.saveData = function(){
+	var bookmark = config.bookmarkList,
+		ws = this.ws;
+
+	ws.set(config.uid, bookmark).on('success', function(data, response){
+		//console.log(data, response);
+	});
+};
+
+//북마크 데이터를 uid 라는 키값을 통해 꺼내오는 메소드.
+DataStorage.prototype.loadBookmarkData = function(){
+	var ws = this.ws,
+		length = 0,
+		uid = config.uid,
+		response = ws.get(uid);
+
+	response.on('success', function(data, response){
+		//console.log(data[uid]);
+		config.bookmarkList = data[uid];
+		length = config.bookmarkList.newsList.length;
+		config.count = length;
+	});
+
+	response.on('error',function(data,response){
+		config.bookmarkList = {newsList : []};
+		config.count = length;
+	});
+};
+
+/* 
+***NewsViewer Class***
+뉴스 리스트와 기사에 대한 정보를 세팅하고, 뿌려주는 클래스.
+*/ 
+function NewsViewer(doc){
 	this.doc = doc;
 }
 
-//뉴스 목록을 setting함
-BagNews.prototype.setNewsList = function(vid,clickList){
+//뉴스 목록을 setting하는 메소드.
+NewsViewer.prototype.setNewsList = function(vid,clickList){
 	var newsList = config.newsList,
 		length=newsList.length,
 		vidList = [],
@@ -44,14 +153,15 @@ BagNews.prototype.setNewsList = function(vid,clickList){
 	doc.trigger('setNewsData');
 };
 
-//뉴스 정보(제목, 뉴스사, 날짜)를 보여줌
-BagNews.prototype.showNewsInfo = function (){
+//뉴스 정보(제목, 뉴스사, 날짜)를 보여주는 메소드.
+NewsViewer.prototype.showNewsInfo = function (){
 	var doc = this.doc, 
 		news = config.newsList,
 		order = config.currentNewsOrder,
 		bookmark = config.bookmarkList.newsList,
 		clickList = config.clickList;
 
+	console.log(clickList);
 	if(clickList == true || clickList == undefined){
 		$('#title').html(news[order].title);
 		$("#cp").html(news[order].cpKorName);
@@ -70,8 +180,8 @@ BagNews.prototype.showNewsInfo = function (){
 	doc.trigger('showNews');
 };
 
-//뉴스 목록을 구성함
-BagNews.prototype.buildList = function (){
+//뉴스 목록을 뿌려주는 메소드. 
+NewsViewer.prototype.buildList = function (){
 	var newsList = config.newsList,
 		$listbox = $('#listbox'),
 		length = newsList.length,
@@ -79,7 +189,7 @@ BagNews.prototype.buildList = function (){
 		news='',
 		doc = this.doc,
 		bookmark = '',
-		count = 0
+		count = 0,
 		lengthCount = config.lengthCount; //최초 리스트 10개씩만 출력, 더보기 버튼 누를시 lengthCount와 비교하여 다음 것을 추가로 불러옴.
 	
 	if(lengthCount == 0){
@@ -150,8 +260,8 @@ BagNews.prototype.buildList = function (){
 	});
 };
 
-//해당 뉴스의 기사를 구성함
-BagNews.prototype.buildArticle = function(article){
+//해당 뉴스의 기사를 뿌려주는 메소드.
+NewsViewer.prototype.buildArticle = function(article){
 	var $articlebox = $('#articlebox');
 	$articlebox.empty();
 	
@@ -165,15 +275,23 @@ BagNews.prototype.buildArticle = function(article){
 	});
 };
 
-BagNews.prototype.controlView = function(){
+//view를 제어하는 메소드.
+NewsViewer.prototype.controlView = function(){
 	this.setNewsList();
 	this.buildList();
 };
+
+
+/* 
+***Bookmark Class***
+북마크 리스트를 뿌려주는 역할을 하는 클래스.
+*/ 
 
 function Bookmark (){
 	this.doc = $(document.body);
 }
 
+//북마크 리스트를 뿌려주는 메소드.
 Bookmark.prototype.showBookmarkList = function(){
 	var bookmark = config.bookmarkList.newsList,
 		length = 0,
@@ -243,11 +361,18 @@ Bookmark.prototype.deleteBookmark = function(vid){
 	}
 };
 
+
+/* 
+***ConfigBox Class***
+환경설정(자동재생) 초기화 및 설정해주는 클래스
+*/ 
+
 function ConfigBox(){
 	this.doc = $(document.body);
 	
 }
 
+//초기화.
 ConfigBox.prototype.init = function(){
 	var doc = this.doc,
 	$configBox = $('#configbox');
@@ -281,6 +406,7 @@ ConfigBox.prototype.init = function(){
 	});
 };
 
+//자동재생 설정 메소드.
 ConfigBox.prototype.setAutoPlay = function(cookie){
 	var $active = $('.active');
 
@@ -296,95 +422,11 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	$.cookie('autoPlay', config.autoPlay, {expires : 7, path : '/'});
 };
 
-function DataLoader(){
-	var  $doc = $(document.body);
 
-	this.apiUrl = config.apiUrl;
-	this.articleUrl = config.articleUrl;
-	this.doc = $doc;
-	var date = new Date();
-		year = date.getFullYear();
-		month = date.getMonth() + 1;
-		day = date.getDate();
-
-	//오늘 날짜의 뉴스만 받아오도록 하기. 옵션에서 조절 가능
-	if(month < 10){
-		if(day < 10)
-			this.date = year +'0'+ month+'0'+ day;
-		else
-			this.date = year +'0'+ month + day;
-	} else {
-		if(day < 10)
-			this.date = year + month+'0'+ day;
-		else
-			this.date = year + month + day;
-	}
-}
-
-//뉴스 api에서 뉴스 정보(json)를 불러오는 부분
-DataLoader.prototype.loadData = function(cp){//뉴스사 값이 들어오지 않으면 default로 전체 뉴스, 뉴스사 값이 들어오면 그 뉴스사의 뉴스를 띄움
-	var doc = this.doc,
-		date = this.date;
-
-	if(!cp){
-		$.getJSON(this.apiUrl+'category/all.jsonp?countPerPage=300&regdate='+date+'&callback=?',function(data){
-			config.newsList = data.tv.newsList.data;
-			doc.trigger('loadedData');
-		});
-	}
-	else {
-		$.getJSON(this.apiUrl+cp+'.jsonp?countPerPage=80&regdate='+date+'&callback=?',function(data){
-			config.newsList = data.tv.newsList.data;
-			doc.trigger('loadedData');
-		});
-	}
-};
-
-//newsId값을 이용하여 기사를 로드함
-DataLoader.prototype.loadArticle = function(){
-	var newsId = config.newsId,
-		doc = this.doc;
-	var articleApiUrl = "http://media.daum.net/api/service/news/view.jsonp?newsId="+ newsId + "&callback=?";
-	$.getJSON(articleApiUrl,function(article){
-		config.articleData = article;
-		doc.trigger('loadedArticle');
-	});
-};
-
-function DataStorage(){
-	this.ws = new cloudmine.WebService({
-	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
-	  apikey: '02e619ec0ee34bccb975fca744e79717'
-	});
-}
-
-DataStorage.prototype.saveData = function(){
-	var bookmark = config.bookmarkList,
-		ws = this.ws;
-
-	ws.set(config.uid, bookmark).on('success', function(data, response){
-		//console.log(data, response);
-	});
-};
-
-DataStorage.prototype.loadBookmarkData = function(){
-	var ws = this.ws,
-		length = 0,
-		uid = config.uid,
-		response = ws.get(uid);
-
-	response.on('success', function(data, response){
-		//console.log(data[uid]);
-		config.bookmarkList = data[uid];
-		length = config.bookmarkList.newsList.length;
-		config.count = length;
-	});
-
-	response.on('error',function(data,response){
-		config.bookmarkList = {newsList : []};
-		config.count = length;
-	});
-};
+/* 
+***Headline Class***
+뉴스 헤드라인을 뿌려주는 역할을 하는 클래스.
+*/ 
 
 function Headline(){
 	var $titlebox = $('.slides_container'),
@@ -431,13 +473,19 @@ Headline.prototype.showNewsTitle = function(){
 
 		titlebox.find("#rand_title").click(function(){
 			config.vid = $(this).attr('vid');
-			doc.trigger('clickNews');
+			doc.trigger('clickHeadline');
 			doc.trigger('toggleControl');
 		});
 	});
 
 	
 };
+
+
+/* 
+***SelectCpBox Class***
+뉴스사 선택 클래스.
+*/ 
 
 function SelectCpBox(){
 	var $doc = $(document.body),
