@@ -278,6 +278,7 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 			config.autoPlay = false;
 			console.log("off false");
 			$('#autoPlayOff').button('toggle');
+			console.log($('#autoPlayOff'));
 		}
 	} else {
 		console.log("cookie false");
