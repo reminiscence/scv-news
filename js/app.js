@@ -38,7 +38,6 @@ $(function() {
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
-		console.log(cookie, typeof cookie, tes, typeof tes);
 		if(cookie == "true"){
 			config.autoPlay = true;
 		} else {
