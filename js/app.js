@@ -73,6 +73,7 @@ $(function() {
 			});
 			$('#login').hide();
 			$('#logout').show();
+			config.uid = response.authResponse.userID;
 			storage.loadBookmarkData();
 		}
 	});
