@@ -272,13 +272,14 @@ ConfigBox.prototype.setAutoPlay = function(cookie){
 	if(cookie == null){
 		if($active.text()=="ON"){
 			config.autoPlay = true;
+			$active.button('toggle');
 		} else {
 			config.autoPlay = false;
+			$('#autoPlayOff').button('toggle');
 		}
-		//$active.button('toggle');
 	} else {
 		config.autoPlay = false;
-		//$active.button('toggle');
+		$('#autoPlayOff').button('toggle');
 	}
 	
 	//cookie에 autoPlay 설정 값 저장. expires는 1주일(7일)
