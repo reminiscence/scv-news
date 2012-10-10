@@ -27,6 +27,19 @@ $(function() {
 	//슬라이드 박스 pirnt
 	$('#slides').fadeIn();
 	
+	//cookie에 자동재생값이 있는지 얻어옴. null일 경우 default 값인 true로 설정.
+
+	var cookie = $.cookie('autoPlay');
+
+	if(cookie == null){
+		config.autoPlay = true;
+	} else {
+		config.autoPlay = cookie;
+		if(cookie == false){
+			$active.button('toggle');
+		}
+	}
+
 	//BV 초기화 및 데이터 로드 시작
 	BV.init();
 	configBox.init();
