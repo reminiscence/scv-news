@@ -37,9 +37,12 @@ $(function() {
 	if(cookie == null){
 		config.autoPlay = true;
 	} else {
+		console.log("1");
 		if(cookie == "true"){
+			console.log("2");
 			config.autoPlay = true;
 		} else {
+			console.log("3");
 			configBox.setAutoPlay(cookie);
 		}
 	}
