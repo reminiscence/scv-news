@@ -222,7 +222,7 @@ h1, h2, .nav-link, .playlist-btn {
 }
 h1 {font-size:1.5em; margin:0;padding:0 0 0 20px; color:#34D541;}
 
-//a { color:#fff; font-style:italic; }
+/*a { color:#fff; font-style:italic; }*/
 blockquote { 
     background:#fff; 
     margin:0 0 20px;
