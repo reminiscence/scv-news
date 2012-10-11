@@ -43,7 +43,8 @@
         // If only using mp4s and browser is firefox, use flash fallback
         var ua = navigator.userAgent.toLowerCase();
         var isFirefox = ua.indexOf('firefox') != -1;
-        if (BigVideo.settings.useFlashForFirefox && (isFirefox)) {
+        var isOpera = ua.indexOf('Opera') != -1;
+        if (BigVideo.settings.useFlashForFirefox && (isFirefox) && (isOpera)) {
 			VideoJS.options.techOrder = ['flash'];
 		}
 
