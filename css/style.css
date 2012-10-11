@@ -5,9 +5,9 @@
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
 
 .menu {
-    width:465px;
+    width:500px;
     position:absolute;
-    bottom:11px; left: 20px;
+    bottom:44px; left: 500px;
     background:rgba(255,255,255,0.2);
     border-radius:5px;
     z-index: 1100;
@@ -16,7 +16,7 @@
 
 .menu a {
      float: left;
-     margin:5px;
+     margin:17px 0 18px 15px;
 }
 
 #selectbox {
@@ -147,7 +147,7 @@
 }
 
 .headline {
-    width:450px;height:16px;position:absolute; bottom : 105px; left:20px; padding:8px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    width:450px;height:16px;position:absolute; bottom : 85px; left:20px; padding:8px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
 #rand_title {
@@ -357,7 +357,7 @@ span.mid_tit {
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-.control-bar {position:absolute; bottom:65px; left : 20px; width:465px;
+.control-bar {position:absolute; bottom:45px; left : 20px; width:465px;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
@@ -389,9 +389,10 @@ span.mid_tit {
 @media screen and (max-width : 768px){
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    .headline { bottom : 165px;  width : 440px;}
-    .menu { bottom : 70px; left : 20px; width : 455px;}
-    .control-bar {bottom : 125px; width: 455px;}
+    .headline { bottom : 145px; }
+    .menu { bottom : 104px;}
+    .control-bar {bottom : 105px; }
+    #myName { top : 15px;}
     #login, #logout { top : 10px; }
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
