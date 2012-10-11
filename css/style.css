@@ -5,7 +5,7 @@
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
 
 .menu {
-    width:455px;
+    width:465px;
     position:absolute;
     bottom:11px; left: 20px;
     background:rgba(255,255,255,0.2);
@@ -16,7 +16,7 @@
 
 .menu a {
      float: left;
-     margin:6px;
+     margin:5px;
 }
 
 #selectbox {
@@ -147,7 +147,7 @@
 }
 
 .headline {
-    width:440px;height:16px;position:absolute; bottom : 105px; left:20px; padding:8px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    width:450px;height:16px;position:absolute; bottom : 105px; left:20px; padding:8px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
 #rand_title {
@@ -357,7 +357,7 @@ span.mid_tit {
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-.control-bar {position:absolute; bottom:65px; left : 20px; width:455px;
+.control-bar {position:absolute; bottom:65px; left : 20px; width:465px;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
@@ -369,7 +369,7 @@ span.mid_tit {
 #big-video-control-track .ui-slider-handle {opacity:0;}
 #big-video-control-playhead{left:30%;}
 #big-video-control-play{position:absolute;top:10px;left:10px;height:16px;width:15px;background-image:url('bigvideo.png');}
-#big-video-control-timer{position:absolute;top:7px; right:5%; color:#fff;font-size:11px;}
+#big-video-control-timer{position:absolute;top:7px; right:3%; color:#fff;font-size:11px;}
 #big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:rgba(255,255,255,0.2);}
 #big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
 .transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
