@@ -392,7 +392,8 @@ span.mid_tit {
     .headline { bottom : 145px; }
     .menu { bottom : 104px;}
     .control-bar {bottom : 105px; }
-    #myName { top : 15px;}
+    #myName { top : 15px; }
+    #myName span{font-size:1em;}
     #login, #logout { top : 10px; }
     .main { margin:0; height:40px;}
     .box {  padding: 0; height:40px; }
@@ -401,27 +402,4 @@ span.mid_tit {
     .modal { top :300px; left:60%; width:300px;}
     #socialCmt { margin : 15px auto; }
     .comments { height:180px; }
-}
-
-@media screen and (max-width : 400px){
-    #cp, #date {padding : 0 0 0 5px;}
-   
-   #listbox .list-title{ width:270px; height:10px; }
-    #listbox .box { width:350px; height:150px; padding: 0; overflow: visible; margin:10px 0 0 5px; }
-    #listbox img { margin: 5px 0 5px 5px; height: 95%; }
-    #listbox h5 { font-size: 1em; margin: 0px 0 0 10px; width: 200px;}
-    .menu { background:rgba(0,0,0,0.2); width:300px; left:20px; }
-    .menu a { display : inline-block; margin : 3px; clear:none;}
-    span.mid_tit { font-size : 1em;}
-    .box span { width:200px; padding-left: 10px; padding-top:0;}
-    .content { height: 130px;}
-    .title { font-size:1em; }
-    .modal { left:80%; }
-    #socialCmt { margin : 15px auto; }
-    .comments { height:180px; }
-
-     .headline { left: 20px; width: 85%; }
-    .slides_container { top : -5px;}
-    .control-bar { width : 100%; bottom : 100px; }
-     #big-video-control{ background: rgba(0,0,0,0.2); }
 }
