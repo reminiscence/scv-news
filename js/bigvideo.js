@@ -45,7 +45,7 @@
         console.log(ua);
         var isFirefox = ua.indexOf('firefox') != -1;
         var isOpera = ua.indexOf('opera') != -1;
-        if (BigVideo.settings.useFlashForFirefox && (isFirefox) && (isOpera)) {
+        if (BigVideo.settings.useFlashForFirefox && ((isFirefox) || (isOpera)) {
 			VideoJS.options.techOrder = ['flash'];
 		}
 
