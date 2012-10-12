@@ -71,13 +71,6 @@ function DataStorage(){
 	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
 	  apikey: '02e619ec0ee34bccb975fca744e79717'
 	});
-
-
-	// //저장
-	// ws.set(key, value).on('success', function(data, response)){
-	// 	console.log(data);
-	// }
-
 }
 
 //북마크된 데이터 클라우드에 저장하는 메소드.
@@ -88,6 +81,7 @@ DataStorage.prototype.saveData = function(){
 	ws.set(config.uid, bookmark).on('success', function(data, response){
 		console.log(data, response);
 	});
+
 };
 
 //북마크 데이터를 uid 라는 키값을 통해 꺼내오는 메소드.
@@ -461,7 +455,7 @@ Headline.prototype.showNewsTitle = function(){
 		randNum = Math.floor(Math.random()* newsList.length);
 		str = newsList[randNum].title;
 		news[i] = {};
-		if($(window).innerWidth() > 600)
+		if($(window).innerWidth() > 768)
 			news[i].tit = str.substring(0, 25) + '...';
 		else
 			news[i].tit = str.substring(0, 10) + '...';

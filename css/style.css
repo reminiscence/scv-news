@@ -150,6 +150,8 @@
     width:38%;height:16px;position:absolute; bottom : 85px; left:20px; padding:8px 0; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
+.slides_container { padding : 0 10px;}
+
 #rand_title {
     color : #fff;
 }
@@ -386,7 +388,8 @@ span.mid_tit {
 }
 
 /*media query*/
-@media screen and (max-width : 768px){
+/*@media screen and (max-width : 768px){*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
     .headline { bottom : 145px; }
