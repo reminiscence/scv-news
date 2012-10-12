@@ -394,6 +394,7 @@ span.mid_tit {
 }
 
 @media screen and (min-width : 600px) and (max-width: 768px){
+     h1 { font-size: 1em;}
     .menu a { margin : 0 0 0 3%}
 }
 /*media query*/
