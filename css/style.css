@@ -396,6 +396,8 @@ span.mid_tit {
 @media screen and (max-width: 768px){
      h1 { font-size: 1em;}
     .menu a { margin : 0 0 0 3%}
+    #myName { right : 0; top : 25px; font-size : 0.8em;}
+    #logout {right : 25px; top : 50px;}
 }
 /*media query*/
 /*@media screen and (max-width : 768px){*/
