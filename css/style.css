@@ -1,391 +1,392 @@
+@media screen and (min-width : 1000px){
+    .modal {width:360px; top: 70%; left:60%; }
+    .dropdown {width: 150px; margin:0 auto; }
+    .dropdown-menu {position: relative; z-index: 1100;}
+    .dropdown-toggle {font-size : 20px; font-weight: bold;}
 
-.modal {width:360px; top: 70%; left:60%; }
-.dropdown {width: 150px; margin:0 auto; }
-.dropdown-menu {position: relative; z-index: 1100;}
-.dropdown-toggle {font-size : 20px; font-weight: bold;}
+    .menu {
+        width:95%;
+        position:absolute;
+        bottom:25px; left: 20px;
+        background:rgba(255,255,255,0.2);
+        border-radius:5px;
+        z-index: 1100;
+        padding : 10px 0;
+        /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
+    }
 
-.menu {
-    width:95%;
-    position:absolute;
-    bottom:25px; left: 20px;
-    background:rgba(255,255,255,0.2);
-    border-radius:5px;
-    z-index: 1100;
-    padding : 10px 0;
-    /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
-}
+    .menu a {
+         float: left;
+         margin: 0 0 0 7%;
+    }
 
-.menu a {
-     float: left;
-     margin: 0 0 0 7%;
-}
+    #selectbox {
+        width : 360px;
+    }
 
-#selectbox {
-    width : 360px;
-}
+    #more {
+        position : absolute;
+        bottom : 20px;
+        right : 20px;
+        width : 80px;
+        height: 30px;
+        z-index: 1100;
+    }
 
-#more {
-    position : absolute;
-    bottom : 20px;
-    right : 20px;
-    width : 80px;
-    height: 30px;
-    z-index: 1100;
-}
+    #listbox, #bookmarkbox {
+        background:rgba(255,255,255,.2);
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 1100;
+        width:100%;
+        height: 100%;
+    }
 
-#listbox, #bookmarkbox {
-    background:rgba(255,255,255,.2);
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: 1100;
-    width:100%;
-    height: 100%;
-}
+    #listbox .box, #bookmarkbox .box{
+        position: relative;
+        background:#000;
+        padding:3px;
+        width:470px;
+        height:200px;
+        float:left;
+        margin:15px;
+    }
+    .title-bar {
+        width: 100%;
+        height: 70px;
+        margin:0;
+        padding:0;
+    }
 
-#listbox .box, #bookmarkbox .box{
-    position: relative;
-    background:#000;
-    padding:3px;
-    width:470px;
-    height:200px;
-    float:left;
-    margin:15px;
-}
-.title-bar {
-    width: 100%;
-    height: 70px;
-    margin:0;
-    padding:0;
-}
-
-.boxlist, .bookmarkboxlist{
-    width: 100%;
-    height: 75%;
-    margin:0;
-    padding:0;
-    overflow-y: auto;
-}
-
-
-.list-title {
-    font-weight: bold;
-    font-size:30px;
-    color : #fff;
-    background:rgba(0,0,0,.8); 
-    width:345px; 
-    height:20px; 
-    margin: 10px 0 0 15px; 
-    border-radius:5px;
-    padding : 20px;
-}
-
-#listbox img, #bookmarkbox img {
-    float:left;
-    width:110px;
-    height: 85%;
-    margin : 15px 0 5px 5px;
-}
-
-#listbox h5, #bookmarkbox h5{
-    color:#fff;
-    float:left;
-    font-size:15px;
-    line-height: 15px;
-    margin : 10px 0 0 20px;
-    width : 330px;
-}
-
-#commentbox {
-    background:rgba(255,255,255,.2);
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: 1100;
-    width:100%;
-    height: 100%;
-    overflow: scroll;
-}
-
-#closeCommentBox {
-    color : #fff;
-    opacity: .9;
-    position: absolute;
-    top:3px;
-    right:5px;
-}
-
-#closeListBox, #closebookmarkBox {
-    color : #fff;
-    opacity: .9;
-    position: fixed;
-    top:10px;
-    right:10px;
-    background: #000;
-    border-radius:5px;
-    width:50px;
-    height:50px;
-}
-
-#articlebox {
-    background:rgba(255,255,255,.2);
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: 1010;
-    width:100%;
-    height: 100%;
-    color:#fff;
-    overflow:hidden;
-}
-
-#closeArticleBox{
-    color : #fff;
-    opacity: .9;
-    position: absolute;
-    top:3px;
-    right:5px;
-}
-
-.headline {
-    width:95%;height:16px;position:absolute; bottom : 135px; left:20px; padding:8px 0; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
-}
-
-.slides_container { padding : 0 10px;}
-
-#rand_title {
-    color : #fff;
-}
-
-#btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
-#btn-deleteBookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
-
-#boxList {
-    width:50%;
-    height:148px;
-    border:1px solid #000;
-    overflow-x: auto;
-}
-
-.title { 
-    position: relative;
-    width : 80%; 
-    padding:10px; 
-    background : rgba(0,0,0,.6); 
-    border-radius:5px; 
-    font-weight: bold; 
-    font-size: 25px; 
-    color: #34D541; 
-    margin : 15px auto;
-   /* margin: 15px 0 10px 40px;*/
-}
-.article_box span {
-    margin-top:10px;
-    font-weight: bold; 
-    font-size: 15px; 
-    color: #fff; 
-    display:block;
-}
-
-.content {
-    width : 80%; 
-    height: 350px;
-    text-indent: 10px; 
-    padding:10px; 
-    /*margin-top : 15px;
-    margin-left : 40px; */
-    margin : 15px auto;
-    background : rgba(0,0,0,.6); 
-    border-radius:5px;
-    overflow-y: auto;
-}
-
-.comments {
-    width : 80%; 
-    height: 350px;
-    text-indent: 10px; 
-    padding:10px; 
-    /*margin-top : 15px;
-    margin-left : 40px; */
-    margin : 15px auto;
-    background : #fff;
-    border-radius:5px;
-    overflow-y: auto;
-}
-
-html, body { 
-    margin:0;
-    padding:0;background:#011;
-    overflow: hidden;
-}
-h1, h2, .nav-link, .playlist-btn {
-    font-family:'Source Sans Pro', sans-serif; font-weight:900; 
-    text-transform:uppercase;
-
-}
-h1 {font-size:1.5em; margin:0;padding:0 0 0 20px; color:#34D541;}
-
-/*a { color:#fff; font-style:italic; }*/
-blockquote { 
-    background:#fff; 
-    margin:0 0 20px;
-    padding:5px 20px; 
-}
-pre {
-    white-space:pre-wrap;       /* css-3 */
-    white-space:-moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space:-pre-wrap;      /* Opera 4-6 */
-    white-space:-o-pre-wrap;    /* Opera 7 */
-    word-wrap:break-word;       /* Internet Explorer 5.5+ */
-}
-.box { 
-    padding:10px;
-    border-radius:5px;
-}
-
-.box span {
-    color:#fff;
-    padding: 10px 0 0 20px;
-    margin:0;
-    font-weight: bold;
-    float : left;
-    display:block;
-    width:310px;
-}
-
-span.mid_tit {
-    color : #08c;
-    font-size:20px;
-}
-
-.nav { 
-    position:fixed; 
-    right:10px;
-    -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
-}
-
-.navbar .nav { right:0; float : right;}
-
-.navbar .brand{padding:20px;}
-
-.credit {
-    margin:20px 0;
-}
-.download-links { margin-top:20px; }
-.download { margin-left:10px; padding:5px 10px; color:#fff; background:#111; border-radius:5px; }
-.video-list {
-    list-style:none;
-    margin:0 0 -10px;
-    padding:0;
-    text-align:center;
-}
-.video-list li {
-    margin-bottom:10px;
-}
-.video-list .playlist-btn {
-    display:block;
-    width:100%;
-}
-.main {
-    position:relative;
-    min-width:300px;
-    margin:10px;
-    background:rgba(255,255,255,0.2);
-    border-radius:5px; 
-    /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
-}
-
-.nav-link {
-    display:block;
-    padding-bottom:10px;
-    text-decoration:none;
-    font-style:normal;
-}
-.toggle-btn {
-    position: absolute;
-    bottom: -50px;
-    left: 5px;
-    background:rgba(0,0,0,.8);
-    padding: 6px 12px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: .8em;
-    font-family:'Source Sans Pro', sans-serif; font-weight:900; 
-    text-transform: uppercase;
-}
-
-.playlist { 
-    padding:0; 
-    margin:20px 20px 40px;
-}
-.playlist-btn { 
-    background:#000; 
-    text-decoration:none; 
-    font-weight:bold; 
-    font-style:normal; 
-    text-transform:uppercase; 
-    font-size:14px; 
-    padding:5px 10px; 
-    margin-right:10px;
-    border-radius:5px; 
-}
-.dimmed {opacity:.7;}
-.footer-text {
-    padding:0 20px;
-    font-size:.9em;
-    font-style:italic;
-    opacity:.8;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
-}
-
-#cp, #date {
-    float:none;
-    display: inline;
-    color : #fff;
-    padding: 0 0 0 20px;
-    margin:0;
-    font-weight: bold;
-}
-
-/*facebook comment plugin*/
-#myName{position : absolute; top:35px; right : 85px; width: 160px; height : 30px; text-align: center; color: #fff;}
-#logout {position : absolute; top:30px; right : 15px; width: 70px; height : 30px; text-align: center; border-radius:5px; font-size:20px;}
-.fb-comments{ margin: 15px 0;}
-#login {position : absolute; top:30px; right : 25px;  width: 70px; height : 20px; text-align: center; border-radius:5px; font-size:20px;}
-.flt {top : 30px; z-index: 1100;}
+    .boxlist, .bookmarkboxlist{
+        width: 100%;
+        height: 75%;
+        margin:0;
+        padding:0;
+        overflow-y: auto;
+    }
 
 
-/*  BigVideo Styles 
-  You may need to adjust these styles to get this working right in your design. 
-*/
-#big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
-#big-video-vid,#big-video-image{position:absolute;}
-.control-bar {position:absolute; bottom:90px; left : 20px; width:95%;
-  -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
-#big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
-#big-video-control-middle{margin: 0 95px 0 24px;}
-#big-video-control-bar{width:100%;height:16px;position:relative;cursor:pointer; }
-#big-video-control-progress{position:absolute;top:1px;height:14px;background:#08c; }
-#big-video-control-track{position:absolute;height:16px;width:100%;background:rgba(255,255,255,0.2);}
-#big-video-control-bound-left{left:0;}
-#big-video-control-bound-right{right:-1px}
-#big-video-control-track .ui-slider-handle {opacity:0;}
-#big-video-control-playhead{left:30%;}
-#big-video-control-play{position:absolute;top:10px;left:10px;height:16px;width:15px;background-image:url('bigvideo.png');}
-#big-video-control-timer{position:absolute;top:7px; right:3%; color:#fff;font-size:11px;}
-#big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:rgba(255,255,255,0.2);}
-#big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
-.transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
-.vjs-big-play-button{display:none !important;}
-.vjs-tech {box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);}
+    .list-title {
+        font-weight: bold;
+        font-size:30px;
+        color : #fff;
+        background:rgba(0,0,0,.8); 
+        width:345px; 
+        height:20px; 
+        margin: 10px 0 0 15px; 
+        border-radius:5px;
+        padding : 20px;
+    }
 
-/*bookmark click*/
-.right {
-    bottom : 100px;
-    left : 51%;
-    width: 40%;
-    z-index: 1100;
-    background: rgba(0,0,0,.8);
+    #listbox img, #bookmarkbox img {
+        float:left;
+        width:110px;
+        height: 85%;
+        margin : 15px 0 5px 5px;
+    }
+
+    #listbox h5, #bookmarkbox h5{
+        color:#fff;
+        float:left;
+        font-size:15px;
+        line-height: 15px;
+        margin : 10px 0 0 20px;
+        width : 330px;
+    }
+
+    #commentbox {
+        background:rgba(255,255,255,.2);
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 1100;
+        width:100%;
+        height: 100%;
+        overflow: scroll;
+    }
+
+    #closeCommentBox {
+        color : #fff;
+        opacity: .9;
+        position: absolute;
+        top:3px;
+        right:5px;
+    }
+
+    #closeListBox, #closebookmarkBox {
+        color : #fff;
+        opacity: .9;
+        position: fixed;
+        top:10px;
+        right:10px;
+        background: #000;
+        border-radius:5px;
+        width:50px;
+        height:50px;
+    }
+
+    #articlebox {
+        background:rgba(255,255,255,.2);
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 1010;
+        width:100%;
+        height: 100%;
+        color:#fff;
+        overflow:hidden;
+    }
+
+    #closeArticleBox{
+        color : #fff;
+        opacity: .9;
+        position: absolute;
+        top:3px;
+        right:5px;
+    }
+
+    .headline {
+        width:95%;height:16px;position:absolute; bottom : 135px; left:20px; padding:8px 0; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    }
+
+    .slides_container { padding : 0 10px;}
+
+    #rand_title {
+        color : #fff;
+    }
+
+    #btn-bookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
+    #btn-deleteBookmark { margin : 5px; position: absolute; bottom: 5px; right : 5px; z-index: 1010;}
+
+    #boxList {
+        width:50%;
+        height:148px;
+        border:1px solid #000;
+        overflow-x: auto;
+    }
+
+    .title { 
+        position: relative;
+        width : 80%; 
+        padding:10px; 
+        background : rgba(0,0,0,.6); 
+        border-radius:5px; 
+        font-weight: bold; 
+        font-size: 25px; 
+        color: #34D541; 
+        margin : 15px auto;
+       /* margin: 15px 0 10px 40px;*/
+    }
+    .article_box span {
+        margin-top:10px;
+        font-weight: bold; 
+        font-size: 15px; 
+        color: #fff; 
+        display:block;
+    }
+
+    .content {
+        width : 80%; 
+        height: 350px;
+        text-indent: 10px; 
+        padding:10px; 
+        /*margin-top : 15px;
+        margin-left : 40px; */
+        margin : 15px auto;
+        background : rgba(0,0,0,.6); 
+        border-radius:5px;
+        overflow-y: auto;
+    }
+
+    .comments {
+        width : 80%; 
+        height: 350px;
+        text-indent: 10px; 
+        padding:10px; 
+        /*margin-top : 15px;
+        margin-left : 40px; */
+        margin : 15px auto;
+        background : #fff;
+        border-radius:5px;
+        overflow-y: auto;
+    }
+
+    html, body { 
+        margin:0;
+        padding:0;background:#011;
+        overflow: hidden;
+    }
+    h1, h2, .nav-link, .playlist-btn {
+        font-family:'Source Sans Pro', sans-serif; font-weight:900; 
+        text-transform:uppercase;
+
+    }
+    h1 {font-size:1.5em; margin:0;padding:0 0 0 20px; color:#34D541;}
+
+    /*a { color:#fff; font-style:italic; }*/
+    blockquote { 
+        background:#fff; 
+        margin:0 0 20px;
+        padding:5px 20px; 
+    }
+    pre {
+        white-space:pre-wrap;       /* css-3 */
+        white-space:-moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space:-pre-wrap;      /* Opera 4-6 */
+        white-space:-o-pre-wrap;    /* Opera 7 */
+        word-wrap:break-word;       /* Internet Explorer 5.5+ */
+    }
+    .box { 
+        padding:10px;
+        border-radius:5px;
+    }
+
+    .box span {
+        color:#fff;
+        padding: 10px 0 0 20px;
+        margin:0;
+        font-weight: bold;
+        float : left;
+        display:block;
+        width:310px;
+    }
+
+    span.mid_tit {
+        color : #08c;
+        font-size:20px;
+    }
+
+    .nav { 
+        position:fixed; 
+        right:10px;
+        -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;
+    }
+
+    .navbar .nav { right:0; float : right;}
+
+    .navbar .brand{padding:20px;}
+
+    .credit {
+        margin:20px 0;
+    }
+    .download-links { margin-top:20px; }
+    .download { margin-left:10px; padding:5px 10px; color:#fff; background:#111; border-radius:5px; }
+    .video-list {
+        list-style:none;
+        margin:0 0 -10px;
+        padding:0;
+        text-align:center;
+    }
+    .video-list li {
+        margin-bottom:10px;
+    }
+    .video-list .playlist-btn {
+        display:block;
+        width:100%;
+    }
+    .main {
+        position:relative;
+        min-width:300px;
+        margin:10px;
+        background:rgba(255,255,255,0.2);
+        border-radius:5px; 
+        /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
+    }
+
+    .nav-link {
+        display:block;
+        padding-bottom:10px;
+        text-decoration:none;
+        font-style:normal;
+    }
+    .toggle-btn {
+        position: absolute;
+        bottom: -50px;
+        left: 5px;
+        background:rgba(0,0,0,.8);
+        padding: 6px 12px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: .8em;
+        font-family:'Source Sans Pro', sans-serif; font-weight:900; 
+        text-transform: uppercase;
+    }
+
+    .playlist { 
+        padding:0; 
+        margin:20px 20px 40px;
+    }
+    .playlist-btn { 
+        background:#000; 
+        text-decoration:none; 
+        font-weight:bold; 
+        font-style:normal; 
+        text-transform:uppercase; 
+        font-size:14px; 
+        padding:5px 10px; 
+        margin-right:10px;
+        border-radius:5px; 
+    }
+    .dimmed {opacity:.7;}
+    .footer-text {
+        padding:0 20px;
+        font-size:.9em;
+        font-style:italic;
+        opacity:.8;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+    }
+
+    #cp, #date {
+        float:none;
+        display: inline;
+        color : #fff;
+        padding: 0 0 0 20px;
+        margin:0;
+        font-weight: bold;
+    }
+
+    /*facebook comment plugin*/
+    #myName{position : absolute; top:35px; right : 85px; width: 160px; height : 30px; text-align: center; color: #fff;}
+    #logout {position : absolute; top:30px; right : 15px; width: 70px; height : 30px; text-align: center; border-radius:5px; font-size:20px;}
+    .fb-comments{ margin: 15px 0;}
+    #login {position : absolute; top:30px; right : 25px;  width: 70px; height : 20px; text-align: center; border-radius:5px; font-size:20px;}
+    .flt {top : 30px; z-index: 1100;}
+
+
+    /*  BigVideo Styles 
+      You may need to adjust these styles to get this working right in your design. 
+    */
+    #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
+    #big-video-vid,#big-video-image{position:absolute;}
+    .control-bar {position:absolute; bottom:90px; left : 20px; width:95%;
+      -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
+    #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
+    #big-video-control-middle{margin: 0 95px 0 24px;}
+    #big-video-control-bar{width:100%;height:16px;position:relative;cursor:pointer; }
+    #big-video-control-progress{position:absolute;top:1px;height:14px;background:#08c; }
+    #big-video-control-track{position:absolute;height:16px;width:100%;background:rgba(255,255,255,0.2);}
+    #big-video-control-bound-left{left:0;}
+    #big-video-control-bound-right{right:-1px}
+    #big-video-control-track .ui-slider-handle {opacity:0;}
+    #big-video-control-playhead{left:30%;}
+    #big-video-control-play{position:absolute;top:10px;left:10px;height:16px;width:15px;background-image:url('bigvideo.png');}
+    #big-video-control-timer{position:absolute;top:7px; right:3%; color:#fff;font-size:11px;}
+    #big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:rgba(255,255,255,0.2);}
+    #big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
+    .transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
+    .vjs-big-play-button{display:none !important;}
+    .vjs-tech {box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);}
+
+    /*bookmark click*/
+    .right {
+        bottom : 100px;
+        left : 51%;
+        width: 40%;
+        z-index: 1100;
+        background: rgba(0,0,0,.8);
+    }
 }
 
 /*media query*/
