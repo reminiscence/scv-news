@@ -5,18 +5,19 @@
 .dropdown-toggle {font-size : 20px; font-weight: bold;}
 
 .menu {
-    width:490px;
+    width:95%;
     position:absolute;
-    bottom:44px; left: 41%;
+    bottom:25px; left: 20px;
     background:rgba(255,255,255,0.2);
     border-radius:5px;
     z-index: 1100;
+    padding : 10px 0;
     /*-webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;*/
 }
 
 .menu a {
      float: left;
-     margin:17px 0 18px 15px;
+     margin: 0 0 0 7%;
 }
 
 #selectbox {
@@ -147,7 +148,7 @@
 }
 
 .headline {
-    width:38%;height:16px;position:absolute; bottom : 85px; left:20px; padding:8px 0; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
+    width:95%;height:16px;position:absolute; bottom : 135px; left:20px; padding:8px 0; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; 
 }
 
 .slides_container { padding : 0 10px;}
@@ -359,7 +360,7 @@ span.mid_tit {
 */
 #big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
 #big-video-vid,#big-video-image{position:absolute;}
-.control-bar {position:absolute; bottom:45px; left : 20px; width:38%;
+.control-bar {position:absolute; bottom:90px; left : 20px; width:95%;
   -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
 #big-video-control{ height:16px;position:relative; padding:10px; margin:0; background: rgba(255,255,255,0.2); border-radius:5px; }
 #big-video-control-middle{margin: 0 95px 0 24px;}
@@ -392,9 +393,10 @@ span.mid_tit {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
     #title { font-size:1em; display: inline;}
     #cp, #date {padding : 0 0 0 5px;}
-    .headline { bottom : 145px; }
+    .headline { bottom : 212px; }
     .menu { bottom : 104px;}
-    .control-bar {bottom : 105px; }
+    .menu a { margin : 0 0 0 5.5%;}
+    .control-bar {bottom : 170px; }
     #myName { top : 15px; }
     #myName span{font-size:1em;}
     #login, #logout { top : 10px; }
