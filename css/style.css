@@ -408,7 +408,7 @@ span.mid_tit {
     .menu { bottom : 104px;}
     .menu a { margin : 0 0 0 5.5%;}
     .control-bar {bottom : 170px; }
-    #myName { top : 15px; }
+    #myName { top : 45px; }
     #myName span{font-size:1em;}
     #login, #logout { top : 10px; }
     .main { margin:0; height:40px;}
