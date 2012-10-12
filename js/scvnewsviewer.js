@@ -71,6 +71,13 @@ function DataStorage(){
 	  appid: 'a53f225b5b9b465fac29085d6f98b18f',
 	  apikey: '02e619ec0ee34bccb975fca744e79717'
 	});
+
+
+	// //저장
+	// ws.set(key, value).on('success', function(data, response)){
+	// 	console.log(data);
+	// }
+
 }
 
 //북마크된 데이터 클라우드에 저장하는 메소드.
@@ -79,7 +86,7 @@ DataStorage.prototype.saveData = function(){
 		ws = this.ws;
 
 	ws.set(config.uid, bookmark).on('success', function(data, response){
-		//console.log(data, response);
+		console.log(data, response);
 	});
 };
 
