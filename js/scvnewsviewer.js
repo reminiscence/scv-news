@@ -92,12 +92,14 @@ DataStorage.prototype.loadBookmarkData = function(){
 		response = ws.get(uid);
 
 	response.on('success', function(data, response){
+		console.log(data, response);
 		config.bookmarkList = data[uid];
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 	});
 
 	response.on('error',function(data,response){
+		console.log(data, response);
 		config.bookmarkList = {newsList : []};
 		config.count = length;
 	});
