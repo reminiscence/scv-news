@@ -208,7 +208,6 @@ NewsViewer.prototype.buildList = function (){
 		}
 		config.lengthCount = i;
 
-
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
 			var $target = $(e.target),
@@ -240,7 +239,6 @@ NewsViewer.prototype.buildList = function (){
 						config.count = ++count;
 
 						alert("항목이 추가되었습니다.");
-
 						doc.trigger('setBookmark');
 					} else { 
 						//로그인 하도록 유도
