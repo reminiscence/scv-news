@@ -256,13 +256,13 @@ NewsViewer.prototype.buildList = function (){
 						config.count = ++count;
 
 						var $btn = $target.parent($target);
-						if($target.hasClass() == true){
+						if($target.attr('id') != '#btn-bookmark'){
 							$btn.toggleClass('btn-primary');		
 						} else {
 							$target.toggleClass('btn-primary');
 						}
 			
-						console.log($target.parent($target));
+						console.log($target);
 						alert("항목이 추가되었습니다.");
 						doc.trigger('setBookmark');
 					} else { 
