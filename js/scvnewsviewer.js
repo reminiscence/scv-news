@@ -207,7 +207,7 @@ NewsViewer.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
 		config.lengthCount = i;
-		var checkBookmark = config.bookmarkList.newsList;
+		var checkBookmark = config.bookmarkList;
 		console.log(checkBookmark);
 		for(i=0; i<config.lengthCount; i++){
 			var $box = $listbox.find('.box');
