@@ -207,18 +207,6 @@ NewsViewer.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
 		config.lengthCount = i;
-		var checkBookmark = config.bookmarkList;
-		console.log(checkBookmark);
-		for(i=0; i<config.lengthCount; i++){
-			var $box = $listbox.find('.box');
-			var $vid = $($box[i]).attr('vid');
-			for(var j = 0; j < checkBookmark.length; j++){
-				if(vid == checkBookmark[j].vid){
-					console.log("success");
-					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
-				}	
-			}
-		}
 
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){

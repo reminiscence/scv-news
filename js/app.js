@@ -121,6 +121,19 @@ $(function() {
 			$('#listbox').fadeIn();
 			
 			config.check = 2;
+			var checkBookmark = config.bookmarkList;
+			console.log(checkBookmark);
+			for(i=0; i<config.lengthCount; i++){
+				var $box = $listbox.find('.box');
+				var $vid = $($box[i]).attr('vid');
+				for(var j = 0; j < checkBookmark.length; j++){
+					if(vid == checkBookmark[j].vid){
+						console.log("success");
+						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
+					}	
+				}
+			}
+
 			if(config.lengthCount < config.newsList.length){
 				$('#more').show();
 			}
