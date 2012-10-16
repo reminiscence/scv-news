@@ -207,6 +207,16 @@ NewsViewer.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
 		config.lengthCount = i;
+		checkBookmark = config.bookmarkList.newsList;
+		for(i=lengthCount; i<lengthCount + 10; i++){
+			var $box = $listbox.find('.box');
+			var $vid = box[i].attr('vid');
+			for(var j = 0; j < checkBookmark.length; j++){
+				if(vid == checkBookmark[j].vid){
+					$box[i].find('#btn-bookmark').toggleClass('btn-primary');
+				}	
+			}
+		}
 
 		//뉴스 리스트 - box 클릭 시 클릭한 뉴스 띄워줌. 모아보기 클릭시 모아보기 항목 추가.
 		$listbox.find(".box").click(function(e){
@@ -314,8 +324,8 @@ Bookmark.prototype.showBookmarkList = function(){
 		}
 
 		$bookmarkBox.find('.box').click(function(e){
-			var $target = $(e.target),
-				$box = $(this);
+			var $target = $(e.target);
+				//$box = $(this);
 			if($target.attr('id') != 'btn-deleteBookmark' && $target.attr('class') != 'icon-trash'){
 				config.vid = $(this).attr('vid');
 				doc.trigger('clickBookmark');
@@ -323,6 +333,16 @@ Bookmark.prototype.showBookmarkList = function(){
 			} else {
 				var vid = $(this).attr('vid');
 				that.deleteBookmark(vid);
+				checkBookmark = config.bookmarkList.newsList;
+				for(var i = config.lengthCount; i < config.lengthCount+10; i++){
+					var $box =  $('#listbox').find('.box');
+					var $vid = box[i].attr('vid');
+					for(var j = 0; j < checkBookmark.length; j++){
+						if(vid == checkBookmark.vid){
+							$box[i].find('#btn-bookmark').toggleClass('btn-primary');
+						}	
+					}
+				}
 			}
 		});
 
