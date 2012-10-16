@@ -124,7 +124,7 @@ $(function() {
 			var checkBookmark = config.bookmarkList;
 			console.log(checkBookmark);
 			for(i=0; i<config.lengthCount; i++){
-				var $box = $listbox.find('.box');
+				var $box = $('#listbox').find('.box');
 				var $vid = $($box[i]).attr('vid');
 				for(var j = 0; j < checkBookmark.length; j++){
 					if(vid == checkBookmark[j].vid){
