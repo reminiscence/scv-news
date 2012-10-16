@@ -255,11 +255,11 @@ NewsViewer.prototype.buildList = function (){
 						config.bookmarkList = bookmark;
 						config.count = ++count;
 
+						var $btn = $target.parent($target);
 						if($target.hasClass() == 'icon-star-empty'){
-							var $btn = $target.parent();
 							$btn.parent($btn).toggleClass('btn-primary');		
 						} else {
-							$target.toggleClass('btn-primary');
+							$btn.toggleClass('btn-primary');
 						}
 			
 						console.log($target.parent($target));
