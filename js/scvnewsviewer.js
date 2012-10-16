@@ -92,19 +92,16 @@ DataStorage.prototype.loadBookmarkData = function(){
 		response = ws.get(uid);
 
 	response.on('success', function(data, response){
-		console.log(data, response);
 		config.bookmarkList = data[uid];
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 
 		var checkBookmark = config.bookmarkList.newsList;
-		console.log(checkBookmark);
 		for(i=0; i<config.lengthCount; i++){
 			var $box = $('#listbox').find('.box');
 			var $videoId = $($box[i]).attr('vid');
 			for(var j = 0; j < checkBookmark.length; j++){
 				if($videoId == checkBookmark[j].vid){
-					console.log("success");
 					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 				}	
 			}

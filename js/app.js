@@ -68,6 +68,17 @@ $(function() {
 			$('#myName').empty();
 			$('#login').show();
 			$('#logout').hide();
+
+			var checkBookmark = config.bookmarkList.newsList;
+			for(i=0; i<config.lengthCount; i++){
+				var $box = $('#listbox').find('.box');
+				var $videoId = $($box[i]).attr('vid');
+				for(var j = 0; j < checkBookmark.length; j++){
+					if($videoId == checkBookmark[j].vid){
+						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
+					}	
+				}
+			}
 		});
 	});
 
