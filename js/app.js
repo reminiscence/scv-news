@@ -41,6 +41,19 @@ $(function() {
 			$('#logout').show();
 			config.uid = response.authResponse.userID;
 			storage.loadBookmarkData();
+
+			var checkBookmark = config.bookmarkList.newsList;
+			console.log(checkBookmark);
+			for(i=0; i<config.lengthCount; i++){
+				var $box = $('#listbox').find('.box');
+				var $videoId = $($box[i]).attr('vid');
+				for(var j = 0; j < checkBookmark.length; j++){
+					if($videoId == checkBookmark[j].vid){
+						console.log("success");
+						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
+					}	
+				}
+			}
 		}
 	});
 	dataLoader.loadData();
@@ -121,18 +134,6 @@ $(function() {
 			$('#listbox').fadeIn();
 			
 			config.check = 2;
-			var checkBookmark = config.bookmarkList.newsList;
-			console.log(checkBookmark);
-			for(i=0; i<config.lengthCount; i++){
-				var $box = $('#listbox').find('.box');
-				var $videoId = $($box[i]).attr('vid');
-				for(var j = 0; j < checkBookmark.length; j++){
-					if($videoId == checkBookmark[j].vid){
-						console.log("success");
-						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
-					}	
-				}
-			}
 
 			if(config.lengthCount < config.newsList.length){
 				$('#more').show();
