@@ -334,14 +334,13 @@ Bookmark.prototype.showBookmarkList = function(){
 			} else {
 				var vid = $(this).attr('vid');
 				that.deleteBookmark(vid);
-				checkBookmark = config.bookmarkList.newsList;
-				for(var i = config.lengthCount; i < config.lengthCount+10; i++){
+				
+				for(var i = 0; i < config.lengthCount; i++){
 					var $box =  $('#listbox').find('.box');
 					var $videoId = $($box[i]).attr('vid');
-					for(var j = 0; j < checkBookmark.length; j++){
-						if($videoId == checkBookmark[j].vid){
-							$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
-						}	
+					
+					if($videoId == vid){
+						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 					}
 				}
 			}
