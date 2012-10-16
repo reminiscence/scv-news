@@ -256,7 +256,7 @@ NewsViewer.prototype.buildList = function (){
 						config.count = ++count;
 
 						var $btn = $target.parent($target);
-						if($target.hasClass() == 'icon-star-empty'){
+						if($target.hasClass() == true){
 							$btn.parent($btn).toggleClass('btn-primary');		
 						} else {
 							$btn.toggleClass('btn-primary');
