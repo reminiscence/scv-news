@@ -249,6 +249,7 @@ NewsViewer.prototype.buildList = function (){
 						config.count = ++count;
 
 						$target.parent($target).toggleClass('btn-primary');
+						console.log($target.parent($target));
 						alert("항목이 추가되었습니다.");
 						doc.trigger('setBookmark');
 					} else { 
