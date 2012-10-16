@@ -257,9 +257,9 @@ NewsViewer.prototype.buildList = function (){
 
 						var $btn = $target.parent($target);
 						if($target.hasClass() == true){
-							$btn.parent($btn).toggleClass('btn-primary');		
+							$btn.toggleClass('btn-primary');		
 						} else {
-							$btn.toggleClass('btn-primary');
+							$target.toggleClass('btn-primary');
 						}
 			
 						console.log($target.parent($target));
