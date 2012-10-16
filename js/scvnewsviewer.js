@@ -207,12 +207,13 @@ NewsViewer.prototype.buildList = function (){
 			$.tmpl(tmpl, news).appendTo($('.boxlist'));
 		}
 		config.lengthCount = i;
-		checkBookmark = config.bookmarkList.newsList;
+		var checkBookmark = config.bookmarkList.newsList;
 		for(i=0; i<config.lengthCount; i++){
 			var $box = $listbox.find('.box');
 			var $vid = $($box[i]).attr('vid');
 			for(var j = 0; j < checkBookmark.length; j++){
 				if(vid == checkBookmark[j].vid){
+					console.log("success");
 					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 				}	
 			}
