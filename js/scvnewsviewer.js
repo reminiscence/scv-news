@@ -96,6 +96,19 @@ DataStorage.prototype.loadBookmarkData = function(){
 		config.bookmarkList = data[uid];
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
+
+		var checkBookmark = config.bookmarkList.newsList;
+		console.log(checkBookmark);
+		for(i=0; i<config.lengthCount; i++){
+			var $box = $('#listbox').find('.box');
+			var $videoId = $($box[i]).attr('vid');
+			for(var j = 0; j < checkBookmark.length; j++){
+				if($videoId == checkBookmark[j].vid){
+					console.log("success");
+					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
+				}	
+			}
+		}
 	});
 
 	response.on('error',function(data,response){
