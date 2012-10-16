@@ -125,9 +125,9 @@ $(function() {
 			console.log(checkBookmark);
 			for(i=0; i<config.lengthCount; i++){
 				var $box = $('#listbox').find('.box');
-				var $vid = $($box[i]).attr('vid');
+				var $videoId = $($box[i]).attr('vid');
 				for(var j = 0; j < checkBookmark.length; j++){
-					if(vid == checkBookmark[j].vid){
+					if($videoId == checkBookmark[j].vid){
 						console.log("success");
 						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 					}	
