@@ -96,7 +96,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 		length = config.bookmarkList.newsList.length;
 		config.count = length;
 
-		var checkBookmark = config.bookmarkList.newsList;
+		/*var checkBookmark = config.bookmarkList.newsList;
 		for(i=0; i<config.lengthCount; i++){
 			var $box = $('#listbox').find('.box');
 			var $videoId = $($box[i]).attr('vid');
@@ -105,7 +105,7 @@ DataStorage.prototype.loadBookmarkData = function(){
 					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 				}	
 			}
-		}
+		}*/
 	});
 
 	response.on('error',function(data,response){
@@ -255,12 +255,12 @@ NewsViewer.prototype.buildList = function (){
 						config.bookmarkList = bookmark;
 						config.count = ++count;
 
-						var $btn = $target.parent($target);
+						/*var $btn = $target.parent($target);
 						if($target.attr('id') != 'btn-bookmark'){
 							$btn.toggleClass('btn-primary');		
 						} else {
 							$target.toggleClass('btn-primary');
-						}
+						}*/
 			
 						console.log($target);
 						alert("항목이 추가되었습니다.");
@@ -348,7 +348,7 @@ Bookmark.prototype.showBookmarkList = function(){
 				var vid = $(this).attr('vid');
 				that.deleteBookmark(vid);
 				
-				var $box =  $('#listbox').find('.box');
+				/*var $box =  $('#listbox').find('.box');
 				for(var i = 0; i < config.lengthCount; i++){
 					
 					var $videoId = $($box[i]).attr('vid');
@@ -357,7 +357,7 @@ Bookmark.prototype.showBookmarkList = function(){
 						console.log("test");
 						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 					}
-				}
+				}*/
 			}
 		});
 

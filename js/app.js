@@ -69,7 +69,7 @@ $(function() {
 			$('#login').show();
 			$('#logout').hide();
 
-			var checkBookmark = config.bookmarkList.newsList;
+			/*var checkBookmark = config.bookmarkList.newsList;
 			for(i=0; i<config.lengthCount; i++){
 				var $box = $('#listbox').find('.box');
 				var $videoId = $($box[i]).attr('vid');
@@ -78,7 +78,7 @@ $(function() {
 						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 					}	
 				}
-			}
+			}*/
 		});
 	});
 
