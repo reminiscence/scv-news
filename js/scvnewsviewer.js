@@ -338,7 +338,7 @@ Bookmark.prototype.showBookmarkList = function(){
 					var $box =  $('#listbox').find('.box');
 					var $videoId = $($box[i]).attr('vid');
 					for(var j = 0; j < checkBookmark.length; j++){
-						if(videoId == checkBookmark[j].vid){
+						if($videoId == checkBookmark[j].vid){
 							$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 						}	
 					}
