@@ -338,11 +338,13 @@ Bookmark.prototype.showBookmarkList = function(){
 				var vid = $(this).attr('vid');
 				that.deleteBookmark(vid);
 				
+				var $box =  $('#listbox').find('.box');
 				for(var i = 0; i < config.lengthCount; i++){
-					var $box =  $('#listbox').find('.box');
+					
 					var $videoId = $($box[i]).attr('vid');
 					
 					if($videoId == vid){
+						console.log("test");
 						$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 					}
 				}
