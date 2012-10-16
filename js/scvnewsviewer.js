@@ -208,7 +208,7 @@ NewsViewer.prototype.buildList = function (){
 		}
 		config.lengthCount = i;
 		checkBookmark = config.bookmarkList.newsList;
-		for(i=lengthCount; i<lengthCount + 10; i++){
+		for(i=0; i<config.lengthCount; i++){
 			var $box = $listbox.find('.box');
 			var $vid = $($box[i]).attr('vid');
 			for(var j = 0; j < checkBookmark.length; j++){
