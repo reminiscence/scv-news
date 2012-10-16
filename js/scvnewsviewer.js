@@ -256,7 +256,7 @@ NewsViewer.prototype.buildList = function (){
 						config.count = ++count;
 
 						var $btn = $target.parent($target);
-						if($target.attr('id') != '#btn-bookmark'){
+						if($target.attr('id') != 'btn-bookmark'){
 							$btn.toggleClass('btn-primary');		
 						} else {
 							$target.toggleClass('btn-primary');
