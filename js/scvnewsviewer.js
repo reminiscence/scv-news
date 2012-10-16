@@ -210,10 +210,10 @@ NewsViewer.prototype.buildList = function (){
 		checkBookmark = config.bookmarkList.newsList;
 		for(i=lengthCount; i<lengthCount + 10; i++){
 			var $box = $listbox.find('.box');
-			var $vid = $box[i].attr('vid');
+			var $vid = $($box[i]).attr('vid');
 			for(var j = 0; j < checkBookmark.length; j++){
 				if(vid == checkBookmark[j].vid){
-					$box[i].find('#btn-bookmark').toggleClass('btn-primary');
+					$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 				}	
 			}
 		}
@@ -336,10 +336,10 @@ Bookmark.prototype.showBookmarkList = function(){
 				checkBookmark = config.bookmarkList.newsList;
 				for(var i = config.lengthCount; i < config.lengthCount+10; i++){
 					var $box =  $('#listbox').find('.box');
-					var $vid = $box[i].attr('vid');
+					var $vid = $($box[i]).attr('vid');
 					for(var j = 0; j < checkBookmark.length; j++){
 						if(vid == checkBookmark[j].vid){
-							$box[i].find('#btn-bookmark').toggleClass('btn-primary');
+							$($box[i]).find('#btn-bookmark').toggleClass('btn-primary');
 						}	
 					}
 				}
