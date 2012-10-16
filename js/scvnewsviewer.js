@@ -244,12 +244,20 @@ NewsViewer.prototype.buildList = function (){
 						list.cpKorName = $box.find('span:eq(2)').text();
 						list.regDate = $box.find('span:eq(4)').text();
 						
+						for(var i = 0; i < count; i++){
+							if(list.vid == bookmark.newsList[i].vid){
+								alert('이미 추가된 항목입니다.');
+								return;
+							}
+						}
+
 						bookmark.newsList[count] = list;
 						config.bookmarkList = bookmark;
 						config.count = ++count;
 
 						if($target.hasClass() == 'icon-star-empty'){
-							$target.parent($target).toggleClass('btn-primary');		
+							var $btn = $target.parent();
+							$btn.parent($btn).toggleClass('btn-primary');		
 						} else {
 							$target.toggleClass('btn-primary');
 						}
