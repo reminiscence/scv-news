@@ -238,7 +238,7 @@ NewsViewer.prototype.buildList = function (){
 						config.bookmarkList = bookmark;
 						config.count = ++count;
 
-						$target.toggleClass('btn-primary');
+						$target.parent($target).toggleClass('btn-primary');
 						alert("항목이 추가되었습니다.");
 						doc.trigger('setBookmark');
 					} else { 
