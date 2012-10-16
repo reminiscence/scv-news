@@ -121,7 +121,7 @@ $(function() {
 			$('#listbox').fadeIn();
 			
 			config.check = 2;
-			var checkBookmark = config.bookmarkList;
+			var checkBookmark = config.bookmarkList.newsList;
 			console.log(checkBookmark);
 			for(i=0; i<config.lengthCount; i++){
 				var $box = $('#listbox').find('.box');
